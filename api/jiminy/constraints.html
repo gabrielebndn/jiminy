@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>analytical constraints &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="utilities" href="utilities.html" />
+    <link rel="prev" title="engine" href="engine.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jiminy C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="robot.html">robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html">sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motors.html">motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller.html">controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engine.html">engine</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">analytical constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Jiminy C++ API</a> &raquo;</li>
+        
+      <li>analytical constraints</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/jiminy/constraints.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="analytical-constraints">
+<h1>analytical constraints<a class="headerlink" href="#analytical-constraints" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “jiminy::AbstractConstraint” in doxygen xml output for project “jiminy” from directory: /home/runner/work/jiminy/jiminy/build/doxygen/xml</p>
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraintE">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FixedFrameConstraint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">AbstractConstraintTpl</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6jiminy20FixedFrameConstraintE" title="jiminy::FixedFrameConstraint"><span class="n"><span class="pre">FixedFrameConstraint</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraintE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraint20FixedFrameConstraintERK20FixedFrameConstraint">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a74648532688b487fe954c44f442d1d9c"></span><span class="sig-name descname"><span class="n"><span class="pre">FixedFrameConstraint</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy20FixedFrameConstraint20FixedFrameConstraintERK20FixedFrameConstraint" title="jiminy::FixedFrameConstraint::FixedFrameConstraint"><span class="n"><span class="pre">FixedFrameConstraint</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">abstractConstraint</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraint20FixedFrameConstraintERK20FixedFrameConstraint" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forbid the copy of the class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraintaSERK20FixedFrameConstraint">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a1a52a7f95bcd3a24bdb11a7eff05c15d"></span><a class="reference internal" href="#_CPPv4N6jiminy20FixedFrameConstraintE" title="jiminy::FixedFrameConstraint"><span class="n"><span class="pre">FixedFrameConstraint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy20FixedFrameConstraintE" title="jiminy::FixedFrameConstraint"><span class="n"><span class="pre">FixedFrameConstraint</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraintaSERK20FixedFrameConstraint" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraint16shared_from_thisEv">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a3b7e0a67e37342211dd6ea8a89a3d9da"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shared_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraint16shared_from_thisEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraint20FixedFrameConstraintERKNSt6stringERKN5Eigen6MatrixI6bool_tXL6EEXL1EEEERKN9pinocchio14ReferenceFrameE">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1abcfb3c4cc5d9a3dea72d98b87ff998c7"></span><span class="sig-name descname"><span class="n"><span class="pre">FixedFrameConstraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frameName</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">bool_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">maskFixed</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">bool_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Constant</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">)</span></span>, <span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ReferenceFrame</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frameRef</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">LOCAL_WORLD_ALIGNED</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraint20FixedFrameConstraintERKNSt6stringERKN5Eigen6MatrixI6bool_tXL6EEXL1EEEERKN9pinocchio14ReferenceFrameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frameName</strong> – <strong>[in]</strong> Name of the frame on which the constraint is to be applied. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraintD0Ev">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a728c4575eff15e0a09193dbca2552d9c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~FixedFrameConstraint</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraintD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy20FixedFrameConstraint12getFrameNameEv">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a8f6823e9a6144089745cf4a842a2c6f6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFrameName</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy20FixedFrameConstraint12getFrameNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy20FixedFrameConstraint11getFrameIdxEv">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1af60d9f22ab8d56d2dc5e20bbef3c3488"></span><span class="n"><span class="pre">frameIndex_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFrameIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy20FixedFrameConstraint11getFrameIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy20FixedFrameConstraint12getDofsFixedEv">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a32c8b86b8bd0a59c92422b7a1a11acc2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getDofsFixed</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy20FixedFrameConstraint12getDofsFixedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy20FixedFrameConstraint17getReferenceFrameEv">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1ae36009589cde4dfbeb53e5d3139c0088"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ReferenceFrame</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getReferenceFrame</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy20FixedFrameConstraint17getReferenceFrameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraint21setReferenceTransformERKN9pinocchio3SE3E">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1aeb6ae43e1c06ba249678d05c9f35eaaf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setReferenceTransform</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SE3</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">transformRef</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraint21setReferenceTransformERKN9pinocchio3SE3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraint21getReferenceTransformEv">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1aa9a2136dc55ba5815f23cd9688b36599"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SE3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getReferenceTransform</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraint21getReferenceTransformEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraint5resetERK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a48176929367ac82f2392c92757fb6d6d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraint5resetERK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Refresh the internal buffers and proxies. </p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>This method is not intended to be called manually. The <a class="reference internal" href="robot.html#classjiminy_1_1_robot"><span class="std std-ref">Robot</span></a> to which the constraint is added is taking care of it when its own <code class="docutils literal notranslate"><span class="pre">reset</span></code> method is called. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy20FixedFrameConstraint23computeJacobianAndDriftERK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_fixed_frame_constraint_1a57b608f109251aca928e3308f31120da"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeJacobianAndDrift</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6jiminy20FixedFrameConstraint23computeJacobianAndDriftERK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute the jacobian and drift of the constraint. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To avoid duplicate kinematic computation, it is assumed that computeJointJacobians and framesForwardKinematics has already been called on model-&gt;pncModel_.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – <strong>[in]</strong> Current joint position. </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Current joint velocity. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraintE">
+<span class="target" id="classjiminy_1_1_wheel_constraint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">WheelConstraint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">AbstractConstraintTpl</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6jiminy15WheelConstraintE" title="jiminy::WheelConstraint"><span class="n"><span class="pre">WheelConstraint</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraintE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraint15WheelConstraintERK15WheelConstraint">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1a5016ee7e666868d5731dcd6281fe808b"></span><span class="sig-name descname"><span class="n"><span class="pre">WheelConstraint</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy15WheelConstraint15WheelConstraintERK15WheelConstraint" title="jiminy::WheelConstraint::WheelConstraint"><span class="n"><span class="pre">WheelConstraint</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">abstractConstraint</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraint15WheelConstraintERK15WheelConstraint" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forbid the copy of the class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraintaSERK15WheelConstraint">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1a6d8034aea28ff18a47959e2718c2390a"></span><a class="reference internal" href="#_CPPv4N6jiminy15WheelConstraintE" title="jiminy::WheelConstraint"><span class="n"><span class="pre">WheelConstraint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy15WheelConstraintE" title="jiminy::WheelConstraint"><span class="n"><span class="pre">WheelConstraint</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraintaSERK15WheelConstraint" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraint16shared_from_thisEv">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1afd4d0e9c1cce5959a32a333ef33a4b19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shared_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraint16shared_from_thisEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraint15WheelConstraintERKNSt6stringERK9float64_tRK9vector3_tRK9vector3_t">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1afeb97569e9e24f612c16ba85d3a2e1be"></span><span class="sig-name descname"><span class="n"><span class="pre">WheelConstraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frameName</span></span>, <span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">wheelRadius</span></span>, <span class="n"><span class="pre">vector3_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">groundNormal</span></span>, <span class="n"><span class="pre">vector3_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">wheelAxis</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraint15WheelConstraintERKNSt6stringERK9float64_tRK9vector3_tRK9vector3_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frameName</strong> – <strong>[in]</strong> Name of the frame representing the center of the wheel. </p></li>
+<li><p><strong>wheelRadius</strong> – <strong>[in]</strong> Radius of the wheel (in m). </p></li>
+<li><p><strong>groundNormal</strong> – <strong>[in]</strong> Unit vector representing the normal to the ground, in the world frame. </p></li>
+<li><p><strong>wheelAxis</strong> – <strong>[in]</strong> Axis of the wheel, in the local frame. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraintD0Ev">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1aa4fe4c46c014b550731fb334dc52e9ea"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~WheelConstraint</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraintD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy15WheelConstraint12getFrameNameEv">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1a5db45a781ebe1ca9d6d1276b296ef04f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFrameName</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy15WheelConstraint12getFrameNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy15WheelConstraint11getFrameIdxEv">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1a178fbaedae7c550de50a829805354ad6"></span><span class="n"><span class="pre">frameIndex_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFrameIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy15WheelConstraint11getFrameIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraint21setReferenceTransformERKN9pinocchio3SE3E">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1a71ac1b67b6738df5b4eecd9753d2e55b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setReferenceTransform</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SE3</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">transformRef</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraint21setReferenceTransformERKN9pinocchio3SE3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraint21getReferenceTransformEv">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1aa8a3eca07536a3cee207dc3edeeea8fe"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SE3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getReferenceTransform</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraint21getReferenceTransformEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraint5resetERK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1ae731613d5851eb085b136569b8da51c0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&amp;</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraint5resetERK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Refresh the internal buffers and proxies. </p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>This method is not intended to be called manually. The <a class="reference internal" href="robot.html#classjiminy_1_1_robot"><span class="std std-ref">Robot</span></a> to which the constraint is added is taking care of it when its own <code class="docutils literal notranslate"><span class="pre">reset</span></code> method is called. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy15WheelConstraint23computeJacobianAndDriftERK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_wheel_constraint_1a14483c9fe9b867fb8108e7b1c9d2d9ef"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeJacobianAndDrift</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6jiminy15WheelConstraint23computeJacobianAndDriftERK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute the jacobian and drift of the constraint. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To avoid duplicate kinematic computation, it is assumed that computeJointJacobians and framesForwardKinematics has already been called on model-&gt;pncModel_.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – <strong>[in]</strong> Current joint position. </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Current joint velocity. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="utilities.html" class="btn btn-neutral float-right" title="utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="engine.html" class="btn btn-neutral float-left" title="engine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>controller &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="engine" href="engine.html" />
+    <link rel="prev" title="motors" href="motors.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jiminy C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="robot.html">robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html">sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motors.html">motors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engine.html">engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">analytical constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Jiminy C++ API</a> &raquo;</li>
+        
+      <li>controller</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/jiminy/controller.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="controller">
+<h1>controller<a class="headerlink" href="#controller" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractControllerE">
+<span class="target" id="classjiminy_1_1_abstract_controller"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">AbstractController</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractControllerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Generic interface for any controller. </p>
+<p>Any controller must inherit from this base class and implement its virtual methods.</p>
+<p>The controller used to initialize a Jiminy <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> is downcasted as an instance of <a class="reference internal" href="#classjiminy_1_1_abstract_controller"><span class="std std-ref">AbstractController</span></a> and polymorphism is used to call the actual implementations. </p>
+<p>Subclassed by <a class="reference internal" href="#classjiminy_1_1_controller_functor"><span class="std std-ref">jiminy::ControllerFunctor&lt; F1, F2 &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController27getDefaultControllerOptionsEv">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a829355d81458f387626e0ec14e64f364"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultControllerOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController27getDefaultControllerOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Dictionary gathering the configuration options shared between controllers. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController18AbstractControllerERK18AbstractController">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a68510b348a292c46faa43a52ecb1573b"></span><span class="sig-name descname"><span class="n"><span class="pre">AbstractController</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy18AbstractController18AbstractControllerERK18AbstractController" title="jiminy::AbstractController::AbstractController"><span class="n"><span class="pre">AbstractController</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">controller</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController18AbstractControllerERK18AbstractController" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractControlleraSERK18AbstractController">
+<span class="target" id="classjiminy_1_1_abstract_controller_1acc47d2a9257a7e5a2c7faa3fcbb090c8"></span><a class="reference internal" href="#_CPPv4N6jiminy18AbstractControllerE" title="jiminy::AbstractController"><span class="n"><span class="pre">AbstractController</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy18AbstractControllerE" title="jiminy::AbstractController"><span class="n"><span class="pre">AbstractController</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">controller</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractControlleraSERK18AbstractController" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController18AbstractControllerEv">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a79ff9025be1b9139cf17dabf5011b3a1"></span><span class="sig-name descname"><span class="n"><span class="pre">AbstractController</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController18AbstractControllerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractControllerD0Ev">
+<span class="target" id="classjiminy_1_1_abstract_controller_1acef564509ff9d2868424aa7af972af58"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~AbstractController</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractControllerD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController10initializeENSt8weak_ptrIK5RobotEE">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a9b0a3130aa7c1f3837a7708de16ff433"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">weak_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="robot.html#_CPPv4N6jiminy5RobotE" title="jiminy::Robot"><span class="n"><span class="pre">Robot</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">robot</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController10initializeENSt8weak_ptrIK5RobotEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the parameters of the controller. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>robot</strong> – <strong>[in]</strong> <a class="reference internal" href="robot.html#classjiminy_1_1_robot"><span class="std std-ref">Robot</span></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController16registerVariableERKNSt6vectorINSt6stringEEEN5Eigen3RefI9vectorN_tXL0EEN5Eigen11InnerStrideIEEEE">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a0cb923d0da681f9121990de84de5997e"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerVariable</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldnames</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">vectorN_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">InnerStride</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController16registerVariableERKNSt6vectorINSt6stringEEEN5Eigen3RefI9vectorN_tXL0EEN5Eigen11InnerStrideIEEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Dynamically registered a Eigen Vector to the telemetry. </p>
+<p>Internally, all it does is to store a reference to the variable, then it logs its value periodically. There is no update mechanism what so ever nor safety check. So the user has to take care of the life span of the variable, and to update it manually whenever it is necessary to do so.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fieldnames</strong> – <strong>[in]</strong> Name of each element of the variable. It will appear in the header of the log. </p></li>
+<li><p><strong>values</strong> – <strong>[in]</strong> Eigen vector to add to the telemetry. It accepts non-contiguous temporary.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController16registerVariableERKNSt6stringERK9float64_t">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a959dbf0a66ba675cca327d0013d52d9c"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerVariable</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldName</span></span>, <span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController16registerVariableERKNSt6stringERK9float64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Dynamically registered a float64 to the telemetry. </p>
+<p>Internally, all it does is to store a reference to the variable, then it logs its value periodically. There is no update mechanism what so ever nor safety check. So the user has to take care of the life span of the variable, and to update it manually whenever it is necessary to do so.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fieldnames</strong> – <strong>[in]</strong> Name of the variable. It will appear in the header of the log. </p></li>
+<li><p><strong>values</strong> – <strong>[in]</strong> Variable to add to the telemetry</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN6jiminy18AbstractController16registerConstantE9hresult_tRKNSt6stringERK1T">
+<span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classjiminy_1_1_abstract_controller_1af742b8ec301bfde6c019bd8630023ba1"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerConstant</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fieldName</span></span>, <a class="reference internal" href="#_CPPv4I0EN6jiminy18AbstractController16registerConstantE9hresult_tRKNSt6stringERK1T" title="jiminy::AbstractController::registerConstant::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6jiminy18AbstractController16registerConstantE9hresult_tRKNSt6stringERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Register a constant float64 to the telemetry. </p>
+<p>Register a constant to the telemetry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fieldnames</strong> – <strong>[in]</strong> Name of the variable. </p></li>
+<li><p><strong>values</strong> – <strong>[in]</strong> Variable to add to the telemetry</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController13removeEntriesEv">
+<span class="target" id="classjiminy_1_1_abstract_controller_1aca8a68d40ab788576acb84e46b621142"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeEntries</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController13removeEntriesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove all variables dynamically registered to the telemetry. </p>
+<p>Note that one must reset Jiminy <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> for this to take effect. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController14computeCommandERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a5ddecd1e88775dbf0489d003b55eca26"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCommand</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController14computeCommandERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute the command. </p>
+<p>It assumes that the robot internal state (including sensors) is consistent with other input arguments. It fetches the sensor data automatically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – <strong>[in]</strong> Current time </p></li>
+<li><p><strong>q</strong> – <strong>[in]</strong> Current configuration vector </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Current velocity vector </p></li>
+<li><p><strong>command</strong> – <strong>[out]</strong> Output effort vector</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController16internalDynamicsERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_abstract_controller_1aa3c828c2f04962503529bff50c085e01"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internalDynamics</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">uCustom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController16internalDynamicsERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emulate internal dynamics of the system at are not included in the physics engine. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – <strong>[in]</strong> Current time </p></li>
+<li><p><strong>q</strong> – <strong>[in]</strong> Current configuration vector </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Current velocity vector </p></li>
+<li><p><strong>uCustom</strong> – <strong>[in]</strong> Output effort vector</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy18AbstractController10getOptionsEv">
+<span class="target" id="classjiminy_1_1_abstract_controller_1aa84391c4f35ac55738e5f19ec7bd2902"></span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getOptions</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy18AbstractController10getOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the configuration options of the controller. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary with the parameters of the controller </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController10setOptionsERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a297f577b2b1d53892e15b246f4f22639"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ctrlOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController10setOptionsERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the configuration options of the controller. </p>
+<p>Note that one must reset Jiminy <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> for this to take effect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ctrlOptions</strong> – <strong>[in]</strong> Dictionary with the parameters of the controller</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController18configureTelemetryENSt10shared_ptrI13TelemetryDataEERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a467e8ae89094c7930e7d5028eef1481b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configureTelemetry</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TelemetryData</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">telemetryData</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">objectPrefixName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController18configureTelemetryENSt10shared_ptrI13TelemetryDataEERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configure the telemetry of the controller. </p>
+<p>This method connects the controller-specific telemetry sender to a given telemetry data (which is unique for a given robot), so that it is later possible to register the variables that one want to monitor. Finally, the telemetry recoder logs every registered variables at each timestep in a memory buffer.</p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>This method is not intended to be called manually. The <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> is taking care of it before flushing the telemetry data at the end of each simulation steps.</p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>telemetryData</strong> – <strong>[in]</strong> Shared pointer to the robot-wide telemetry data object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController15updateTelemetryEv">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a89768b5599cf476faf6c1b64bb207925"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateTelemetry</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController15updateTelemetryEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the internal buffers of the telemetry associated with variables monitored by the controller. </p>
+<p>As the main entry point for a user to log extra variables, the engine also passes the current state of the robot to enable logging of custom state-related variables.</p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>This method is not intended to be called manually. The <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> is taking care of it before flushing the telemetry data at the end of each simulation steps. </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – <strong>[in]</strong> Current time. </p></li>
+<li><p><strong>q</strong> – <strong>[in]</strong> Current position. </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Current velocity.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController5resetERK6bool_t">
+<span class="target" id="classjiminy_1_1_abstract_controller_1afe9907f1e5040d84d5f56eccb57c13a6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">resetDynamicTelemetry</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController5resetERK6bool_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset the internal state of the controller. </p>
+<p>Note that it resets the configuration of the telemetry.</p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>This method is not intended to be called manually. The <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> is taking care of it when its own <code class="docutils literal notranslate"><span class="pre">reset</span></code> method is called.</p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>resetDynamicTelemetry</strong> – <strong>[in]</strong> Whether or not variables dynamically registered to the telemetry must be removed. Optional: False by default </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy18AbstractController16getIsInitializedEv">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a3c3228d887347dc66343c9e13f5eba77"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getIsInitialized</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy18AbstractController16getIsInitializedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get isInitialized_. </p>
+<p>It is a flag used to determine if the controller has been initialized.</p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>Note that a controller can be considered initialized even if its telemetry is not properly configured. If not, it is the only to do before being ready to use. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy18AbstractController24getIsTelemetryConfiguredEv">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a8322fc388edf01224eb623150264024c"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getIsTelemetryConfigured</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy18AbstractController24getIsTelemetryConfiguredEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get isTelemetryConfigured_. </p>
+<p>It is a flag used to determine if the telemetry of the controller has been initialized. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController22baseControllerOptions_E">
+<span class="target" id="classjiminy_1_1_abstract_controller_1a63cade2537f99b5e2387bbac86ca2e71"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6jiminy18AbstractController19controllerOptions_tE" title="jiminy::AbstractController::controllerOptions_t"><span class="n"><span class="pre">controllerOptions_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">baseControllerOptions_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController22baseControllerOptions_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Structure with the parameters of the controller. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController6robot_E">
+<span class="target" id="classjiminy_1_1_abstract_controller_1afee573880d638da53469ee3d5f3cf1be"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">weak_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="robot.html#_CPPv4N6jiminy5RobotE" title="jiminy::Robot"><span class="n"><span class="pre">Robot</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">robot_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController6robot_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="robot.html#classjiminy_1_1_robot"><span class="std std-ref">Robot</span></a> for which to compute the command and internal dynamics must be computed. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController12sensorsData_E">
+<span class="target" id="classjiminy_1_1_abstract_controller_1aa7e62cae7feaf1f2c541950d6d5440df"></span><span class="n"><span class="pre">sensorsDataMap_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sensorsData_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController12sensorsData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController19controllerOptions_tE">
+<span class="target" id="structjiminy_1_1_abstract_controller_1_1controller_options__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">controllerOptions_t</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController19controllerOptions_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Structure with the configuration options shared between controllers. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController19controllerOptions_t19controllerOptions_tERK14configHolder_t">
+<span class="target" id="structjiminy_1_1_abstract_controller_1_1controller_options__t_1a4caa122248e49ec75c671fa701f10a88"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">controllerOptions_t</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController19controllerOptions_t19controllerOptions_tERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy18AbstractController19controllerOptions_t15telemetryEnableE">
+<span class="target" id="structjiminy_1_1_abstract_controller_1_1controller_options__t_1a31ae1a43355c2e07594f3235071ff66f"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">telemetryEnable</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy18AbstractController19controllerOptions_t15telemetryEnableE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Flag used to enable the telemetry of the controller. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN6jiminy17ControllerFunctorE">
+<span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F1</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F2</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classjiminy_1_1_controller_functor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ControllerFunctor</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N6jiminy18AbstractControllerE" title="jiminy::AbstractController"><span class="n"><span class="pre">AbstractController</span></span></a><a class="headerlink" href="#_CPPv4I00EN6jiminy17ControllerFunctorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy17ControllerFunctor17ControllerFunctorERK17ControllerFunctor">
+<span class="target" id="classjiminy_1_1_controller_functor_1a1e327e62ac846394095195a1d05e2d76"></span><span class="sig-name descname"><span class="n"><span class="pre">ControllerFunctor</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy17ControllerFunctor17ControllerFunctorERK17ControllerFunctor" title="jiminy::ControllerFunctor::ControllerFunctor"><span class="n"><span class="pre">ControllerFunctor</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">controller</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy17ControllerFunctor17ControllerFunctorERK17ControllerFunctor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forbid the copy of the class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy17ControllerFunctoraSERK17ControllerFunctor">
+<span class="target" id="classjiminy_1_1_controller_functor_1a1d0abf9234bce15fbfbc1dcde48ba738"></span><a class="reference internal" href="#_CPPv4I00EN6jiminy17ControllerFunctorE" title="jiminy::ControllerFunctor"><span class="n"><span class="pre">ControllerFunctor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6jiminy17ControllerFunctorE" title="jiminy::ControllerFunctor"><span class="n"><span class="pre">ControllerFunctor</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">controller</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy17ControllerFunctoraSERK17ControllerFunctor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy17ControllerFunctor17ControllerFunctorER2F1R2F2">
+<span class="target" id="classjiminy_1_1_controller_functor_1a1456266eb4d2c8cb5c43e6c5a38654aa"></span><span class="sig-name descname"><span class="n"><span class="pre">ControllerFunctor</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6jiminy17ControllerFunctorE" title="jiminy::ControllerFunctor::F1"><span class="n"><span class="pre">F1</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">commandFct</span></span>, <a class="reference internal" href="#_CPPv4I00EN6jiminy17ControllerFunctorE" title="jiminy::ControllerFunctor::F2"><span class="n"><span class="pre">F2</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">internalDynamicsFct</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy17ControllerFunctor17ControllerFunctorER2F1R2F2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor. </p>
+<p><dl class="simple">
+<dt><strong>Remark</strong></dt><dd><p>A valid ‘callable’ is a function pointer, functor or lambda with signature: void(float64_t const &amp; t, vectorN_t const &amp; q, vectorN_t const &amp; v, sensorsDataMap_t const &amp; sensorsData, vectorN_t &amp; command) where I is range(n), with n the number of different type of sensor.</p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>commandFct</strong> – <strong>[in]</strong> ‘Callable’ computing the command </p></li>
+<li><p><strong>internalDynamicsFct</strong> – <strong>[in]</strong> ‘Callable’ computing the internal dynamics </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy17ControllerFunctor17ControllerFunctorERR2F1RR2F2">
+<span class="target" id="classjiminy_1_1_controller_functor_1a29a35ac19930fa91e3cc071a038b13a8"></span><span class="sig-name descname"><span class="n"><span class="pre">ControllerFunctor</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6jiminy17ControllerFunctorE" title="jiminy::ControllerFunctor::F1"><span class="n"><span class="pre">F1</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">commandFct</span></span>, <a class="reference internal" href="#_CPPv4I00EN6jiminy17ControllerFunctorE" title="jiminy::ControllerFunctor::F2"><span class="n"><span class="pre">F2</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">internalDynamicsFct</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy17ControllerFunctor17ControllerFunctorERR2F1RR2F2" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy17ControllerFunctorD0Ev">
+<span class="target" id="classjiminy_1_1_controller_functor_1a33afb2ee4a34caeeaa908be3e0eb9705"></span><span class="sig-name descname"><span class="n"><span class="pre">~ControllerFunctor</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6jiminy17ControllerFunctorD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy17ControllerFunctor14computeCommandERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_controller_functor_1a2cdcee957778541273232b884f0aaead"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCommand</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6jiminy17ControllerFunctor14computeCommandERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute the command. </p>
+<p>It assumes that the robot internal state (including sensors) is consistent with other input arguments. It fetches the sensor data automatically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – <strong>[in]</strong> Current time </p></li>
+<li><p><strong>q</strong> – <strong>[in]</strong> Current configuration vector </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Current velocity vector </p></li>
+<li><p><strong>command</strong> – <strong>[out]</strong> Output effort vector</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy17ControllerFunctor16internalDynamicsERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_controller_functor_1a92e0148acb1faca150daf9286da84429"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internalDynamics</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">uCustom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6jiminy17ControllerFunctor16internalDynamicsERK9float64_tRK9vectorN_tRK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emulate internal dynamics of the system at are not included in the physics engine. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – <strong>[in]</strong> Current time </p></li>
+<li><p><strong>q</strong> – <strong>[in]</strong> Current configuration vector </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Current velocity vector </p></li>
+<li><p><strong>command</strong> – <strong>[in]</strong> Output effort vector</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return code to determine whether the execution of the method was successful. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="engine.html" class="btn btn-neutral float-right" title="engine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="motors.html" class="btn btn-neutral float-left" title="motors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>viewer &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="processing" href="processing.html" />
+    <link rel="prev" title="dynamics" href="dynamics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jiminy Python API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core/index.html">core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulator.html">simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamics.html">dynamics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html">processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Jiminy Python API</a> &raquo;</li>
+        
+      <li>viewer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/jiminy_py/viewer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-jiminy_py.viewer">
+<span id="viewer"></span><h1>viewer<a class="headerlink" href="#module-jiminy_py.viewer" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="jiminy_py.viewer.TrajectoryDataType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">TrajectoryDataType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/log.html#TrajectoryDataType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.TrajectoryDataType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jiminy_py.viewer.TrajectoryDataType.evolution_robot">
+<span class="sig-name descname"><span class="pre">evolution_robot</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="state.html#jiminy_py.state.State" title="jiminy_py.state.State"><span class="pre">jiminy_py.state.State</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#jiminy_py.viewer.TrajectoryDataType.evolution_robot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jiminy_py.viewer.TrajectoryDataType.robot">
+<span class="sig-name descname"><span class="pre">robot</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="core/robot.html#jiminy_py.core.Robot" title="jiminy_py.core.Robot"><span class="pre">jiminy_py.core.Robot</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#jiminy_py.viewer.TrajectoryDataType.robot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jiminy_py.viewer.TrajectoryDataType.use_theoretical_model">
+<span class="sig-name descname"><span class="pre">use_theoretical_model</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></em><a class="headerlink" href="#jiminy_py.viewer.TrajectoryDataType.use_theoretical_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.viewer.sleep">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">sleep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#sleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to provide cross-platform time sleep with maximum accuracy.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use this method with cautious since it relies on busy looping principle
+instead of system scheduler. As a result, it wastes a lot more
+resources than time.sleep. However, it is the only way to ensure
+accurate delay on a non-real-time systems such as Windows 10.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dt</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – Sleep duration in seconds.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">Viewer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_gui_if_parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_robot_on_close</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'world'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_com</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_dcm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_contacts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_f_external</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>TODO: Write documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The environment variable ‘JIMINY_VIEWER_INTERACTIVE_DISABLE’ can be
+used to force disabling interactive display.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy.Model to display.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to use the theoretical (rigid)
+model or the actual (flexible) model of
+this robot. Note that using the actual
+model is more efficient since update of
+the frames placements can be skipped.
+Optional: Actual model by default.</p></li>
+<li><p><strong>robot_color</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em>) – Color of the robot. It will override the original
+color of the meshes if not <cite>None</cite>. It supports both
+RGBA codes as a list of 4 floating-point values
+ranging from 0.0 and 1.0, and a few named colors.
+Optional: Disabled by default.</p></li>
+<li><p><strong>lock</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.RLock" title="(in Python v3.9)"><em>threading.RLock</em></a><em>]</em>) – Custom threading.RLock. Required for parallel rendering.
+It is required since some backends does not support
+multiple simultaneous connections (e.g. corbasever).
+<cite>None</cite> to use the unique lock of the current thread.
+Optional: <cite>None</cite> by default.</p></li>
+<li><p><strong>backend</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – Name of the rendering backend to use. It can be either
+‘panda3d’, ‘panda3d-qt’, ‘meshcat’ or ‘gepetto-gui’.
+None to keep using to one already running if any, or
+the default one otherwise. Note that the default is
+hardware and environment dependent.
+See <cite>viewer.default_backend</cite> method for details.
+Optional: <cite>None</cite> by default.</p></li>
+<li><p><strong>open_gui_if_parent</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Open GUI if new viewer’s backend server is
+started. <cite>None</cite> to fallback to default.
+Optional: Do not open gui for ‘meshcat’
+backend in interactive mode with already one
+display cell already opened, open gui in
+any other case by default.</p></li>
+<li><p><strong>delete_robot_on_close</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Enable automatic deletion of the robot
+when closing.
+Optional: False by default.</p></li>
+<li><p><strong>robot_name</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – Unique robot name, to identify each robot.
+Optional: Randomly generated identifier by default.</p></li>
+<li><p><strong>scene_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Scene name, used only with ‘gepetto-gui’ backend. It
+must differ from the scene name.
+Optional: ‘world’ by default.</p></li>
+<li><p><strong>display_com</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to display the center of mass.
+Optional: Disabled by default.</p></li>
+<li><p><strong>display_dcm</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to display the capture point / DCM.
+Optional: Disabled by default.</p></li>
+<li><p><strong>display_contacts</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to display the contact forces.
+Note that the user is responsible for updating
+sensors data since <cite>Viewer.display</cite> is only
+computing kinematic quantities.
+Optional: Disabled by default.</p></li>
+<li><p><strong>display_f_external</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em><em>]</em>) – Whether or not to display the external external forces applied at
+the joints on the robot. If a boolean is provided, the same
+visibility will be set for each joint, alternatively one can
+provide a boolean list whose ordering is consistent with
+<cite>pinocchio_model.names</cite>. Note that the user is responsible for
+updating the force buffer <cite>viewer.f_external</cite> data since
+<cite>Viewer.display</cite> is only computing kinematic quantities.
+Optional: Root joint for robot with freeflyer by default.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – Unused extra keyword arguments to enable forwarding.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.backend">
+<span class="sig-name descname"><span class="pre">backend</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'panda3d'</span></em><a class="headerlink" href="#jiminy_py.viewer.Viewer.backend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.window_name">
+<span class="sig-name descname"><span class="pre">window_name</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'jiminy'</span></em><a class="headerlink" href="#jiminy_py.viewer.Viewer.window_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.open_gui">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">open_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_if_needed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.open_gui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.open_gui" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a new viewer graphical interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method does nothing when using Gepetto-gui backend because
+its lifetime is tied to the graphical interface.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one graphical interface can be opened locally for efficiency.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>start_if_needed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.has_gui">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">has_gui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.has_gui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.has_gui" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.wait">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">require_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.wait"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for all the meshes to finish loading in every clients.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is a non-op for <cite>gepetto-gui</cite> since it works in synchronous
+mode.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>require_client</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Wait for at least one client to be available
+before checking for mesh loading.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.is_alive">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.is_alive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the backend server is running and responding to queries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.is_open">
+<span class="sig-name descname"><span class="pre">is_open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.is_open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.is_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a given viewer instance is open, or if the backend server
+is running if no instance is specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close a given viewer instance, or all of them if no instance is
+specified.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Calling this method with an viewer instance always closes the
+client. It may also remove the robot from the server if the viewer
+attribute <cite>delete_robot_on_close</cite> is True. Moreover, it is the one
+having started the backend server, it also terminates it, resulting
+in closing every viewer somehow. It results in the same outcome
+than calling this method without specifying any viewer instance.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.set_watermark">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">set_watermark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_fullpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.set_watermark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.set_watermark" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert desired watermark on bottom left corner of the window.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The relative width and height cannot exceed 20% of the visible
+area, othewise it will be rescaled.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Gepetto-gui is not supported by this method and will never be.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img_fullpath</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – Full path of the image to use as watermark.
+Meshcat supports format ‘.png’, ‘.jpeg’ or ‘svg’,
+while Panda3d only supports ‘.png’ and ‘.jpeg’ for
+now. None or empty string to disable.
+Optional: None by default.</p></li>
+<li><p><strong>width</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em>) – Desired width for the image. None to not rescale the
+image manually.
+Optional: None by default.</p></li>
+<li><p><strong>height</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em>) – Desired height for the image. None to not rescale the
+image manually.
+Optional: None by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.set_legend">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">set_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.set_legend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.set_legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert legend on top left corner of the window.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to have specified different colors for each robot on the
+scene, since it will be used as marker on the legend.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Gepetto-gui is not supported by this method and will never be.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>labels</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em><em>]</em>) – Sequence of strings whose length must be consistent
+with the number of robots on the scene. None to disable.
+Optional: None by default.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.set_clock">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">set_clock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.set_clock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.set_clock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert clock on bottom right corner of the window.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only Panda3d rendering backend is supported by this method.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em>) – Current time is seconds. None to disable.
+Optional: None by default.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.get_camera_transform">
+<span class="sig-name descname"><span class="pre">get_camera_transform</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.get_camera_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.get_camera_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get transform of the camera pose.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The reference axis is negative z-axis instead of positive x-axis.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It returns the previous requested camera transform for meshcat,
+since it is impossible to get acces to this information. Thus
+this method is valid as long as the user does not move the
+camera manually using mouse camera control.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Union[Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>], numpy.ndarray], Union[Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>], numpy.ndarray]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.set_camera_transform">
+<span class="sig-name descname"><span class="pre">set_camera_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.set_camera_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.set_camera_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set transform of the camera pose.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The reference axis is negative z-axis instead of positive x-axis,
+which means that position = [0.0, 0.0, 0.0], rotation =
+[0.0, 0.0, 0.0] moves the camera at the center of scene, looking
+downward.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em>) – Position [X, Y, Z] as a list or 1D array. None to not
+update it.
+Optional: None by default.</p></li>
+<li><p><strong>rotation</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em>) – Rotation [Roll, Pitch, Yaw] as a list or 1D np.array.
+None to note update it.
+Optional: None by default.</p></li>
+<li><p><strong>relative</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em><em>]</em>) – How to apply the transform:<ul>
+<li><p><strong>None:</strong> absolute.</p></li>
+<li><p><strong>’camera’:</strong> relative to current camera pose.</p></li>
+<li><p><strong>other:</strong> relative to a robot frame, not accounting for the
+rotation of the frame during travalling. It supports both frame
+name and index in model.</p></li>
+</ul>
+</p></li>
+<li><p><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to wait for rendering to finish.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.set_camera_lookat">
+<span class="sig-name descname"><span class="pre">set_camera_lookat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.set_camera_lookat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.set_camera_lookat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the camera look-up position.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It preserve the relative camera pose wrt the lookup position.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> (<em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em>) – Position [X, Y, Z] as a list or 1D array, frame index</p></li>
+<li><p><strong>relative</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em><em>]</em>) – Set the lookat position relative to robot frame if
+specified, in absolute otherwise. Both frame name and
+index in model are supported.</p></li>
+<li><p><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to wait for rendering to finish.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.register_camera_motion">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">register_camera_motion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera_motion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.register_camera_motion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.register_camera_motion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register camera motion. It will be used later by <cite>replay</cite> to set the
+absolute or relative camera pose, depending on whether or not
+travelling is enable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>camera_motion</strong> (<em>Sequence</em><em>[</em><em>jiminy_py.viewer.viewer.CameraMotionBreakpointType</em><em>]</em>) – <p>Camera breakpoint poses over time, as a list of
+<cite>CameraMotionBreakpointType</cite> dict. Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mf">0.00</span><span class="p">,</span>
+  <span class="s1">&#39;pose&#39;</span><span class="p">:</span> <span class="p">([</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">])},</span>
+ <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mf">0.33</span><span class="p">,</span>
+  <span class="s1">&#39;pose&#39;</span><span class="p">:</span> <span class="p">([</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">])},</span>
+ <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mf">0.66</span><span class="p">,</span>
+  <span class="s1">&#39;pose&#39;</span><span class="p">:</span> <span class="p">([</span><span class="mf">8.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">])},</span>
+ <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mf">1.00</span><span class="p">,</span>
+  <span class="s1">&#39;pose&#39;</span><span class="p">:</span> <span class="p">([</span><span class="mf">9.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">])}]</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.remove_camera_motion">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">remove_camera_motion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.remove_camera_motion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.remove_camera_motion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove camera motion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.attach_camera">
+<span class="sig-name descname"><span class="pre">attach_camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_xyzrpy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock_relative_pose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.attach_camera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.attach_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach the camera to a given robot frame.</p>
+<p>Only the position of the frame is taken into account. A custom relative
+pose of the camera wrt to the frame can be further specified. If so,
+then the relative camera pose wrt the frame is locked, otherwise the
+camera is only constrained to look at the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em>) – Name or index of the frame of the robot to follow with
+the camera.</p></li>
+<li><p><strong>camera_xyzrpy</strong> (<em>Optional</em><em>[</em><em>Tuple</em><em>[</em><em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>, </em><em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>]</em><em>]</em>) – Tuple position [X, Y, Z], rotation
+[Roll, Pitch, Yaw] corresponding to the relative
+pose of the camera wrt the tracked frame. It will
+be used to initialize the camera pose if relative
+pose is not locked. <cite>None</cite> to disable.
+Optional: Disabkle by default.</p></li>
+<li><p><strong>lock_relative_pose</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Whether or not to lock the relative pose of
+the camera wrt tracked frame.
+Optional: False by default iif Panda3d
+backend is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.detach_camera">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">detach_camera</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.detach_camera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.detach_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detach the camera.</p>
+<p>Must be called to undo <cite>attach_camera</cite>, so that it will stop
+automatically tracking a frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.set_color">
+<span class="sig-name descname"><span class="pre">set_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.set_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override the color of the visual and collision geometries of the
+robot on-the-fly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is only supported by Panda3d for now.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em>) – Color of the robot. It will override the original color
+of the meshes if not <cite>None</cite>, and restore them otherwise.
+It supports both RGBA codes as a list of 4 floating-point
+values ranging from 0.0 and 1.0, and a few named colors.
+Optional: Disabled by default.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.capture_frame">
+<span class="sig-name descname"><span class="pre">capture_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.capture_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.capture_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take a snapshot and return associated data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – Width for the image in pixels (not available with
+Gepetto-gui for now). None to keep unchanged.
+Optional: Kept unchanged by default.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – Height for the image in pixels (not available with
+Gepetto-gui for now). None to keep unchanged.
+Optional: Kept unchanged by default.</p></li>
+<li><p><strong>raw_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to return a 2D numpy array, or the raw output
+from the backend (the actual type may vary).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Union[numpy.ndarray, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.9)">bytes</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.save_frame">
+<span class="sig-name descname"><span class="pre">save_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.save_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.save_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a snapshot in png format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Fullpath of the image (.png extension is mandatory)</p></li>
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – Width for the image in pixels (not available with
+Gepetto-gui for now). None to keep unchanged.
+Optional: Kept unchanged by default.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – Height for the image in pixels (not available with
+Gepetto-gui for now). None to keep unchanged.
+Optional: Kept unchanged by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.display_visuals">
+<span class="sig-name descname"><span class="pre">display_visuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.display_visuals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.display_visuals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the visibility of the visual model of the robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visibility</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to enable or disable display of the visual
+model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.display_collisions">
+<span class="sig-name descname"><span class="pre">display_collisions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.display_collisions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.display_collisions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the visibility of the collision model of the robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visibility</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to enable or disable display of the visual
+model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.add_marker">
+<span class="sig-name descname"><span class="pre">add_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_if_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_refresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">shape_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.add_marker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.add_marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add marker on the scene.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is only supported by Panda3d.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Unique name. It must be a valid string identifier.</p></li>
+<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Desired shape, as a string, i.e. ‘cone’, ‘box’, ‘sphere’,
+‘capsule’, ‘cylinder’, or ‘arrow’.</p></li>
+<li><p><strong>pose</strong> (<em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>Tuple</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>, </em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>]</em><em>]</em>) – Pose of the geometry on the scene, as a list of vectors
+(position [X, Y, Z], quaternion [X,  Y, Z, W]). <cite>None</cite>
+corresponds to world frame position and/or orientation.
+Optional: World frame by default.</p></li>
+<li><p><strong>scale</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>, </em><em>Callable</em><em>[</em><em>numpy.ndarray</em><em>]</em><em>]</em>) – Size of the marker. Each principal axis of the geometry
+are scaled separately.</p></li>
+<li><p><strong>color</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>, </em><em>Callable</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>]</em>) – Color of the marker. It supports both RGBA codes as a
+list of 4 floating-point values ranging from 0.0 and 1.0,
+and a few named colors.
+Optional: robot’s color by default if overridden,
+‘red’ otherwise.</p></li>
+<li><p><strong>auto_refresh</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to refresh the scene after adding
+the marker. Useful for adding a bunch of markers
+and only refresh once. Note that the marker will
+not display properly until then.</p></li>
+<li><p><strong>shape_kwargs</strong> (<em>Any</em>) – Any additional keyword arguments to forward for
+shape instantiation.</p></li>
+<li><p><strong>remove_if_exists</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dict of type <cite>MarkerDataType</cite>, storing references to the
+current pose, scale, and color of the marker, and itself a
+reference to <cite>viewer.markers[name]</cite>. Any modification of it
+will take effect at next <cite>refresh</cite> call.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>jiminy_py.viewer.viewer.MarkerDataType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.display_center_of_mass">
+<span class="sig-name descname"><span class="pre">display_center_of_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.display_center_of_mass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.display_center_of_mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the position of the center of mass as a sphere.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It corresponds to the attribute <cite>com[0]</cite> of the provided
+<cite>robot.pinocchio_model</cite>. Calling <cite>Viewer.display</cite> will update it
+automatically, while <cite>Viewer.refresh</cite> will not.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visibility</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to enable or disable display of the center
+of mass.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.display_capture_point">
+<span class="sig-name descname"><span class="pre">display_capture_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.display_capture_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.display_capture_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the position of the capture point,also called divergent
+component of motion (DCM), as a sphere.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Calling <cite>Viewer.display</cite> will update it automatically, while
+<cite>Viewer.refresh</cite> will not.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visibility</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to enable or disable display of the capture
+point.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.display_contact_forces">
+<span class="sig-name descname"><span class="pre">display_contact_forces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.display_contact_forces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.display_contact_forces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display forces associated with the contact sensors attached to the
+robot, as a capsule of variable length depending of Fz.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fz can be signed. It will affect the orientation of the capsule.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It corresponds to the attribute <cite>data</cite> of <cite>jiminy.ContactSensor</cite>.
+Calling <cite>Viewer.display</cite> will NOT update its value automatically.
+It is up to the user to keep it up-to-date.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is only supported by Panda3d.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visibility</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to display the contact forces.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.display_external_forces">
+<span class="sig-name descname"><span class="pre">display_external_forces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.display_external_forces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.display_external_forces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display external forces applied on the joints the robot, as an
+arrow of variable length depending of magnitude of the force.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It only display the linear component of the force, while ignoring
+the angular part for now.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It corresponds to the attribute <a href="#id1"><span class="problematic" id="id2">``</span></a>viewer.f_external`. Calling
+<cite>Viewer.display</cite> will NOT update its value automatically.  It is up
+to the user to keep it up-to-date.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is only supported by Panda3d.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>visibility</strong> (<em>Union</em><em>[</em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Whether or not to display the external force applied
+at each joint selectively. If a boolean is provided,
+the same visibility will be set for each joint,
+alternatively, one can provide a boolean list whose
+ordering is consistent with pinocchio model (i.e.
+<cite>pinocchio_model.names</cite>).</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.remove_marker">
+<span class="sig-name descname"><span class="pre">remove_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.remove_marker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.remove_marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a marker, based on its name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>identifier</strong> – Name of the marker to remove.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.refresh">
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_update_visual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_update_collision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.refresh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the configuration of Robot in the viewer.</p>
+<p>This method is also in charge of updating the camera placement for
+travelling.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is copy-pasted from <cite>Pinocchio.visualize.*.display</cite>
+method, after removing parts responsible of update pinocchio
+data and collision data. Visual data must still be updated.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>force_update_visual</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Force update of visual geometries.</p></li>
+<li><p><strong>force_update_collision</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Force update of collision geometries.</p></li>
+<li><p><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to wait for rendering to finish.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_hook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.display"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the configuration of the robot.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It will alter original robot data if viewer attribute
+<cite>use_theoretical_model</cite> is false.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>numpy.ndarray</em>) – Configuration of the robot.</p></li>
+<li><p><strong>v</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Velocity of the robot. Used only to update velocity
+dependent markers such as DCM. <cite>None</cite> if undefined.
+Optional: <cite>None</cite> by default.</p></li>
+<li><p><strong>xyz_offset</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Freeflyer position offset. Note that it does not
+check for the robot actually have a freeflyer.</p></li>
+<li><p><strong>update_hook</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>]</em><em>]</em>) – Callable that will be called right after updating
+kinematics data. <cite>None</cite> to disable.
+Optional: None by default.</p></li>
+<li><p><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to wait for rendering to finish.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.viewer.Viewer.replay">
+<span class="sig-name descname"><span class="pre">replay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evolution_robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">inf)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_hook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_clock</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/viewer.html#Viewer.replay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.Viewer.replay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replay a complete robot trajectory at a given real-time ratio.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Specifying ‘udpate_hook’ is necessary to be able to display sensor
+information usch as contact forces. It will be automatically
+disable otherwise.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It will alter original robot data if viewer attribute
+<cite>use_theoretical_model</cite> is false.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>evolution_robot</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="state.html#jiminy_py.state.State" title="jiminy_py.state.State"><em>jiminy_py.state.State</em></a><em>]</em>) – List of State object of increasing time.</p></li>
+<li><p><strong>time_interval</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>numpy.ndarray</em><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>]</em><em>]</em>) – Specific time interval to replay.
+Optional: Complete evolution by default [0, inf].</p></li>
+<li><p><strong>speed_ratio</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – Real-time factor.
+Optional: No time dilation by default (1.0).</p></li>
+<li><p><strong>xyz_offset</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Freeflyer position offset. Note that it does not
+check for the robot actually have a freeflyer.
+OPtional: None by default.</p></li>
+<li><p><strong>update_hook</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>numpy.ndarray</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>]</em><em>]</em>) – <p>Callable that will be called periodically between
+every state update. <cite>None</cite> to disable, otherwise it
+must have the following signature:</p>
+<blockquote>
+<div><p>f(t:float, q: ndarray, v: ndarray) -&gt; None</p>
+</div></blockquote>
+<p>Optional: No update hook by default.</p>
+</p></li>
+<li><p><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to wait for rendering to finish.</p></li>
+<li><p><strong>enable_clock</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.viewer.interactive_mode">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">interactive_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/meshcat/utilities.html#interactive_mode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.interactive_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine what kind of process is running Python kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>0: Non-interactive process. It can be either Ipython console</dt><dd><p>or builtin terminaL. Does not support HTML embedding.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>1: Interactive Jupyter Notebook. (It can be confused with</dt><dd><p>Qtconsole)</p>
+</dd>
+</dl>
+</li>
+<li><p>2: Interactive Google Colab. Not properly supported so far.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.viewer.extract_replay_data_from_log_data">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">extract_replay_data_from_log_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/replay.html#extract_replay_data_from_log_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.extract_replay_data_from_log_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract replay data from log data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Robot" title="jiminy_py.core.Robot"><em>jiminy_py.core.Robot</em></a>) – Jiminy robot for which to extract log data.</p></li>
+<li><p><strong>log_data</strong> (<em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>numpy.ndarray</em><em>]</em>) – Data from the log file, in a dictionnary.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Trajectory data, update hook and extra keyword arguments to
+forward to <cite>play_trajectories</cite> method to display the trajectory.
+By default, it enables display of external forces applied on
+freeflyer if any.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="log.html#jiminy_py.log.TrajectoryDataType" title="jiminy_py.log.TrajectoryDataType">jiminy_py.log.TrajectoryDataType</a>, Callable[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a>], Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.viewer.play_trajectories">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">play_trajectories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajs_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_hooks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">inf)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz_offsets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robots_colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">travelling_frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_xyzrpy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_motion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">watermark_fullpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_clock</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_com</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_dcm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_contacts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_f_external</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'world'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_video_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_paused</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_robot_on_close</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_widgets_overlay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close_backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viewers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/replay.html#play_trajectories"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.play_trajectories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replay one or several robot trajectories in a viewer.</p>
+<p>The ratio between the replay and the simulation time is kept constant to
+the desired ratio. One can choose between several backend (gepetto-gui or
+meshcat).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Replay speed is independent of the platform (windows, linux…) and
+available CPU power.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trajs_data</strong> (<em>Union</em><em>[</em><a class="reference internal" href="log.html#jiminy_py.log.TrajectoryDataType" title="jiminy_py.log.TrajectoryDataType"><em>jiminy_py.log.TrajectoryDataType</em></a><em>, </em><em>Sequence</em><em>[</em><a class="reference internal" href="log.html#jiminy_py.log.TrajectoryDataType" title="jiminy_py.log.TrajectoryDataType"><em>jiminy_py.log.TrajectoryDataType</em></a><em>]</em><em>]</em>) – List of <cite>TrajectoryDataType</cite> dicts.</p></li>
+<li><p><strong>update_hooks</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Callable</em><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>numpy.ndarray</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>]</em><em>, </em><em>Sequence</em><em>[</em><em>Callable</em><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>numpy.ndarray</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>]</em><em>]</em><em>]</em><em>]</em>) – <p>Callables associated with each robot that can be used
+to update non-kinematic robot data, for instance to
+emulate sensors data from log using the hook provided
+by <cite>emulate_sensors_data_from_log</cite> method. <cite>None</cite> to
+disable, otherwise it must have the signature:</p>
+<blockquote>
+<div><p>f(t:float, q: ndarray, v: ndarray) -&gt; None</p>
+</div></blockquote>
+<p>Optional: None by default.</p>
+</p></li>
+<li><p><strong>time_interval</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>numpy.ndarray</em><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>]</em><em>]</em>) – Replay only timesteps in this interval of time.
+It does not have to be finite.
+Optional: [0, inf] by default.</p></li>
+<li><p><strong>speed_ratio</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – Speed ratio of the simulation.
+Optional: 1.0 by default.</p></li>
+<li><p><strong>xyz_offsets</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>, </em><em>Sequence</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>]</em><em>]</em>) – List of constant position of the root joint for each
+robot in world frame. None to disable.
+Optional: None by default.</p></li>
+<li><p><strong>robots_colors</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Sequence</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em><em>]</em><em>]</em><em>]</em>) – List of RGBA codes or named colors defining the color
+for each robot. It will be applied to every link.
+None to disable.
+Optional: Original color if single robot, default
+color cycle otherwise.</p></li>
+<li><p><strong>travelling_frame</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em><em>]</em>) – Name or index of the frame to track. The camera
+will automatically follow the frame of the robot
+associated with the first <cite>trajs_data</cite>.`None` to
+disable.
+Optional: Disabled by default.</p></li>
+<li><p><strong>camera_xyzrpy</strong> (<em>Optional</em><em>[</em><em>Tuple</em><em>[</em><em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>, </em><em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>]</em><em>]</em>) – Tuple position [X, Y, Z], rotation [Roll, Pitch, Yaw]
+corresponding to the absolute pose of the camera
+during replay, if travelling is disable, or the
+relative pose wrt the tracked frame otherwise. None
+to disable.
+Optional: None by default.</p></li>
+<li><p><strong>camera_motion</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>jiminy_py.viewer.viewer.CameraMotionBreakpointType</em><em>]</em><em>]</em>) – Camera breakpoint poses over time, as a list of
+<cite>CameraMotionBreakpointType</cite> dict. None to disable.
+Optional: None by default.</p></li>
+<li><p><strong>watermark_fullpath</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – Add watermark to the viewer. It is not
+persistent but disabled after replay. This
+option is only supported by meshcat backend.
+None to disable.
+Optional: No watermark by default.</p></li>
+<li><p><strong>legend</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em><em>]</em><em>]</em>) – List of text defining the legend for each robot. It is not
+persistent but disabled after replay. This option is only
+supported by meshcat backend. None to disable.
+Optional: No legend if no color by default, the robots names
+otherwise.</p></li>
+<li><p><strong>enable_clock</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Add clock on bottom right corner of the viewer.
+Only available with ‘panda3d’ rendering backend.
+Optional: Disabled by default.</p></li>
+<li><p><strong>display_com</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Whether or not to display the center of mass. <cite>None</cite>
+to keep current viewers’ settings, if any.
+Optional: Enabled by default iif <cite>viewers</cite> is <cite>None</cite>,
+and backend is ‘panda3d’.</p></li>
+<li><p><strong>display_dcm</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Whether or not to display the capture point (also
+called DCM). <cite>None to keep current viewers’ settings.
+Optional: Enabled by default iif `viewers</cite> is <cite>None</cite>,
+and backend is ‘panda3d’.</p></li>
+<li><p><strong>display_contacts</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Whether or not to display the contact forces.
+Note that the user is responsible for updating
+sensors data via <cite>update_hooks</cite>. <cite>None</cite> to keep
+current viewers’ settings.
+Optional: Enabled by default iif <cite>update_hooks</cite> is
+specified, <cite>viewers</cite> is <cite>None</cite>, and backend is
+‘panda3d’.</p></li>
+<li><p><strong>display_f_external</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em><em>]</em>) – Whether or not to display the external external
+forces applied at the joints on the robot. If a
+boolean is provided, the same visibility will be
+set for each joint, alternatively one can
+provide a boolean list whose ordering is
+consistent with <cite>pinocchio_model.names</cite>. Note
+that the user is responsible for updating the
+force buffer <cite>viewer.f_external</cite> via
+<cite>update_hooks</cite>. <cite>None</cite> to keep current viewers’
+settings.
+Optional: <cite>None</cite> by default.</p></li>
+<li><p><strong>scene_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Name of viewer’s scene in which to display the robot.
+Optional: Common default name if omitted.</p></li>
+<li><p><strong>record_video_path</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – Fullpath location where to save generated video.
+It must be specified to enable video recording.
+Meshcat only support ‘webm’ format, while the
+other renderer only supports ‘mp4’ format encoded
+with web-compatible ‘h264’ codec.
+Optional: None by default.</p></li>
+<li><p><strong>start_paused</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Start the simulation is pause, waiting for keyboard
+input before starting to play the trajectories.
+Only available if <cite>record_video_path</cite> is None.
+Optional: False by default.</p></li>
+<li><p><strong>backend</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – Backend, one of ‘panda3d’, ‘meshcat’, or ‘gepetto-gui’. If
+<cite>None</cite>, the most appropriate backend will be selected
+automatically, based on hardware and python environment.
+Optional: <cite>None</cite> by default.</p></li>
+<li><p><strong>delete_robot_on_close</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Whether or not to delete the robot from the
+viewer when closing it.
+Optional: True by default.</p></li>
+<li><p><strong>remove_widgets_overlay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Remove overlay (legend, watermark, clock,
+…) automatically before returning.
+Optional: Enabled by default.</p></li>
+<li><p><strong>close_backend</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to close backend automatically before
+returning.
+Optional: Disabled by default.</p></li>
+<li><p><strong>viewers</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>Optional</em><em>[</em><a class="reference internal" href="#jiminy_py.viewer.Viewer" title="jiminy_py.viewer.viewer.Viewer"><em>jiminy_py.viewer.viewer.Viewer</em></a><em>]</em><em>]</em><em>]</em>) – List of already instantiated viewers, associated one by one
+in order to each trajectory data. None to disable.
+Optional: None by default.</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Add information to keep track of the process.
+Optional: True by default.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – Unused keyword arguments to allow chaining renderining
+methods with ease.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of viewers used to play the trajectories.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Sequence[<a class="reference internal" href="#jiminy_py.viewer.Viewer" title="jiminy_py.viewer.viewer.Viewer">jiminy_py.viewer.viewer.Viewer</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.viewer.play_logs_data">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">play_logs_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robots</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logs_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/replay.html#play_logs_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.play_logs_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play log data in a viewer.</p>
+<p>This method simply formats the data then calls <cite>play_trajectories</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>Union</em><em>[</em><em>Sequence</em><em>[</em><a class="reference internal" href="core/robot.html#jiminy_py.core.Robot" title="jiminy_py.core.Robot"><em>jiminy_py.core.Robot</em></a><em>]</em><em>, </em><a class="reference internal" href="core/robot.html#jiminy_py.core.Robot" title="jiminy_py.core.Robot"><em>jiminy_py.core.Robot</em></a><em>]</em>) – Either a single robot, or a list of robot for each log data.</p></li>
+<li><p><strong>logs_data</strong> (<em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>, </em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em>) – Either a single dictionary, or a list of dictionaries of
+simulation data log.</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments to forward to <cite>play_trajectories</cite> method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Sequence[<a class="reference internal" href="#jiminy_py.viewer.Viewer" title="jiminy_py.viewer.viewer.Viewer">jiminy_py.viewer.viewer.Viewer</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.viewer.play_logs_files">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.viewer.</span></span><span class="sig-name descname"><span class="pre">play_logs_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logs_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_package_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/viewer/replay.html#play_logs_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.viewer.play_logs_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play the content of a logfile in a viewer.</p>
+<p>This method reconstruct the exact model used during the simulation
+corresponding to the logfile, including random biases or flexible joints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logs_files</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em><em>]</em>) – Either a single simulation log files in any format, or
+a list.</p></li>
+<li><p><strong>mesh_package_dirs</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em><em>]</em>) – Prepend custom mesh package seach path
+directories to the ones provided by log file. It
+may be necessary to specify it to read log
+generated on a different environment.</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments to forward to <cite>play_trajectories</cite> method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Sequence[<a class="reference internal" href="#jiminy_py.viewer.Viewer" title="jiminy_py.viewer.viewer.Viewer">jiminy_py.viewer.viewer.Viewer</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="processing.html" class="btn btn-neutral float-right" title="processing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dynamics.html" class="btn btn-neutral float-left" title="dynamics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

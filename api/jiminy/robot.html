@@ -1,0 +1,1172 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>robot &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="sensors" href="sensors.html" />
+    <link rel="prev" title="Jiminy C++ API" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jiminy C++ API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html">sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motors.html">motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller.html">controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engine.html">engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">analytical constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Jiminy C++ API</a> &raquo;</li>
+        
+      <li>robot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/jiminy/robot.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robot">
+<h1>robot<a class="headerlink" href="#robot" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5ModelE">
+<span class="target" id="classjiminy_1_1_model"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Model</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_shared_from_this</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6jiminy5ModelE" title="jiminy::Model"><span class="n"><span class="pre">Model</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6jiminy5ModelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#classjiminy_1_1_robot"><span class="std std-ref">jiminy::Robot</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model22getDefaultJointOptionsEv">
+<span class="target" id="classjiminy_1_1_model_1a721e31c9bf32fbcf9c991551d053a066"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultJointOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model22getDefaultJointOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model25getDefaultDynamicsOptionsEv">
+<span class="target" id="classjiminy_1_1_model_1a7464c22beab3a7ae7bf597fd6657556c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultDynamicsOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model25getDefaultDynamicsOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model26getDefaultCollisionOptionsEv">
+<span class="target" id="classjiminy_1_1_model_1a32d59e4b73de7ca8d564b42d53c6c719"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultCollisionOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model26getDefaultCollisionOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model22getDefaultModelOptionsEv">
+<span class="target" id="classjiminy_1_1_model_1a9598eda30e8356f9f514a1a744a08671"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefaultModelOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model22getDefaultModelOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model5ModelERK5Model">
+<span class="target" id="classjiminy_1_1_model_1a53886bca1b831c35ab379faa1a7dd4f0"></span><span class="sig-name descname"><span class="n"><span class="pre">Model</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy5Model5ModelERK5Model" title="jiminy::Model::Model"><span class="n"><span class="pre">Model</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">robot</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model5ModelERK5Model" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5ModelaSERK5Model">
+<span class="target" id="classjiminy_1_1_model_1a7e21854f46ad404b02c7850f4010c004"></span><a class="reference internal" href="#_CPPv4N6jiminy5ModelE" title="jiminy::Model"><span class="n"><span class="pre">Model</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy5ModelE" title="jiminy::Model"><span class="n"><span class="pre">Model</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy5ModelaSERK5Model" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model5ModelEv">
+<span class="target" id="classjiminy_1_1_model_1a577605e4e37e8c3af6f80698e9010461"></span><span class="sig-name descname"><span class="n"><span class="pre">Model</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model5ModelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5ModelD0Ev">
+<span class="target" id="classjiminy_1_1_model_1a77796df6cf5ec88f3f6d20e4d2b0a862"></span><span class="sig-name descname"><span class="n"><span class="pre">~Model</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6jiminy5ModelD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model16shared_from_thisEv">
+<span class="target" id="classjiminy_1_1_model_1aa1e33c1687df33bd4fbcdf48ec24f9c3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shared_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model16shared_from_thisEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model16shared_from_thisEv">
+<span class="target" id="classjiminy_1_1_model_1aa13bb0141055937cd88babd59f1ab68e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shared_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model16shared_from_thisEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model10initializeERKNSt6stringERK6bool_tRKNSt6vectorINSt6stringEEE">
+<span class="target" id="classjiminy_1_1_model_1a9ec1b82668b779671d41694ea8e3f7ea"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">urdfPath</span></span>, <span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hasFreeflyer</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">meshPackageDirs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model10initializeERKNSt6stringERK6bool_tRKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model8addFrameERKNSt6stringERKNSt6stringERKN9pinocchio3SE3E">
+<span class="target" id="classjiminy_1_1_model_1a69defb9872a70a746683ea76e3abc927"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addFrame</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frameName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">parentBodyName</span></span>, <span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SE3</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">framePlacement</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model8addFrameERKNSt6stringERKNSt6stringERKN9pinocchio3SE3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a frame in the kinematic tree, attached to the frame of an existing body. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frameName</strong> – <strong>[in]</strong> Name of the frame to be added </p></li>
+<li><p><strong>parentBodyName</strong> – <strong>[in]</strong> Name of the parent body frame </p></li>
+<li><p><strong>framePlacement</strong> – <strong>[in]</strong> Frame placement wrt the parent body frame </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model11removeFrameERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_model_1a3c14ec220c3d467f6320b52f6fa3e915"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeFrame</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frameName</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model11removeFrameERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model18addCollisionBodiesERKNSt6vectorINSt6stringEEERK6bool_t">
+<span class="target" id="classjiminy_1_1_model_1ae940772cf77ab9b858faac6a7972c18a"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addCollisionBodies</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">bodyNames</span></span>, <span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ignoreMeshes</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model18addCollisionBodiesERKNSt6vectorINSt6stringEEERK6bool_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model21removeCollisionBodiesENSt6vectorINSt6stringEEE">
+<span class="target" id="classjiminy_1_1_model_1a765b3dc927f0789115e000a29f054b0e"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeCollisionBodies</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frameNames</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model21removeCollisionBodiesENSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model16addContactPointsERKNSt6vectorINSt6stringEEE">
+<span class="target" id="classjiminy_1_1_model_1a972e5eb1d3952f5e3824943041d16d07"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addContactPoints</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frameNames</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model16addContactPointsERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model19removeContactPointsERKNSt6vectorINSt6stringEEE">
+<span class="target" id="classjiminy_1_1_model_1ae748ef710e0194d1963b78daa6f1a26d"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeContactPoints</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frameNames</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model19removeContactPointsERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model13addConstraintERKNSt6stringERKNSt10shared_ptrI22AbstractConstraintBaseEE">
+<span class="target" id="classjiminy_1_1_model_1ae9e983efeec6f9719ec099427bec144d"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addConstraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraintName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractConstraintBase</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model13addConstraintERKNSt6stringERKNSt10shared_ptrI22AbstractConstraintBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a kinematic constraint to the robot. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>constraintName</strong> – <strong>[in]</strong> Unique name identifying the kinematic constraint. </p></li>
+<li><p><strong>constraint</strong> – <strong>[in]</strong> Constraint to add. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model16removeConstraintERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_model_1a7cff89a8297a90aecc732b03aa982b26"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeConstraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraintName</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model16removeConstraintERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove a kinematic constraint form the system. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>constraintName</strong> – <strong>[in]</strong> Unique name identifying the kinematic constraint. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model13getConstraintERKNSt6stringERNSt10shared_ptrI22AbstractConstraintBaseEE">
+<span class="target" id="classjiminy_1_1_model_1afe31f2767254223b38288c733c8fd546"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConstraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraintName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractConstraintBase</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model13getConstraintERKNSt6stringERNSt10shared_ptrI22AbstractConstraintBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a pointer to the constraint referenced by constraintName. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>constraintName</strong> – <strong>[in]</strong> Name of the constraint to get. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ERROR_BAD_INPUT if constraintName does not exist, SUCCESS otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model13getConstraintERKNSt6stringERNSt8weak_ptrIK22AbstractConstraintBaseEE">
+<span class="target" id="classjiminy_1_1_model_1ad41f81f523043fe0dc1e437beb4f83de"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConstraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraintName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">weak_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">AbstractConstraintBase</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraint</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model13getConstraintERKNSt6stringERNSt8weak_ptrIK22AbstractConstraintBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14getConstraintsEv">
+<span class="target" id="classjiminy_1_1_model_1a4eae062187e3476eb32fc773c5ebdfb6"></span><span class="n"><span class="pre">constraintsHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConstraints</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model14getConstraintsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model15existConstraintERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_model_1a11b1d67be6e9c3f7714c65695ee9dd93"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">existConstraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">constraintName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model15existConstraintERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model16resetConstraintsERK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_model_1a98e33be9ca9b6f76cb085e0dadf39b0e"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetConstraints</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model16resetConstraintsERK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model18computeConstraintsERK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_model_1a73daddb2a889a40aeecf5553d141a0c7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeConstraints</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model18computeConstraintsERK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute jacobian and drift associated to all the constraints. </p>
+<p>The results are accessible using getConstraintsJacobian and getConstraintsDrift. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is assumed frames forward kinematics has already been called.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – <strong>[in]</strong> Joint position. </p></li>
+<li><p><strong>v</strong> – <strong>[in]</strong> Joint velocity. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model22getConstraintsJacobianEv">
+<span class="target" id="classjiminy_1_1_model_1a4eeecf9e18628d866b6ab190269b88a4"></span><span class="n"><span class="pre">constMatrixBlock_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConstraintsJacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model22getConstraintsJacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get jacobian of the constraints. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model19getConstraintsDriftEv">
+<span class="target" id="classjiminy_1_1_model_1a0b9205cd850c59d68312ecff14229066"></span><span class="n"><span class="pre">constVectorBlock_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConstraintsDrift</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model19getConstraintsDriftEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get drift of the constraints. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model20getConstraintsLambdaEv">
+<span class="target" id="classjiminy_1_1_model_1a0bce35ee496ad1f422ad264a791d9f19"></span><span class="n"><span class="pre">constVectorBlock_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConstraintsLambda</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model20getConstraintsLambdaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get lambda multipliers of the constraints. </p>
+<p>Get drift of the constraints. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model14hasConstraintsEv">
+<span class="target" id="classjiminy_1_1_model_1a79b8362499c8dfebfb9b043cc68faad4"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasConstraints</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model14hasConstraintsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns true if at least one constraint is active on the robot. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model10setOptionsE14configHolder_t">
+<span class="target" id="classjiminy_1_1_model_1a8a28c14dc857af990212a9e578e7614c"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modelOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model10setOptionsE14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model10getOptionsEv">
+<span class="target" id="classjiminy_1_1_model_1a508cfa5831e0987c3cb1e1a810d52950"></span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getOptions</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model10getOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model5resetEv">
+<span class="target" id="classjiminy_1_1_model_1a9e4bbfd62ecc6501e92f9e5ef0b55590"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model5resetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method are not intended to be called manually. The <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> is taking care of it. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model16getIsInitializedEv">
+<span class="target" id="classjiminy_1_1_model_1a1ff011aea5232063a78b236e7c9fa932"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getIsInitialized</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model16getIsInitializedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model11getUrdfPathEv">
+<span class="target" id="classjiminy_1_1_model_1ad46b346bec7a12c163997af3c9fe5004"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getUrdfPath</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model11getUrdfPathEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model18getMeshPackageDirsEv">
+<span class="target" id="classjiminy_1_1_model_1a3ddbe0ad0cb1fa5f8cd1fee0bec93cfa"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMeshPackageDirs</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model18getMeshPackageDirsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model15getHasFreeflyerEv">
+<span class="target" id="classjiminy_1_1_model_1a26dfca0e487cea8bed5207f8b23c5fa8"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getHasFreeflyer</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model15getHasFreeflyerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model2nqEv">
+<span class="target" id="classjiminy_1_1_model_1a328f873968a39b00337d6070a68bbb22"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">nq</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model2nqEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model2nvEv">
+<span class="target" id="classjiminy_1_1_model_1a3b9a2728601a1a545254efa9cc6e708d"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">nv</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model2nvEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model2nxEv">
+<span class="target" id="classjiminy_1_1_model_1aa43b98dbc4c8a9935a693da59871b50d"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">nx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model2nxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model23getCollisionBodiesNamesEv">
+<span class="target" id="classjiminy_1_1_model_1aea27599b8c0fe540dabb5a5ceff7f813"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionBodiesNames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model23getCollisionBodiesNamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model21getContactFramesNamesEv">
+<span class="target" id="classjiminy_1_1_model_1ac29782dfbdc9950f855c2c415d7a612e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getContactFramesNames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model21getContactFramesNamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model21getCollisionBodiesIdxEv">
+<span class="target" id="classjiminy_1_1_model_1a2187024e5efdcb7a8075abed67878909"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">frameIndex_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionBodiesIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model21getCollisionBodiesIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model20getCollisionPairsIdxEv">
+<span class="target" id="classjiminy_1_1_model_1a6747d29936b2e066abfff1086b3046de"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pairIndex_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionPairsIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model20getCollisionPairsIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model19getContactFramesIdxEv">
+<span class="target" id="classjiminy_1_1_model_1a0eef5b06131d62a6bc04473748e297f9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">frameIndex_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getContactFramesIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model19getContactFramesIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model19getRigidJointsNamesEv">
+<span class="target" id="classjiminy_1_1_model_1acb558c3a2eea29969a56ffd071be4dcb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRigidJointsNames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model19getRigidJointsNamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model22getRigidJointsModelIdxEv">
+<span class="target" id="classjiminy_1_1_model_1afd5d1cab6030aa0c3c36706189bb4b96"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">jointIndex_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRigidJointsModelIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model22getRigidJointsModelIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model25getRigidJointsPositionIdxEv">
+<span class="target" id="classjiminy_1_1_model_1ad1daeec4661b9eb4d5507e8dc8f3c3d3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRigidJointsPositionIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model25getRigidJointsPositionIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model25getRigidJointsVelocityIdxEv">
+<span class="target" id="classjiminy_1_1_model_1a97f9e717473802ad1bca88bf502bc6d6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRigidJointsVelocityIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model25getRigidJointsVelocityIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model22getFlexibleJointsNamesEv">
+<span class="target" id="classjiminy_1_1_model_1a3d1ffb716ea57eddd348fe518dd9c20b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFlexibleJointsNames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model22getFlexibleJointsNamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model25getFlexibleJointsModelIdxEv">
+<span class="target" id="classjiminy_1_1_model_1a6d96875ead92a26812f02d07dcdf155f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">jointIndex_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFlexibleJointsModelIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model25getFlexibleJointsModelIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model19getPositionLimitMinEv">
+<span class="target" id="classjiminy_1_1_model_1a8429c23d1d6c2f5b2ff70796f686c4c5"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPositionLimitMin</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model19getPositionLimitMinEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model19getPositionLimitMaxEv">
+<span class="target" id="classjiminy_1_1_model_1acf94fcc857e4554e1a2975f7354ae5f3"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPositionLimitMax</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model19getPositionLimitMaxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model16getVelocityLimitEv">
+<span class="target" id="classjiminy_1_1_model_1ab2f04d4ef8392d35ffb546f172783baa"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getVelocityLimit</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model16getVelocityLimitEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model21getPositionFieldnamesEv">
+<span class="target" id="classjiminy_1_1_model_1aa2dfa4011eb3ecd108abc5be757025eb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPositionFieldnames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model21getPositionFieldnamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model21getVelocityFieldnamesEv">
+<span class="target" id="classjiminy_1_1_model_1acf7f3b98810ce744d541d22c7a0bfeaa"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getVelocityFieldnames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model21getVelocityFieldnamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model25getAccelerationFieldnamesEv">
+<span class="target" id="classjiminy_1_1_model_1a74903f2e3c5ef029f134aa7b3ab59817"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getAccelerationFieldnames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model25getAccelerationFieldnamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model26getForceExternalFieldnamesEv">
+<span class="target" id="classjiminy_1_1_model_1a7634862ed2e14e9674c5c988e11bf950"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getForceExternalFieldnames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model26getForceExternalFieldnamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model33getFlexibleConfigurationFromRigidERK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_model_1aef649f5a7eac03dd221804a000e4659b"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFlexibleConfigurationFromRigid</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">qRigid</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">qFlex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model33getFlexibleConfigurationFromRigidERK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model33getRigidConfigurationFromFlexibleERK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_model_1a8c787b963812d8d949552b9ae4083cb3"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRigidConfigurationFromFlexible</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">qFlex</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">qRigid</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model33getRigidConfigurationFromFlexibleERK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model28getFlexibleVelocityFromRigidERK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_model_1a33886fc75510eac00d85b1518a592b5d"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFlexibleVelocityFromRigid</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vRigid</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vFlex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model28getFlexibleVelocityFromRigidERK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Model28getRigidVelocityFromFlexibleERK9vectorN_tR9vectorN_t">
+<span class="target" id="classjiminy_1_1_model_1a801d3960c803fd1e2858fff0873daa95"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRigidVelocityFromFlexible</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vFlex</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vRigid</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Model28getRigidVelocityFromFlexibleERK9vectorN_tR9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model9pncModel_E">
+<span class="target" id="classjiminy_1_1_model_1a59321f0e4653b37b816809ac5090ecc5"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Model</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pncModel_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model9pncModel_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model8pncData_E">
+<span class="target" id="classjiminy_1_1_model_1a253b90725c0633f9ccee0ff77a092c6e"></span><span class="k"><span class="pre">mutable</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Data</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pncData_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model8pncData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model15collisionModel_E">
+<span class="target" id="classjiminy_1_1_model_1a6f70af276ac8e2ce6035c6a8a5d69aee"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">GeometryModel</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisionModel_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model15collisionModel_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model16pncGeometryData_E">
+<span class="target" id="classjiminy_1_1_model_1ae5d1c24d25cb52c391a9618ac03aa8d9"></span><span class="k"><span class="pre">mutable</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">GeometryData</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pncGeometryData_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model16pncGeometryData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model18pncModelRigidOrig_E">
+<span class="target" id="classjiminy_1_1_model_1acc7ad7a78322af0e14bd6718cb89c5e4"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Model</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pncModelRigidOrig_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model18pncModelRigidOrig_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17pncDataRigidOrig_E">
+<span class="target" id="classjiminy_1_1_model_1aead37cf4080c6a77e0d0b5cb1a9e04b1"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Data</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pncDataRigidOrig_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17pncDataRigidOrig_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model11mdlOptions_E">
+<span class="target" id="classjiminy_1_1_model_1a1e2f011c4af45b0a0c3925fa5af65d82"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6jiminy5Model14modelOptions_tE" title="jiminy::Model::modelOptions_t"><span class="n"><span class="pre">modelOptions_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mdlOptions_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model11mdlOptions_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14contactForces_E">
+<span class="target" id="classjiminy_1_1_model_1a6afaf81cb68f6dda1a116e6585526ae3"></span><span class="n"><span class="pre">forceVector_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">contactForces_</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14contactForces_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Buffer storing the contact forces. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model18collisionOptions_tE">
+<span class="target" id="structjiminy_1_1_model_1_1collision_options__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisionOptions_t</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model18collisionOptions_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model18collisionOptions_t18collisionOptions_tERK14configHolder_t">
+<span class="target" id="structjiminy_1_1_model_1_1collision_options__t_1a088d52df2d79142acf55aad5279e29e3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisionOptions_t</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model18collisionOptions_t18collisionOptions_tERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model18collisionOptions_t23maxContactPointsPerBodyE">
+<span class="target" id="structjiminy_1_1_model_1_1collision_options__t_1a82236d3142e165d88ddeda5e5e080d9a"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxContactPointsPerBody</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model18collisionOptions_t23maxContactPointsPerBodyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_tE">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dynamicsOptions_t</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_t17dynamicsOptions_tERK14configHolder_t">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t_1a3e93cc7b61b2e498129eb6cc0f4e8a87"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dynamicsOptions_t</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_t17dynamicsOptions_tERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_t20inertiaBodiesBiasStdE">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t_1a8739bfdd42c1e8e7cea4a29d1a967b49"></span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inertiaBodiesBiasStd</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_t20inertiaBodiesBiasStdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_t17massBodiesBiasStdE">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t_1ad766c96b50d32374613a65746cfe3cfd"></span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">massBodiesBiasStd</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_t17massBodiesBiasStdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_t33centerOfMassPositionBodiesBiasStdE">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t_1a4f0c5d12beb0c37713e38439a603ec54"></span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">centerOfMassPositionBodiesBiasStd</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_t33centerOfMassPositionBodiesBiasStdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_t29relativePositionBodiesBiasStdE">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t_1abf8aafadf14d4ae2f69c2cb2763c02d4"></span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">relativePositionBodiesBiasStd</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_t29relativePositionBodiesBiasStdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_t19enableFlexibleModelE">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t_1aed88529ead11611bef77e078236733d6"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enableFlexibleModel</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_t19enableFlexibleModelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model17dynamicsOptions_t17flexibilityConfigE">
+<span class="target" id="structjiminy_1_1_model_1_1dynamics_options__t_1acef03d3ab8aebb2c91ba08d6dcf9bec4"></span><span class="n"><span class="pre">flexibilityConfig_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">flexibilityConfig</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model17dynamicsOptions_t17flexibilityConfigE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_tE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jointOptions_t</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t14jointOptions_tERK14configHolder_t">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1af0ccbf2eea45be2337ccc8eeda161578"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jointOptions_t</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t14jointOptions_tERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t19enablePositionLimitE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1a4970b8e75bf9360616437e4c38c7abbb"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enablePositionLimit</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t19enablePositionLimitE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t21positionLimitFromUrdfE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1ae9f86bf52183fad742381e914ff84abe"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">positionLimitFromUrdf</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t21positionLimitFromUrdfE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t16positionLimitMinE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1a8de1235acf06480bcb7b22e06555a3bc"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">positionLimitMin</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t16positionLimitMinE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Min position limit of all the actual joints, namely without freeflyer and flexible joints if any. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t16positionLimitMaxE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1aed1d4f91d5b349d26fe08935fd5e964b"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">positionLimitMax</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t16positionLimitMaxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t19enableVelocityLimitE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1a198428c7b5e57ba934374e3a03aee0f5"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enableVelocityLimit</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t19enableVelocityLimitE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t21velocityLimitFromUrdfE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1a4b31fba9b93b5db15ef3f68fa5594dac"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">velocityLimitFromUrdf</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t21velocityLimitFromUrdfE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14jointOptions_t13velocityLimitE">
+<span class="target" id="structjiminy_1_1_model_1_1joint_options__t_1aa43f6c99c69212b15cee9dc917e02a5c"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">velocityLimit</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14jointOptions_t13velocityLimitE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14modelOptions_tE">
+<span class="target" id="structjiminy_1_1_model_1_1model_options__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modelOptions_t</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14modelOptions_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14modelOptions_t14modelOptions_tERK14configHolder_t">
+<span class="target" id="structjiminy_1_1_model_1_1model_options__t_1a0d14492815914973c324d28173554318"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modelOptions_t</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Model14modelOptions_t14modelOptions_tERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14modelOptions_t8dynamicsE">
+<span class="target" id="structjiminy_1_1_model_1_1model_options__t_1ad59a6d337be411dfc999323122fff511"></span><a class="reference internal" href="#_CPPv4N6jiminy5Model17dynamicsOptions_tE" title="jiminy::Model::dynamicsOptions_t"><span class="n"><span class="pre">dynamicsOptions_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dynamics</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14modelOptions_t8dynamicsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14modelOptions_t6jointsE">
+<span class="target" id="structjiminy_1_1_model_1_1model_options__t_1a496a3a4f2d827c08eddbe8e980d5b770"></span><a class="reference internal" href="#_CPPv4N6jiminy5Model14jointOptions_tE" title="jiminy::Model::jointOptions_t"><span class="n"><span class="pre">jointOptions_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">joints</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14modelOptions_t6jointsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Model14modelOptions_t10collisionsE">
+<span class="target" id="structjiminy_1_1_model_1_1model_options__t_1a2ba0fdfc3e06027dca6fd87bdbc79ab1"></span><a class="reference internal" href="#_CPPv4N6jiminy5Model18collisionOptions_tE" title="jiminy::Model::collisionOptions_t"><span class="n"><span class="pre">collisionOptions_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisions</span></span></span><a class="headerlink" href="#_CPPv4N6jiminy5Model14modelOptions_t10collisionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5RobotE">
+<span class="target" id="classjiminy_1_1_robot"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Robot</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">jiminy</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N6jiminy5ModelE" title="jiminy::Model"><span class="n"><span class="pre">Model</span></span></a><a class="headerlink" href="#_CPPv4N6jiminy5RobotE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot14motorsHolder_tE">
+<span class="target" id="classjiminy_1_1_robot_1aaeb6be62c30003fd22f1d4355233a1a6"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">motorsHolder_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="motors.html#_CPPv4N6jiminy17AbstractMotorBaseE" title="jiminy::AbstractMotorBase"><span class="n"><span class="pre">AbstractMotorBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6jiminy5Robot14motorsHolder_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot15sensorsHolder_tE">
+<span class="target" id="classjiminy_1_1_robot_1aa8b88fd97c3dbb735d15510209d015f5"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sensorsHolder_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="sensors.html#_CPPv4N6jiminy18AbstractSensorBaseE" title="jiminy::AbstractSensorBase"><span class="n"><span class="pre">AbstractSensorBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6jiminy5Robot15sensorsHolder_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot20sensorsGroupHolder_tE">
+<span class="target" id="classjiminy_1_1_robot_1ac3da401fb27e662f6662779cf6032737"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sensorsGroupHolder_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6jiminy5Robot15sensorsHolder_tE" title="jiminy::Robot::sensorsHolder_t"><span class="n"><span class="pre">sensorsHolder_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6jiminy5Robot20sensorsGroupHolder_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot21sensorsSharedHolder_tE">
+<span class="target" id="classjiminy_1_1_robot_1a982e47561094ab7d243e310a74bca63b"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sensorsSharedHolder_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">SensorSharedDataHolder_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6jiminy5Robot21sensorsSharedHolder_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot5RobotERK5Robot">
+<span class="target" id="classjiminy_1_1_robot_1a566e98063aaad2007ebd9d3294781ba2"></span><span class="sig-name descname"><span class="n"><span class="pre">Robot</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy5Robot5RobotERK5Robot" title="jiminy::Robot::Robot"><span class="n"><span class="pre">Robot</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">robot</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy5Robot5RobotERK5Robot" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5RobotaSERK5Robot">
+<span class="target" id="classjiminy_1_1_robot_1a42cb1df08c3554595c6ffa5de1924e9a"></span><a class="reference internal" href="#_CPPv4N6jiminy5RobotE" title="jiminy::Robot"><span class="n"><span class="pre">Robot</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6jiminy5RobotE" title="jiminy::Robot"><span class="n"><span class="pre">Robot</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6jiminy5RobotaSERK5Robot" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot5RobotEv">
+<span class="target" id="classjiminy_1_1_robot_1a2626e64b2ac09d044c7809c709c50f70"></span><span class="sig-name descname"><span class="n"><span class="pre">Robot</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot5RobotEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5RobotD0Ev">
+<span class="target" id="classjiminy_1_1_robot_1a34af30de6094a1f8924692f09a0b0be6"></span><span class="sig-name descname"><span class="n"><span class="pre">~Robot</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5RobotD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot16shared_from_thisEv">
+<span class="target" id="classjiminy_1_1_robot_1a9f76c511fe6e73c4e6eb81a24af879be"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shared_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot16shared_from_thisEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot16shared_from_thisEv">
+<span class="target" id="classjiminy_1_1_robot_1aa234660f5d521e7156d8071b333ae5de"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shared_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot16shared_from_thisEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot10initializeERKNSt6stringERK6bool_tRKNSt6vectorINSt6stringEEE">
+<span class="target" id="classjiminy_1_1_robot_1a6ff60d1566b48710fa1c50006c0c9e8e"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">urdfPath</span></span>, <span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hasFreeflyer</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">meshPackageDirs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot10initializeERKNSt6stringERK6bool_tRKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot11attachMotorENSt10shared_ptrI17AbstractMotorBaseEE">
+<span class="target" id="classjiminy_1_1_robot_1a1d0d029d108b5ee3f82809fc3e62066e"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">attachMotor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="motors.html#_CPPv4N6jiminy17AbstractMotorBaseE" title="jiminy::AbstractMotorBase"><span class="n"><span class="pre">AbstractMotorBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">motor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot11attachMotorENSt10shared_ptrI17AbstractMotorBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot8getMotorERKNSt6stringERNSt10shared_ptrI17AbstractMotorBaseEE">
+<span class="target" id="classjiminy_1_1_robot_1a9b51d6bb934e5c8dabb93df1f5f8abc3"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMotor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="motors.html#_CPPv4N6jiminy17AbstractMotorBaseE" title="jiminy::AbstractMotorBase"><span class="n"><span class="pre">AbstractMotorBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot8getMotorERKNSt6stringERNSt10shared_ptrI17AbstractMotorBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot8getMotorERKNSt6stringERNSt8weak_ptrIK17AbstractMotorBaseEE">
+<span class="target" id="classjiminy_1_1_robot_1a709c23fe93e85700235321449ce9080e"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMotor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">weak_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="motors.html#_CPPv4N6jiminy17AbstractMotorBaseE" title="jiminy::AbstractMotorBase"><span class="n"><span class="pre">AbstractMotorBase</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motor</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot8getMotorERKNSt6stringERNSt8weak_ptrIK17AbstractMotorBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot9getMotorsEv">
+<span class="target" id="classjiminy_1_1_robot_1a437ec8b9d8a29c987f61193c4a2d36c0"></span><a class="reference internal" href="#_CPPv4N6jiminy5Robot14motorsHolder_tE" title="jiminy::Robot::motorsHolder_t"><span class="n"><span class="pre">motorsHolder_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMotors</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot9getMotorsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot11detachMotorERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1a950f19a8a54aa73c2a277c80f4fd51ac"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detachMotor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorName</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot11detachMotorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot12detachMotorsERKNSt6vectorINSt6stringEEE">
+<span class="target" id="classjiminy_1_1_robot_1ab3bd266e406cc3332a664a259e7c701b"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detachMotors</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorsNames</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot12detachMotorsERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot12attachSensorENSt10shared_ptrI18AbstractSensorBaseEE">
+<span class="target" id="classjiminy_1_1_robot_1ab91b6f00db81f3bf41ac17af184d14e8"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">attachSensor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="sensors.html#_CPPv4N6jiminy18AbstractSensorBaseE" title="jiminy::AbstractSensorBase"><span class="n"><span class="pre">AbstractSensorBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sensor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot12attachSensorENSt10shared_ptrI18AbstractSensorBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot9getSensorERKNSt6stringERKNSt6stringERNSt10shared_ptrI18AbstractSensorBaseEE">
+<span class="target" id="classjiminy_1_1_robot_1a43a680e857d9e096d17fae532ecf45d7"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSensor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="sensors.html#_CPPv4N6jiminy18AbstractSensorBaseE" title="jiminy::AbstractSensorBase"><span class="n"><span class="pre">AbstractSensorBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot9getSensorERKNSt6stringERKNSt6stringERNSt10shared_ptrI18AbstractSensorBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot9getSensorERKNSt6stringERKNSt6stringERNSt8weak_ptrIK18AbstractSensorBaseEE">
+<span class="target" id="classjiminy_1_1_robot_1a67339056a1f41fa16a050a328c1a667b"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSensor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">weak_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="sensors.html#_CPPv4N6jiminy18AbstractSensorBaseE" title="jiminy::AbstractSensorBase"><span class="n"><span class="pre">AbstractSensorBase</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensor</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot9getSensorERKNSt6stringERKNSt6stringERNSt8weak_ptrIK18AbstractSensorBaseEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot10getSensorsEv">
+<span class="target" id="classjiminy_1_1_robot_1a422aeee272e3024ced6c67421859fb2c"></span><a class="reference internal" href="#_CPPv4N6jiminy5Robot20sensorsGroupHolder_tE" title="jiminy::Robot::sensorsGroupHolder_t"><span class="n"><span class="pre">sensorsGroupHolder_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSensors</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot10getSensorsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot12detachSensorERKNSt6stringERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1ab9cbf62e18b470a15e89e6b05c3a910a"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detachSensor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorName</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot12detachSensorERKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot13detachSensorsERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1ae24537da8df9a5e818e390cefcd0fa4d"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detachSensors</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot13detachSensorsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot20computeMotorsEffortsERK9float64_tRK9vectorN_tRK9vectorN_tRK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_robot_1a02a4982606137637f3922900a2a0cec6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeMotorsEfforts</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot20computeMotorsEffortsERK9float64_tRK9vectorN_tRK9vectorN_tRK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot16getMotorsEffortsEv">
+<span class="target" id="classjiminy_1_1_robot_1a32c3ad31026c8b99b2c3c3fc4f054b5b"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMotorsEfforts</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot16getMotorsEffortsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot14getMotorEffortERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1a8a798fd76d80224ab677bdcbd7c78ace"></span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMotorEffort</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot14getMotorEffortERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot14setSensorsDataERK9float64_tRK9vectorN_tRK9vectorN_tRK9vectorN_tRK9vectorN_t">
+<span class="target" id="classjiminy_1_1_robot_1a3fbb780e6e358775a432b573467bd423"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSensorsData</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">float64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">q</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">uMotor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot14setSensorsDataERK9float64_tRK9vectorN_tRK9vectorN_tRK9vectorN_tRK9vectorN_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot14getSensorsDataEv">
+<span class="target" id="classjiminy_1_1_robot_1a7ed76d58344808acab3040690e08c6b0"></span><span class="n"><span class="pre">sensorsDataMap_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSensorsData</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot14getSensorsDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot13getSensorDataERKNSt6stringERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1aa809a0c686191b5142ae4b1977c57130"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSensorData</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot13getSensorDataERKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot10setOptionsERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1aa05224bbd36e889357cbc9450387a776"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">robotOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot10setOptionsERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot10getOptionsEv">
+<span class="target" id="classjiminy_1_1_robot_1a44242854f137086087af3c5a99ac978c"></span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getOptions</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot10getOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot15setMotorOptionsERKNSt6stringERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1ae29c561f55f442ffc077cb6720479601"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMotorOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorName</span></span>, <span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot15setMotorOptionsERKNSt6stringERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot16setMotorsOptionsERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1a879f213e216f16346515ac7e45cf2fc4"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMotorsOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorsOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot16setMotorsOptionsERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot15getMotorOptionsERKNSt6stringER14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1a7a4596a750c092a175e9ffbc5acfb27b"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMotorOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorName</span></span>, <span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">motorOptions</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot15getMotorOptionsERKNSt6stringER14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot16getMotorsOptionsEv">
+<span class="target" id="classjiminy_1_1_robot_1a35367cf1a0d0a17507981b478e2f5621"></span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMotorsOptions</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot16getMotorsOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot16setSensorOptionsERKNSt6stringERKNSt6stringERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1af835d83be20df8e40fb091794d307e54"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSensorOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorName</span></span>, <span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot16setSensorOptionsERKNSt6stringERKNSt6stringERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot17setSensorsOptionsERKNSt6stringERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1a914760a2310dfd7b9c4b6616014fb713"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSensorsOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorsOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot17setSensorsOptionsERKNSt6stringERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot17setSensorsOptionsERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1ab0f38e3cd4d6a380c60d6e990c81f942"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSensorsOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorsOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot17setSensorsOptionsERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot16getSensorOptionsERKNSt6stringERKNSt6stringER14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1ac9f37d6574a3e5ca04849f68637c46fa"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSensorOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorName</span></span>, <span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorOptions</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot16getSensorOptionsERKNSt6stringERKNSt6stringER14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot17getSensorsOptionsERKNSt6stringER14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1a1951372c2154d46212ac83f23194cb05"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSensorsOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span>, <span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorsOptions</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot17getSensorsOptionsERKNSt6stringER14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot17getSensorsOptionsEv">
+<span class="target" id="classjiminy_1_1_robot_1a364315fd6cb7052c4e255c715a10240d"></span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSensorsOptions</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot17getSensorsOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot15setModelOptionsERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1afaefe6e6e1a5cb25985cbd7290c46353"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setModelOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">modelOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot15setModelOptionsERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot15getModelOptionsEv">
+<span class="target" id="classjiminy_1_1_robot_1a60df0cfe9536330e0a9076d1ae664932"></span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getModelOptions</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot15getModelOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot19setTelemetryOptionsERK14configHolder_t">
+<span class="target" id="classjiminy_1_1_robot_1a3393f0786885730c8b22825e02cdb2d4"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTelemetryOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">telemetryOptions</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot19setTelemetryOptionsERK14configHolder_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot19getTelemetryOptionsEv">
+<span class="target" id="classjiminy_1_1_robot_1ae73a4af824321e3bd12268beccbed9cb"></span><span class="n"><span class="pre">configHolder_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTelemetryOptions</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot19getTelemetryOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot11dumpOptionsERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1a6c1c1bfccad25e34a4493b912b443588"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dumpOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filepath</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot11dumpOptionsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot11loadOptionsERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1a8607ad4b7926af0c0da28d0a074302db"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadOptions</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filepath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot11loadOptionsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot5resetEv">
+<span class="target" id="classjiminy_1_1_robot_1a9e621206df44866100c9713be87b2d0e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6jiminy5Robot5resetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method are not intended to be called manually. The <a class="reference internal" href="engine.html#classjiminy_1_1_engine"><span class="std std-ref">Engine</span></a> is taking care of it. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot18configureTelemetryENSt10shared_ptrI13TelemetryDataEERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1a7077c6db187366c7c72e9d1bc7f93899"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configureTelemetry</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TelemetryData</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">telemetryData</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">objectPrefixName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot18configureTelemetryENSt10shared_ptrI13TelemetryDataEERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot15updateTelemetryEv">
+<span class="target" id="classjiminy_1_1_robot_1aa09bdd5c219f45bfebb3e6d7479e6750"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateTelemetry</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot15updateTelemetryEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot24getIsTelemetryConfiguredEv">
+<span class="target" id="classjiminy_1_1_robot_1a7ead31e17db49f4f99a868bfe08006e3"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getIsTelemetryConfigured</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot24getIsTelemetryConfiguredEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot14getMotorsNamesEv">
+<span class="target" id="classjiminy_1_1_robot_1a346cbf12df910b25babe56fdcd0a0863"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMotorsNames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot14getMotorsNamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot17getMotorsModelIdxEv">
+<span class="target" id="classjiminy_1_1_robot_1aaf360908af09b741011fc9a5b4ccbf6b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">jointIndex_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMotorsModelIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot17getMotorsModelIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot20getMotorsPositionIdxEv">
+<span class="target" id="classjiminy_1_1_robot_1a21e58025caca6af292fdbe87a76e4404"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMotorsPositionIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot20getMotorsPositionIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot20getMotorsVelocityIdxEv">
+<span class="target" id="classjiminy_1_1_robot_1ac11fe0e9322ebc6058398783682ea90b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">int32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMotorsVelocityIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot20getMotorsVelocityIdxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot15getSensorsNamesEv">
+<span class="target" id="classjiminy_1_1_robot_1aa7890aef16508c68ecd589153e427ec7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSensorsNames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot15getSensorsNamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot15getSensorsNamesERKNSt6stringE">
+<span class="target" id="classjiminy_1_1_robot_1a865be041979d3bc7021e16bee3fa4f95"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSensorsNames</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sensorType</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot15getSensorsNamesERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot15getCommandLimitEv">
+<span class="target" id="classjiminy_1_1_robot_1af6670f1fd4ebc3c1934e0ff7d5c975bf"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCommandLimit</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot15getCommandLimitEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot12getArmaturesEv">
+<span class="target" id="classjiminy_1_1_robot_1ac18946698c89e280da13c894ee4a05d0"></span><span class="n"><span class="pre">vectorN_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getArmatures</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot12getArmaturesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot20getCommandFieldnamesEv">
+<span class="target" id="classjiminy_1_1_robot_1a7d8d0e3688f42f450a3a95061b85cfd4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCommandFieldnames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot20getCommandFieldnamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot24getMotorEffortFieldnamesEv">
+<span class="target" id="classjiminy_1_1_robot_1adb61528abfdd3a78fa44df6c604d2168"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMotorEffortFieldnames</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot24getMotorEffortFieldnamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot7nmotorsEv">
+<span class="target" id="classjiminy_1_1_robot_1a398635f95e3c58bdab44d27965095700"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">nmotors</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot7nmotorsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6jiminy5Robot7getLockERNSt10unique_ptrI14LockGuardLocalEE">
+<span class="target" id="classjiminy_1_1_robot_1ad6b4d276dba9044c121ef650eb75daf8"></span><span class="n"><span class="pre">hresult_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLock</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">LockGuardLocal</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lock</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6jiminy5Robot7getLockERNSt10unique_ptrI14LockGuardLocalEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6jiminy5Robot11getIsLockedEv">
+<span class="target" id="classjiminy_1_1_robot_1afdf0ddd41342aae585a2a0bd86061583"></span><span class="n"><span class="pre">bool_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getIsLocked</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6jiminy5Robot11getIsLockedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sensors.html" class="btn btn-neutral float-right" title="sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Jiminy C++ API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

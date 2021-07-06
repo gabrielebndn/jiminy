@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gym_jiminy.common.controllers.proportional_derivative &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>gym_jiminy.common.controllers.proportional_derivative</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for gym_jiminy.common.controllers.proportional_derivative</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Implementation of basic Proportional-Derivative controller block compatible</span>
+<span class="sd">with gym_jiminy reinforcement learning pipeline environment design.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numba</span> <span class="k">as</span> <span class="nn">nb</span>
+<span class="kn">import</span> <span class="nn">gym</span>
+
+<span class="kn">from</span> <span class="nn">jiminy_py.core</span> <span class="kn">import</span> <span class="n">EncoderSensor</span> <span class="k">as</span> <span class="n">encoder</span>
+
+<span class="kn">from</span> <span class="nn">..bases</span> <span class="kn">import</span> <span class="n">BaseControllerBlock</span>
+<span class="kn">from</span> <span class="nn">..envs</span> <span class="kn">import</span> <span class="n">BaseJiminyEnv</span>
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">SpaceDictNested</span><span class="p">,</span> <span class="n">FieldDictNested</span>
+
+
+<div class="viewcode-block" id="_compute_command_impl"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/controllers/proportional_derivative.html#gym_jiminy.common.controllers.proportional_derivative._compute_command_impl">[docs]</a><span class="nd">@nb</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nogil</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_compute_command_impl</span><span class="p">(</span><span class="n">q_target</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                          <span class="n">v_target</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                          <span class="n">encoders_data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                          <span class="n">motor_to_encoder</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                          <span class="n">pid_kp</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                          <span class="n">pid_kd</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Implementation of PD control law.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        Used internally by `PDController` to compute command but separated to</span>
+<span class="sd">        allow precompilation. It is not meant to be called manually.</span>
+
+<span class="sd">    :meta private:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Estimate position and motor velocity from encoder data</span>
+    <span class="n">q_measured</span><span class="p">,</span> <span class="n">v_measured</span> <span class="o">=</span> <span class="n">encoders_data</span><span class="p">[:,</span> <span class="n">motor_to_encoder</span><span class="p">]</span>
+
+    <span class="c1"># Compute the joint tracking error</span>
+    <span class="n">q_error</span> <span class="o">=</span> <span class="n">q_measured</span> <span class="o">-</span> <span class="n">q_target</span>
+    <span class="n">v_error</span> <span class="o">=</span> <span class="n">v_measured</span> <span class="o">-</span> <span class="n">v_target</span>
+
+    <span class="c1"># Compute PD command</span>
+    <span class="k">return</span> <span class="o">-</span> <span class="n">pid_kp</span> <span class="o">*</span> <span class="p">(</span><span class="n">q_error</span> <span class="o">+</span> <span class="n">pid_kd</span> <span class="o">*</span> <span class="n">v_error</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDController"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/controllers/proportional_derivative.html#gym_jiminy.common.controllers.proportional_derivative.PDController">[docs]</a><span class="k">class</span> <span class="nc">PDController</span><span class="p">(</span><span class="n">BaseControllerBlock</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Low-level Proportional-Derivative controller.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        It must be connected directly to the environment to control without</span>
+<span class="sd">        any intermediary controllers.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">env</span><span class="p">:</span> <span class="n">BaseJiminyEnv</span><span class="p">,</span>
+                 <span class="n">update_ratio</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                 <span class="n">pid_kp</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">pid_kd</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param update_ratio: Ratio between the update period of the controller</span>
+<span class="sd">                             and the one of the subsequent controller.</span>
+<span class="sd">        :param pid_kp: PD controller position-proportional gain in motor order.</span>
+<span class="sd">        :param pid_kd: PD controller velocity-proportional gain in motor order.</span>
+<span class="sd">        :param kwargs: Used arguments to allow automatic pipeline wrapper</span>
+<span class="sd">                       generation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Backup some user arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pid_kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pid_kp</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pid_kd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pid_kd</span><span class="p">)</span>
+
+        <span class="c1"># Define the mapping from motors to encoders</span>
+        <span class="n">encoder_joints</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_names</span><span class="p">[</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">]:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_sensor</span><span class="p">(</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">encoder_joints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">joint_name</span><span class="p">)</span>
+
+        <span class="n">motor_to_encoder</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">:</span>
+            <span class="n">motor</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_motor</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">motor_joint</span> <span class="o">=</span> <span class="n">motor</span><span class="o">.</span><span class="n">joint_name</span>
+            <span class="n">encoder_found</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">encoder_joint</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">encoder_joints</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">motor_joint</span> <span class="o">==</span> <span class="n">encoder_joint</span><span class="p">:</span>
+                    <span class="n">motor_to_encoder</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="n">encoder_found</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">encoder_found</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;No encoder sensor associated with motor &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;. Every &quot;</span>
+                    <span class="s2">&quot;actuated joint must have an encoder sensor attached.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">motor_to_encoder</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">motor_to_encoder</span><span class="p">)</span>
+
+        <span class="c1"># Initialize the controller</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">update_ratio</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PDController._refresh_action_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/controllers/proportional_derivative.html#gym_jiminy.common.controllers.proportional_derivative.PDController._refresh_action_space">[docs]</a>    <span class="k">def</span> <span class="nf">_refresh_action_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the action space of the controller.</span>
+
+<span class="sd">        The action spaces corresponds to the position and velocity of motors</span>
+<span class="sd">        instead of the torque.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Extract the position and velocity bounds for the observation space</span>
+        <span class="n">sensors_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">_get_sensors_space</span><span class="p">()</span>
+        <span class="n">encoders_space</span> <span class="o">=</span> <span class="n">sensors_space</span><span class="p">[</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">]</span>
+        <span class="n">pos_high</span><span class="p">,</span> <span class="n">vel_high</span> <span class="o">=</span> <span class="n">encoders_space</span><span class="o">.</span><span class="n">high</span>
+        <span class="n">pos_low</span><span class="p">,</span> <span class="n">vel_low</span> <span class="o">=</span> <span class="n">encoders_space</span><span class="o">.</span><span class="n">low</span>
+
+        <span class="c1"># Reorder the position and velocity bounds to match motors order</span>
+        <span class="n">pos_high</span> <span class="o">=</span> <span class="n">pos_high</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">motor_to_encoder</span><span class="p">]</span>
+        <span class="n">pos_low</span> <span class="o">=</span> <span class="n">pos_low</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">motor_to_encoder</span><span class="p">]</span>
+        <span class="n">vel_high</span> <span class="o">=</span> <span class="n">vel_high</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">motor_to_encoder</span><span class="p">]</span>
+        <span class="n">vel_low</span> <span class="o">=</span> <span class="n">vel_low</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">motor_to_encoder</span><span class="p">]</span>
+
+        <span class="c1"># Set the action space. Note that it is flattened.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="n">Q</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span>
+                <span class="n">low</span><span class="o">=</span><span class="n">pos_low</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">pos_high</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+            <span class="n">V</span><span class="o">=</span><span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span>
+                <span class="n">low</span><span class="o">=</span><span class="n">vel_low</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">vel_high</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="PDController.get_fieldnames"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/controllers/proportional_derivative.html#gym_jiminy.common.controllers.proportional_derivative.PDController.get_fieldnames">[docs]</a>    <span class="k">def</span> <span class="nf">get_fieldnames</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FieldDictNested</span><span class="p">:</span>
+        <span class="n">pos_fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;targetPosition</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                          <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">]</span>
+        <span class="n">vel_fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;targetVelocity</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                          <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="n">Q</span><span class="o">=</span><span class="n">pos_fieldnames</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="n">vel_fieldnames</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PDController.compute_command"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/controllers/proportional_derivative.html#gym_jiminy.common.controllers.proportional_derivative.PDController.compute_command">[docs]</a>    <span class="k">def</span> <span class="nf">compute_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                        <span class="n">measure</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">:</span> <span class="n">SpaceDictNested</span>
+                        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute the motor torques using a PD controller.</span>
+
+<span class="sd">        It is proportional to the error between the measured motors positions/</span>
+<span class="sd">        velocities and the target ones.</span>
+
+<span class="sd">        :param measure: Observation of the environment.</span>
+<span class="sd">        :param action: Desired motors positions and velocities as a dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_compute_command_impl</span><span class="p">(</span>
+            <span class="n">q_target</span><span class="o">=</span><span class="n">action</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">],</span> <span class="n">v_target</span><span class="o">=</span><span class="n">action</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">],</span>
+            <span class="n">encoders_data</span><span class="o">=</span><span class="n">measure</span><span class="p">[</span><span class="s1">&#39;sensors&#39;</span><span class="p">][</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">],</span>
+            <span class="n">motor_to_encoder</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">motor_to_encoder</span><span class="p">,</span>
+            <span class="n">pid_kp</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pid_kp</span><span class="p">,</span> <span class="n">pid_kd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pid_kd</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

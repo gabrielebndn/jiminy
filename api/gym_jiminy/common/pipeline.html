@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Pipeline &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Controllers" href="controllers/index.html" />
+    <link rel="prev" title="Locomotion" href="envs/env_locomotion.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Gym Jiminy API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bases/index.html">Bases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="envs/index.html">Envs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers/index.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wrappers/index.html">Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils/index.html">Utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Gym Jiminy API</a> &raquo;</li>
+        
+      <li>Pipeline</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/api/gym_jiminy/common/pipeline.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-gym_jiminy.common.pipeline">
+<span id="pipeline"></span><h1>Pipeline<a class="headerlink" href="#module-gym_jiminy.common.pipeline" title="Permalink to this headline">¶</a></h1>
+<p>Helper methods to generate learning environment pipeline, consisting in an
+barebone environment inheriting from <cite>BaseJiminyEnv</cite>, wrapped together with
+any number of successive blocks as a unified environment, in Matlab Simulink
+fashion.</p>
+<p>It enables to break down a complex control architectures in many submodules,
+making it easier to maintain and avoiding code duplications between usecases.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.EnvConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">gym_jiminy.common.pipeline.</span></span><span class="sig-name descname"><span class="pre">EnvConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/gym_jiminy/common/pipeline.html#EnvConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gym_jiminy.common.pipeline.EnvConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<p>Environment class type.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both class type or fully qualified dotted path are supported.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.EnvConfig.env_class">
+<span class="sig-name descname"><span class="pre">env_class</span></span><em class="property"><span class="pre">:</span> <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv" title="gym_jiminy.common.envs.env_generic.BaseJiminyEnv"><span class="pre">gym_jiminy.common.envs.env_generic.BaseJiminyEnv</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym_jiminy.common.pipeline.EnvConfig.env_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Environment constructor default arguments.</p>
+<p>This attribute can be omitted.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.EnvConfig.env_kwargs">
+<span class="sig-name descname"><span class="pre">env_kwargs</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym_jiminy.common.pipeline.EnvConfig.env_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.BlockConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">gym_jiminy.common.pipeline.</span></span><span class="sig-name descname"><span class="pre">BlockConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/gym_jiminy/common/pipeline.html#BlockConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gym_jiminy.common.pipeline.BlockConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<p>Block class type. If specified, it must derive from
+<cite>BaseControllerBlock</cite> for controller blocks or <cite>BaseObserverBlock</cite> for
+observer blocks.</p>
+<p>This attribute can be omitted. If so, then ‘block_kwargs’ must be omitted
+and ‘wrapper_class’ must be specified. Indeed, not all block are associated
+with a dedicated observer or controller object. It happens when the block
+is not doing any computation on its own but just transforming the action or
+observation, e.g. stacking observation frames.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both class type or fully qualified dotted path are supported.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.BlockConfig.block_class">
+<span class="sig-name descname"><span class="pre">block_class</span></span><em class="property"><span class="pre">:</span> <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="bases/block_bases.html#gym_jiminy.common.bases.block_bases.BaseControllerBlock" title="gym_jiminy.common.bases.block_bases.BaseControllerBlock"><span class="pre">gym_jiminy.common.bases.block_bases.BaseControllerBlock</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="bases/block_bases.html#gym_jiminy.common.bases.block_bases.BaseObserverBlock" title="gym_jiminy.common.bases.block_bases.BaseObserverBlock"><span class="pre">gym_jiminy.common.bases.block_bases.BaseObserverBlock</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym_jiminy.common.pipeline.BlockConfig.block_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block constructor default arguments.</p>
+<p>This attribute can be omitted.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.BlockConfig.block_kwargs">
+<span class="sig-name descname"><span class="pre">block_kwargs</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym_jiminy.common.pipeline.BlockConfig.block_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper class type.</p>
+<p>This attribute can be omitted. If so, then ‘wrapper_kwargs’ must be omitted
+and ‘block_class’ must be specified. The latter will be used to infer the
+default wrapper type.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both class type or fully qualified dotted path are supported.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.BlockConfig.wrapper_class">
+<span class="sig-name descname"><span class="pre">wrapper_class</span></span><em class="property"><span class="pre">:</span> <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper" title="gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper"><span class="pre">gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym_jiminy.common.pipeline.BlockConfig.wrapper_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper constructor default arguments.</p>
+<p>This attribute can be omitted.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.BlockConfig.wrapper_kwargs">
+<span class="sig-name descname"><span class="pre">wrapper_kwargs</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym_jiminy.common.pipeline.BlockConfig.wrapper_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.build_pipeline">
+<span class="sig-prename descclassname"><span class="pre">gym_jiminy.common.pipeline.</span></span><span class="sig-name descname"><span class="pre">build_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/gym_jiminy/common/pipeline.html#build_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gym_jiminy.common.pipeline.build_pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap together an environment inheriting from <cite>BaseJiminyEnv</cite> with any
+number of blocks, as a unified pipeline environment class inheriting from
+<cite>BasePipelineWrapper</cite>. Each block is wrapped individually and successively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env_config</strong> (<a class="reference internal" href="#gym_jiminy.common.pipeline.EnvConfig" title="gym_jiminy.common.pipeline.EnvConfig"><em>gym_jiminy.common.pipeline.EnvConfig</em></a>) – Configuration of the environment, as a dict of type <cite>EnvConfig</cite>.</p></li>
+<li><p><strong>blocks_config</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="#gym_jiminy.common.pipeline.BlockConfig" title="gym_jiminy.common.pipeline.BlockConfig"><em>gym_jiminy.common.pipeline.BlockConfig</em></a><em>]</em>) – Configuration of the blocks, as a list. The list is ordered from the
+lowest level block to the highest, each element corresponding to the
+configuration of a individual block, as a dict of type <cite>BlockConfig</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Type[<a class="reference internal" href="bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper" title="gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper">gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gym_jiminy.common.pipeline.load_pipeline">
+<span class="sig-prename descclassname"><span class="pre">gym_jiminy.common.pipeline.</span></span><span class="sig-name descname"><span class="pre">load_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullpath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/gym_jiminy/common/pipeline.html#load_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gym_jiminy.common.pipeline.load_pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load pipeline from JSON or TOML configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>Fullpath of the configuration file.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>fullpath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – </p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Type[<a class="reference internal" href="bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper" title="gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper">gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="controllers/index.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="envs/env_locomotion.html" class="btn btn-neutral float-left" title="Locomotion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

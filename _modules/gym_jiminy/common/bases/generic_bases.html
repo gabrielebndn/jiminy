@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gym_jiminy.common.bases.generic_bases &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>gym_jiminy.common.bases.generic_bases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for gym_jiminy.common.bases.generic_bases</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Controller and observer abstract interfaces from reinforcement learning,</span>
+<span class="sd">specifically design for Jiminy engine, and defined as mixin classes. Any</span>
+<span class="sd">observer/controller block must inherite and implement those interfaces.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gym</span>
+
+<span class="kn">import</span> <span class="nn">jiminy_py.core</span> <span class="k">as</span> <span class="nn">jiminy</span>
+<span class="kn">from</span> <span class="nn">jiminy_py.simulator</span> <span class="kn">import</span> <span class="n">Simulator</span>
+
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">SpaceDictNested</span><span class="p">,</span> <span class="n">copy</span>
+
+
+<div class="viewcode-block" id="ObserverInterface"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ObserverInterface">[docs]</a><span class="k">class</span> <span class="nc">ObserverInterface</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Observer interface for both observers and environments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">observe_dt</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">observation_space</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">]</span>
+    <span class="n">_observation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Initialize the observation interface.</span>
+
+<span class="sd">        It only allocates some attributes.</span>
+
+<span class="sd">        :param args: Extra arguments that may be useful for mixing</span>
+<span class="sd">                     multiple inheritance through multiple inheritance.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments. See &#39;args&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Define some attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observe_dt</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Call super to allow mixing interfaces through multiple inheritance</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
+
+<div class="viewcode-block" id="ObserverInterface.get_observation"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ObserverInterface.get_observation">[docs]</a>    <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get post-processed observation.</span>
+
+<span class="sd">        By default, it does not perform any post-processing. One is responsible</span>
+<span class="sd">        for clipping the observation if necessary to make sure it does not</span>
+<span class="sd">        violate the lower and upper bounds. This can be done either by</span>
+<span class="sd">        overloading this method, or in the case of pipeline design, by adding a</span>
+<span class="sd">        clipping observation block at the very end.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            In most cases, it is not necessary to overloaded this method, and</span>
+<span class="sd">            doing so may lead to unexpected behavior if not done carefully.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">)</span></div>
+
+    <span class="c1"># methods to override:</span>
+    <span class="c1"># ----------------------------</span>
+
+<div class="viewcode-block" id="ObserverInterface._refresh_observation_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ObserverInterface._refresh_observation_space">[docs]</a>    <span class="k">def</span> <span class="nf">_refresh_observation_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the observation space.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="ObserverInterface.refresh_observation"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ObserverInterface.refresh_observation">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Update the observation based on the current simulation state.</span>
+
+<span class="sd">        .. warning:</span>
+<span class="sd">            When overloading this method, one is expected to use the internal</span>
+<span class="sd">            buffer `_observation` to store the observation by updating it by</span>
+<span class="sd">            reference. It may be error prone and tricky to get use to it, but</span>
+<span class="sd">            it is computionally optimal because it avoids allocating memory and</span>
+<span class="sd">            redundant calculus. Additionally, it enables to retrieve the</span>
+<span class="sd">            observation later on by calling `get_observation`.</span>
+
+<span class="sd">        :param args: Extra arguments that may be useful to derived</span>
+<span class="sd">                     implementations.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments. See &#39;args&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+
+
+<div class="viewcode-block" id="ControllerInterface"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ControllerInterface">[docs]</a><span class="k">class</span> <span class="nc">ControllerInterface</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Controller interface for both controllers and environments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">control_dt</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">action_space</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">]</span>
+    <span class="n">_action</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Initialize the control interface.</span>
+
+<span class="sd">        It only allocates some attributes.</span>
+
+<span class="sd">        :param args: Extra arguments that may be useful for mixing</span>
+<span class="sd">                     multiple inheritance through multiple inheritance.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments. See &#39;args&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Define some attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_dt</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_action</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">enable_reward_terminal</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">compute_reward_terminal</span><span class="o">.</span>  <span class="c1"># type: ignore[attr-defined]</span>
+            <span class="vm">__func__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">ControllerInterface</span><span class="o">.</span><span class="n">compute_reward_terminal</span><span class="p">)</span>
+
+        <span class="c1"># Call super to allow mixing interfaces through multiple inheritance</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
+
+    <span class="c1"># methods to override:</span>
+    <span class="c1"># ----------------------------</span>
+
+<div class="viewcode-block" id="ControllerInterface._refresh_action_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ControllerInterface._refresh_action_space">[docs]</a>    <span class="k">def</span> <span class="nf">_refresh_action_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the action space.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="ControllerInterface.compute_command"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ControllerInterface.compute_command">[docs]</a>    <span class="k">def</span> <span class="nf">compute_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                        <span class="n">measure</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute the command to send to the subsequent block, based on the</span>
+<span class="sd">        current target and observation of the environment.</span>
+
+<span class="sd">        :param measure: Observation of the environment.</span>
+<span class="sd">        :param action: High-level target to achieve.</span>
+
+<span class="sd">        :returns: Command to send to the subsequent block. It is a target if</span>
+<span class="sd">                  the latter is another controller, or motors efforts command</span>
+<span class="sd">                  if it is the environment to ultimately control.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="ControllerInterface.compute_reward"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ControllerInterface.compute_reward">[docs]</a>    <span class="k">def</span> <span class="nf">compute_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                       <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+                       <span class="n">info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                       <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute reward at current episode state.</span>
+
+<span class="sd">        By default, it always returns 0.0. It must be overloaded to implement</span>
+<span class="sd">        a proper reward function.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            For compatibility with openAI gym API, only the total reward is</span>
+<span class="sd">            returned. Yet, it is possible to update &#39;info&#39; by reference if</span>
+<span class="sd">            one wants to log extra info for monitoring.</span>
+
+<span class="sd">        :param args: Extra arguments that may be useful for derived</span>
+<span class="sd">                     environments, for example `Gym.GoalEnv`.</span>
+<span class="sd">        :param info: Dictionary of extra information for monitoring.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments. See &#39;args&#39;.</span>
+
+<span class="sd">        :returns: Total reward.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=no-self-use,unused-argument</span>
+
+        <span class="k">return</span> <span class="mf">0.0</span></div>
+
+<div class="viewcode-block" id="ControllerInterface.compute_reward_terminal"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ControllerInterface.compute_reward_terminal">[docs]</a>    <span class="k">def</span> <span class="nf">compute_reward_terminal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute terminal reward at current episode final state.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Implementation is optional. Not computing terminal reward if not</span>
+<span class="sd">            overloaded by the user for the sake of efficiency.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Similarly to `compute_reward`, &#39;info&#39; can be updated by reference</span>
+<span class="sd">            to log extra info for monitoring.</span>
+
+<span class="sd">        :param info: Dictionary of extra information for monitoring.</span>
+
+<span class="sd">        :returns: Terminal reward.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+
+
+<div class="viewcode-block" id="ObserverControllerInterface"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ObserverControllerInterface">[docs]</a><span class="k">class</span> <span class="nc">ObserverControllerInterface</span><span class="p">(</span><span class="n">ObserverInterface</span><span class="p">,</span> <span class="n">ControllerInterface</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Observer plus controller interface for both generic pipeline blocks,</span>
+<span class="sd">    including environments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">simulator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Simulator</span><span class="p">]</span>
+    <span class="n">stepper_state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">jiminy</span><span class="o">.</span><span class="n">StepperState</span><span class="p">]</span>
+    <span class="n">system_state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">jiminy</span><span class="o">.</span><span class="n">SystemState</span><span class="p">]</span>
+    <span class="n">sensors_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Define some attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Call super to allow mixing interfaces through multiple inheritance</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ObserverControllerInterface._observer_handle"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ObserverControllerInterface._observer_handle">[docs]</a>    <span class="k">def</span> <span class="nf">_observer_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                         <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                         <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                         <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                         <span class="n">sensors_data</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">sensorsData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;TODO Write documentation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh_observation</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ObserverControllerInterface._controller_handle"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/generic_bases.html#gym_jiminy.common.bases.generic_bases.ObserverControllerInterface._controller_handle">[docs]</a>    <span class="k">def</span> <span class="nf">_controller_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                           <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                           <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                           <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                           <span class="n">sensors_data</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">sensorsData</span><span class="p">,</span>
+                           <span class="n">command</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;This method is the main entry-point to interact with the simulator.</span>
+
+<span class="sd">        .. note:</span>
+<span class="sd">            It is design to apply motors efforts on the robot, but internally,</span>
+<span class="sd">            it updates the observation before computing the command.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            This method is not supposed to be called manually nor overloaded.</span>
+<span class="sd">            It must be passed to `set_controller_handle` to send to use the</span>
+<span class="sd">            controller to send commands directly to the robot.</span>
+
+<span class="sd">        :param t: Current simulation time.</span>
+<span class="sd">        :param q: Current actual configuration of the robot. Note that it is</span>
+<span class="sd">                  not the one of the theoretical model even if</span>
+<span class="sd">                  &#39;use_theoretical_model&#39; is enabled for the backend Python</span>
+<span class="sd">                  `Simulator`.</span>
+<span class="sd">        :param v: Current actual velocity vector.</span>
+<span class="sd">        :param sensors_data: Current sensor data. Note that it is the raw data,</span>
+<span class="sd">                             which means that it is not an actual dictionary</span>
+<span class="sd">                             but it behaves similarly.</span>
+<span class="sd">        :param command: Output argument to update by reference using `[:]` or</span>
+<span class="sd">                        `np.core.multiarray.copyto` in order to apply motors</span>
+<span class="sd">                        torques on the robot.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

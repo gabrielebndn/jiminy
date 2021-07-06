@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>processing &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="state" href="state.html" />
+    <link rel="prev" title="viewer" href="viewer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jiminy Python API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core/index.html">core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulator.html">simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamics.html">dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewer.html">viewer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Jiminy Python API</a> &raquo;</li>
+        
+      <li>processing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/jiminy_py/processing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-jiminy_py.processing">
+<span id="processing"></span><h1>processing<a class="headerlink" href="#module-jiminy_py.processing" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="jiminy_py.processing.ConvexHull">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">jiminy_py.processing.</span></span><span class="sig-name descname"><span class="pre">ConvexHull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/processing.html#ConvexHull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.processing.ConvexHull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Compute the convex hull defined by a set of points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>numpy.ndarray</em>) – N-D points whose to computed the associated convex hull,
+as a 2D array whose first dimension corresponds to the
+number of points, and the second to the N-D coordinates.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jiminy_py.processing.ConvexHull.center">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">center</span></span><em class="property"><span class="pre">:</span> <span class="pre">numpy.ndarray</span></em><a class="headerlink" href="#jiminy_py.processing.ConvexHull.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the center of the convex hull.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Degenerated convex hulls corresponding to len(points) == 1 or 2 are
+handled separately.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>1D float vector with N-D coordinates of the center.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jiminy_py.processing.ConvexHull.get_distance">
+<span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/processing.html#ConvexHull.get_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.processing.ConvexHull.get_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the signed distance of query points from the convex hull.</p>
+<p>Positive distance corresponds to a query point lying outside the convex
+hull.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Degenerated convex hulls corresponding to len(points) == 1 or 2 are
+handled separately. The distance from a point and a segment is used
+respectevely.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>queries</strong> (<em>numpy.ndarray</em>) – N-D query points for which to compute distance from the
+convex hull, as a 2D array.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>1D float vector of the same length than <cite>queries</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.processing.squared_norm_2">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.processing.</span></span><span class="sig-name descname"><span class="pre">squared_norm_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/processing.html#squared_norm_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.processing.squared_norm_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fast implementation of the sum of squared arrray elements, optimized for
+small to medium size 1D arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>array</strong> (<em>numpy.ndarray</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.processing.integrate_zoh">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.processing.</span></span><span class="sig-name descname"><span class="pre">integrate_zoh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state_prev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/processing.html#integrate_zoh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.processing.integrate_zoh" title="Permalink to this definition">¶</a></dt>
+<dd><p>N-order integration scheme assuming Zero-Order-Hold for highest
+derivative, taking state bounds into account to make sure integrated state
+is wthin bounds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state_prev</strong> (<em>numpy.ndarray</em>) – Previous state update, ordered from lowest to highest
+derivative order, which means:
+s[i](t) = s[i](t-1) + integ_{t-1}^{t}(s[i+1](t))</p></li>
+<li><p><strong>state_min</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Lower bounds of the state.
+Optional: -Inf by default.</p></li>
+<li><p><strong>state_max</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Upper bounds of the state.
+Optional: Inf by default.</p></li>
+<li><p><strong>dt</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – Integration delta of time since previous state update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.processing.smoothing_filter">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.processing.</span></span><span class="sig-name descname"><span class="pre">smoothing_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/processing.html#smoothing_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.processing.smoothing_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoothing filter with relabeling and resampling features.</p>
+<p>It supports evenly sampled multidimensional input signal. Relabeling can be
+used to infer the value of samples at time steps before and after the
+explicitly provided samples.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As a reminder, relabeling is a generalization of periodicity.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_in</strong> (<em>numpy.ndarray</em>) – Time steps of the input signal.</p></li>
+<li><p><strong>val_in</strong> (<em>numpy.ndarray</em>) – Sampled values of the input signal.
+(2D numpy array: row = sample, column = time)</p></li>
+<li><p><strong>time_out</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Time steps of the output signal.</p></li>
+<li><p><strong>relabel</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Relabeling matrix (identity for periodic signals).
+Optional: Disable if omitted.</p></li>
+<li><p><strong>params</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>Sequence</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>]</em><em>]</em><em>]</em><em>]</em>) – Parameters of the filter. Dictionary with keys:<ul>
+<li><p><strong>’mixing_ratio_1’:</strong> Relative time at the begining of the signal
+during the output signal corresponds to a linear mixing over time of
+the filtered and original signal (only used if relabel is omitted).</p></li>
+<li><p><strong>’mixing_ratio_2’:</strong> Relative time at the end of the signal during
+the output signal corresponds to a linear mixing over time of the
+filtered and original signal (only used if relabel is omitted).</p></li>
+<li><p><strong>’smoothness’[0]:</strong> Smoothing factor to filter the begining of the
+signal (only used if relabel is omitted).</p></li>
+<li><p><strong>’smoothness’[1]:</strong> Smoothing factor to filter the end of the signal
+(only used if relabel is omitted).</p></li>
+<li><p><strong>’smoothness’[2]:</strong> Smoothing factor to filter the middle part of
+the signal.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Filtered signal (2D numpy array: row = sample, column = time).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="state.html" class="btn btn-neutral float-right" title="state" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="viewer.html" class="btn btn-neutral float-left" title="viewer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

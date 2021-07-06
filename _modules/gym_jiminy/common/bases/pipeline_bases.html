@@ -1,0 +1,829 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gym_jiminy.common.bases.pipeline_bases &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>gym_jiminy.common.bases.pipeline_bases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for gym_jiminy.common.bases.pipeline_bases</h1><div class="highlight"><pre>
+<span></span>
+<span class="sd">&quot;&quot;&quot;This method gathers base implementations for blocks to be used in pipeline</span>
+<span class="sd">control design.</span>
+
+<span class="sd">It implements:</span>
+
+<span class="sd">    - the concept of block that can be connected to a `BaseJiminyEnv`</span>
+<span class="sd">      environment through any level of indirection</span>
+<span class="sd">    - a base controller block, along with a concret PD controller</span>
+<span class="sd">    - a wrapper to combine a controller block and a `BaseJiminyEnv`</span>
+<span class="sd">      environment, eventually already wrapped, so that it appears as a single,</span>
+<span class="sd">      unified environment.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Callable</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gym</span>
+
+<span class="kn">import</span> <span class="nn">jiminy_py.core</span> <span class="k">as</span> <span class="nn">jiminy</span>
+<span class="kn">from</span> <span class="nn">jiminy_py.simulator</span> <span class="kn">import</span> <span class="n">Simulator</span>
+
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="p">(</span><span class="n">SpaceDictNested</span><span class="p">,</span>
+                     <span class="n">is_breakpoint</span><span class="p">,</span>
+                     <span class="n">zeros</span><span class="p">,</span>
+                     <span class="n">fill</span><span class="p">,</span>
+                     <span class="n">set_value</span><span class="p">,</span>
+                     <span class="n">register_variables</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">..envs</span> <span class="kn">import</span> <span class="n">BaseJiminyEnv</span>
+<span class="kn">from</span> <span class="nn">..envs.internal</span> <span class="kn">import</span> <span class="n">ObserverHandleType</span><span class="p">,</span> <span class="n">ControllerHandleType</span>
+
+<span class="kn">from</span> <span class="nn">.block_bases</span> <span class="kn">import</span> <span class="n">BaseControllerBlock</span><span class="p">,</span> <span class="n">BaseObserverBlock</span>
+<span class="kn">from</span> <span class="nn">.generic_bases</span> <span class="kn">import</span> <span class="n">ObserverControllerInterface</span>
+
+
+<div class="viewcode-block" id="BasePipelineWrapper"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper">[docs]</a><span class="k">class</span> <span class="nc">BasePipelineWrapper</span><span class="p">(</span><span class="n">ObserverControllerInterface</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrap a `BaseJiminyEnv` Gym environment and a single block, so that it</span>
+<span class="sd">    appears as a single, unified, environment. Eventually, the environment can</span>
+<span class="sd">    already be wrapped inside one or several `gym.Wrapper` containers.</span>
+
+<span class="sd">    If several successive blocks must be used, just wrap successively each</span>
+<span class="sd">    block one by one with the resulting intermediary `PipelineWrapper`.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        This architecture is not designed for trainable blocks, but rather for</span>
+<span class="sd">        robotic-oriented controllers and observers, such as PID controllers,</span>
+<span class="sd">        inverse kinematics, Model Predictive Control (MPC), sensor fusion...</span>
+<span class="sd">        It is recommended to add the controllers and observers into the</span>
+<span class="sd">        policy itself if they have to be trainable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">env</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">,</span> <span class="n">BaseJiminyEnv</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">env</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">,</span> <span class="n">BaseJiminyEnv</span><span class="p">],</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param kwargs: Extra keyword arguments for multiple inheritance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize base wrapper and interfaces through multiple inheritance</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>  <span class="c1"># Do not forward extra arguments, if any</span>
+
+        <span class="c1"># Refresh some proxies for fast lookup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="p">:</span> <span class="n">Simulator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">simulator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">StepperState</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">stepper_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">SystemState</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">system_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">sensorsData</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">sensors_data</span>
+
+        <span class="c1"># Define some internal buffers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dt_eps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_command</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">unwrapped</span><span class="o">.</span><span class="n">action_space</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Attribute lookup.</span>
+
+<span class="sd">        It is mainly used by autocomplete feature of Ipython. It is overloaded</span>
+<span class="sd">        to get consistent autocompletion wrt `getattr`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="BasePipelineWrapper._controller_handle"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper._controller_handle">[docs]</a>    <span class="k">def</span> <span class="nf">_controller_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                           <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                           <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                           <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                           <span class="n">sensors_data</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">sensorsData</span><span class="p">,</span>
+                           <span class="n">command</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">[:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_command</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(),</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="BasePipelineWrapper._get_block_index"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper._get_block_index">[docs]</a>    <span class="k">def</span> <span class="nf">_get_block_index</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get the index of the block. It corresponds the &quot;deepness&quot; of the</span>
+<span class="sd">        block, namely how many blocks deriving from the same wrapper type than</span>
+<span class="sd">        the current one are already wrapped in the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">BaseJiminyEnv</span><span class="p">):</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+            <span class="n">block</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">env</span>
+        <span class="k">return</span> <span class="n">i</span></div>
+
+<div class="viewcode-block" id="BasePipelineWrapper.reset"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+              <span class="n">controller_hook</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[],</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span>
+                  <span class="n">Optional</span><span class="p">[</span><span class="n">ObserverHandleType</span><span class="p">],</span>
+                  <span class="n">Optional</span><span class="p">[</span><span class="n">ControllerHandleType</span><span class="p">]]]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Reset the unified environment.</span>
+
+<span class="sd">        In practice, it resets the environment and initializes the generic</span>
+<span class="sd">        pipeline internal buffers through the use of &#39;controller_hook&#39;.</span>
+
+<span class="sd">        :param controller_hook: Used internally for chaining multiple</span>
+<span class="sd">                                `BasePipelineWrapper`. It is not meant to be</span>
+<span class="sd">                                defined manually.</span>
+<span class="sd">                                Optional: None by default.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments to comply with OpenAI Gym API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument,arguments-differ</span>
+
+        <span class="c1"># Define chained controller hook</span>
+        <span class="k">def</span> <span class="nf">register</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ObserverHandleType</span><span class="p">,</span> <span class="n">ControllerHandleType</span><span class="p">]:</span>
+            <span class="sd">&quot;&quot;&quot;Register the block to the higher-level block.</span>
+
+<span class="sd">            This method is used internally to make sure that `_setup` method</span>
+<span class="sd">            of connected blocks are called in the right order, namely from the</span>
+<span class="sd">            lowest-level block to the highest-level one, right after reset of</span>
+<span class="sd">            the low-level simulator and just before performing the first step.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">nonlocal</span> <span class="bp">self</span><span class="p">,</span> <span class="n">controller_hook</span>
+
+            <span class="c1"># Get the temporal resolution of simulator steps</span>
+            <span class="n">engine_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dt_eps</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;telemetry&quot;</span><span class="p">][</span><span class="s2">&quot;timeUnit&quot;</span><span class="p">]</span>
+
+            <span class="c1"># Initialize the pipeline wrapper</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+
+            <span class="c1"># Forward the observer and controller handles provided by the</span>
+            <span class="c1"># controller hook of higher-level block, if any, or use the</span>
+            <span class="c1"># ones of this block otherwise.</span>
+            <span class="n">observer_handle</span><span class="p">,</span> <span class="n">controller_handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">controller_hook</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">handles</span> <span class="o">=</span> <span class="n">controller_hook</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">observer_handle</span><span class="p">,</span> <span class="n">controller_handle</span> <span class="o">=</span> <span class="n">handles</span>
+            <span class="k">if</span> <span class="n">observer_handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">observer_handle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_observer_handle</span>
+            <span class="k">if</span> <span class="n">controller_handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">controller_handle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_controller_handle</span>
+            <span class="k">return</span> <span class="n">observer_handle</span><span class="p">,</span> <span class="n">controller_handle</span>
+
+        <span class="c1"># Reset base pipeline</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">register</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BasePipelineWrapper.step"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper.step">[docs]</a>    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">action</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+             <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot;Run a simulation step for a given action.</span>
+
+<span class="sd">        :param action: Next action to perform. `None` to not update it.</span>
+
+<span class="sd">        :returns: Next observation, reward, status of the episode (done or</span>
+<span class="sd">                  not), and a dictionary of extra information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Backup the action to perform, if any</span>
+        <span class="k">if</span> <span class="n">action</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+
+        <span class="c1"># Compute the next learning step</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="c1"># Compute block&#39;s reward and sum it to total</span>
+        <span class="n">reward</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_reward</span><span class="p">(</span><span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enable_reward_terminal</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">done</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">unwrapped</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_reward_terminal</span><span class="p">(</span><span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(),</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span></div>
+
+    <span class="c1"># methods to override:</span>
+    <span class="c1"># ----------------------------</span>
+
+<div class="viewcode-block" id="BasePipelineWrapper._setup"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper._setup">[docs]</a>    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the wrapper.</span>
+
+<span class="sd">        By default, it only resets some internal buffers.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method must be called once, after the environment has been</span>
+<span class="sd">            reset. This is done automatically when calling `reset` method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Reset some internal buffers</span>
+        <span class="n">fill</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">fill</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_command</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="c1"># Refresh some proxies for fast lookup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">sensors_data</span></div>
+
+<div class="viewcode-block" id="BasePipelineWrapper.refresh_observation"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper.refresh_observation">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># type: ignore[override]</span>
+        <span class="sd">&quot;&quot;&quot;Compute the unified observation.</span>
+
+<span class="sd">        By default, it forwards the observation computed by the environment.</span>
+
+<span class="sd">        :param measure: Observation of the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=arguments-differ</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">refresh_observation</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BasePipelineWrapper.compute_command"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.BasePipelineWrapper.compute_command">[docs]</a>    <span class="k">def</span> <span class="nf">compute_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                        <span class="n">measure</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute the motors efforts to apply on the robot.</span>
+
+<span class="sd">        By default, it forwards the command computed by the environment.</span>
+
+<span class="sd">        :param measure: Observation of the environment.</span>
+<span class="sd">        :param action: Target to achieve.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+        <span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">compute_command</span><span class="p">(</span><span class="n">measure</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ObservedJiminyEnv"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ObservedJiminyEnv">[docs]</a><span class="k">class</span> <span class="nc">ObservedJiminyEnv</span><span class="p">(</span><span class="n">BasePipelineWrapper</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrap a `BaseJiminyEnv` Gym environment and a single observer, so that</span>
+<span class="sd">    it appears as a single, unified, environment. Eventually, the environment</span>
+<span class="sd">    can already be wrapped inside one or several `gym.Wrapper` containers.</span>
+
+<span class="sd">    .. aafig::</span>
+<span class="sd">        :proportional:</span>
+<span class="sd">        :textual:</span>
+
+<span class="sd">                +---------+           +------------+</span>
+<span class="sd">        &quot;act_1&quot; |         | &quot;obs_env&quot; |            |</span>
+<span class="sd">        -------&gt;+  &quot;env&quot;  +----------&gt;+ &quot;observer&quot; +-----------&gt;</span>
+<span class="sd">                |         |   &quot;obs&quot;   |            | &quot;features&quot;</span>
+<span class="sd">                +---------+           +------------+</span>
+
+<span class="sd">    The input observation &#39;obs_env&#39; of &#39;observer&#39; must be consistent with the</span>
+<span class="sd">    observation space &#39;obs&#39; of the environment. The observation space of the</span>
+<span class="sd">    outcoming unified environment will be the observation space of the</span>
+<span class="sd">    highest-level observer, while its action space will be the one of the</span>
+<span class="sd">    unwrapped environment &#39;obs&#39;.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        This design is not suitable for learning the observer, but rather for</span>
+<span class="sd">        robotic-oriented observers, such as sensor fusion algorithms, Kalman</span>
+<span class="sd">        filters... It is recommended to add the observer into the policy</span>
+<span class="sd">        itself if it has to be trainable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501  # pylint: disable=line-too-long</span>
+    <span class="n">env</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">,</span> <span class="n">BaseJiminyEnv</span><span class="p">]</span>
+    <span class="n">observation_space</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">env</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">,</span> <span class="n">BaseJiminyEnv</span><span class="p">],</span>
+                 <span class="n">observer</span><span class="p">:</span> <span class="n">BaseObserverBlock</span><span class="p">,</span>
+                 <span class="n">augment_observation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param env: Environment to control. It can be an already controlled</span>
+<span class="sd">                    environment wrapped in `ObservedJiminyEnv` if one desires</span>
+<span class="sd">                    to stack several controllers with `BaseJiminyEnv`.</span>
+<span class="sd">        :param observer: Observer to use to extract higher-level features.</span>
+<span class="sd">        :param augment_observation: Whether or not to gather the high-level</span>
+<span class="sd">                                    features computed by the observer with the</span>
+<span class="sd">                                    raw observation of the environment. This</span>
+<span class="sd">                                    option is only available if the observation</span>
+<span class="sd">                                    space is of type `gym.spaces.Dict`.</span>
+<span class="sd">                                    Optional: Disabled by default.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments to allow automatic pipeline</span>
+<span class="sd">                       wrapper generation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Backup user arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observer</span> <span class="o">=</span> <span class="n">observer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">augment_observation</span> <span class="o">=</span> <span class="n">augment_observation</span>
+
+        <span class="c1"># Make sure that the unwrapped environment matches the controlled one</span>
+        <span class="k">assert</span> <span class="n">env</span><span class="o">.</span><span class="n">unwrapped</span> <span class="ow">is</span> <span class="n">observer</span><span class="o">.</span><span class="n">env</span>
+
+        <span class="c1"># Initialize base wrapper</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Retrieve the environment observation</span>
+        <span class="n">observation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span>
+
+        <span class="c1"># Update the action space</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
+
+        <span class="c1"># Set the controller name, based on the controller index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observer_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;observer_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_block_index</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">action_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">observation_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Check that the initial observation of the environment is consistent</span>
+        <span class="c1"># with the action space of the observer.</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">observation</span><span class="p">),</span> <span class="p">(</span>
+            <span class="s2">&quot;The command is not consistent with the action space of the &quot;</span>
+            <span class="s2">&quot;subsequent block.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Update the observation space</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">augment_observation</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span>
+                <span class="s1">&#39;features&#39;</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">())</span><span class="o">.</span><span class="n">spaces</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">observer_name</span><span class="p">]</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">observation_space</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">observation_space</span>
+
+        <span class="c1"># Initialize some internal buffers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_action</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ObservedJiminyEnv._setup"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ObservedJiminyEnv._setup">[docs]</a>    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the wrapper.</span>
+
+<span class="sd">        In addition to the base implementation, it configures the observer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Configure the observer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+
+        <span class="c1"># Call base implementation</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+
+        <span class="c1"># Compute the observe and control update periods</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observe_dt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">observe_dt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_dt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">control_dt</span></div>
+
+<div class="viewcode-block" id="ObservedJiminyEnv.refresh_observation"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ObservedJiminyEnv.refresh_observation">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># type: ignore[override]</span>
+        <span class="sd">&quot;&quot;&quot;Compute high-level features based on the current wrapped</span>
+<span class="sd">        environment&#39;s observation.</span>
+
+<span class="sd">        It gathers the original observation from the environment with the</span>
+<span class="sd">        features computed by the observer, if requested, otherwise it forwards</span>
+<span class="sd">        the features directly without any further processing.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Beware it updates and returns &#39;_observation&#39; buffer to deal with</span>
+<span class="sd">            multiple observers with different update periods. Even so, it is</span>
+<span class="sd">            safe to call this method multiple times successively.</span>
+
+<span class="sd">        :returns: Updated part of the observation only for efficiency.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=arguments-differ</span>
+
+        <span class="c1"># Get environment observation</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">refresh_observation</span><span class="p">()</span>
+
+        <span class="c1"># Update observed features if necessary</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span><span class="o">.</span><span class="n">t</span>
+        <span class="k">if</span> <span class="n">is_breakpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">observe_dt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dt_eps</span><span class="p">):</span>
+            <span class="n">obs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">refresh_observation</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+                <span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">augment_observation</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span> <span class="o">=</span> <span class="n">obs</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;features&#39;</span><span class="p">,</span> <span class="n">OrderedDict</span><span class="p">())[</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">observer_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">features</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span> <span class="o">=</span> <span class="n">features</span></div></div>
+
+
+<div class="viewcode-block" id="ControlledJiminyEnv"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ControlledJiminyEnv">[docs]</a><span class="k">class</span> <span class="nc">ControlledJiminyEnv</span><span class="p">(</span><span class="n">BasePipelineWrapper</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrap a `BaseJiminyEnv` Gym environment and a single controller, so that</span>
+<span class="sd">    it appears as a single, unified, environment. Eventually, the environment</span>
+<span class="sd">    can already be wrapped inside one or several `gym.Wrapper` containers.</span>
+
+<span class="sd">    If several successive controllers must be used, just wrap successively each</span>
+<span class="sd">    controller one by one with the resulting `ControlledJiminyEnv`.</span>
+
+<span class="sd">    .. aafig::</span>
+<span class="sd">        :proportional:</span>
+<span class="sd">        :textual:</span>
+
+<span class="sd">                +---------+                    +----------+                      +----------+</span>
+<span class="sd">        &quot;act_1&quot; |         |            &quot;act_2&quot; |          |              &quot;act_3&quot; |          |</span>
+<span class="sd">        -------&gt;+  &quot;env&quot;  +------&gt; &quot;+&quot; -------&gt;+ &quot;ctrl_1&quot; +--------&gt; &quot;+&quot; -------&gt;+ &quot;ctrl_2&quot; +--------&gt; &quot;=&quot;</span>
+<span class="sd">                |         | &quot;obs&quot;              |          | &quot;cmd_1&quot;              |          | &quot;cmd_2&quot;</span>
+<span class="sd">                +---------+                    +----------+                      +----------+</span>
+
+<span class="sd">                      +----------------------------------------------------+</span>
+<span class="sd">                      |                                                    |</span>
+<span class="sd">                      v                                                    |</span>
+<span class="sd">                +-----+----+         +----------+         +---------+      |</span>
+<span class="sd">        &quot;act_3&quot; |          | &quot;act_2&quot; |          | &quot;act_1&quot; |         |      | &quot;obs + cmd_1 + cmd_2&quot;</span>
+<span class="sd">        -------&gt;+ &quot;ctrl_2&quot; +--------&gt;+ &quot;ctrl_1&quot; +--------&gt;+  &quot;env&quot;  +--o---o----------------------&gt;</span>
+<span class="sd">                |          | &quot;cmd_2&quot; |          | &quot;cmd_1&quot; |         |  | &quot;obs + cmd_1&quot;</span>
+<span class="sd">                +----------+         +-----+----+         +---------+  |</span>
+<span class="sd">                                           ^                           |</span>
+<span class="sd">                                           |                           |</span>
+<span class="sd">                                           +---------------------------+</span>
+
+<span class="sd">    The output command &#39;cmd_X&#39; of &#39;ctrl_X&#39; must be consistent with the action</span>
+<span class="sd">    space &#39;act_X&#39; of the subsequent block. The action space of the outcoming</span>
+<span class="sd">    unified environment will be the action space of the highest-level</span>
+<span class="sd">    controller &#39;act_N&#39;, while its observation space will be the one of the</span>
+<span class="sd">    unwrapped environment &#39;obs&#39;. Alternatively, the later can also gather the</span>
+<span class="sd">    (stacked) action space of the successive controllers if one is to observe</span>
+<span class="sd">    the intermediary controllers&#39; targets.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        The environment and each controller has their own update period.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        This design is not suitable for learning the controllers &#39;ctrl_X&#39;, but</span>
+<span class="sd">        rather for robotic-oriented controllers, such as PID control, inverse</span>
+<span class="sd">        kinematics, admittance control, or Model Predictive Control (MPC). It</span>
+<span class="sd">        is recommended to add the controllers into the policy itself if it has</span>
+<span class="sd">        to be trainable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501  # pylint: disable=line-too-long</span>
+    <span class="n">observation_space</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">env</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">,</span> <span class="n">BaseJiminyEnv</span><span class="p">],</span>
+                 <span class="n">controller</span><span class="p">:</span> <span class="n">BaseControllerBlock</span><span class="p">,</span>
+                 <span class="n">augment_observation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        .. note::</span>
+<span class="sd">            As a reminder, `env.step_dt` refers to the learning step period,</span>
+<span class="sd">            namely the timestep between two successive frames:</span>
+
+<span class="sd">                [obs, reward, done, info]</span>
+
+<span class="sd">            This definition remains true, independently of whether or not the</span>
+<span class="sd">            environment is wrapped with a controller using this class. On the</span>
+<span class="sd">            contrary, `env.control_dt` corresponds to the apparent control</span>
+<span class="sd">            update period, namely the update period of the higher-level</span>
+<span class="sd">            controller if multiple are piped together. The same goes for</span>
+<span class="sd">            `env.observe_dt`.</span>
+
+<span class="sd">        :param env: Environment to control. It can be an already controlled</span>
+<span class="sd">                    environment wrapped in `ControlledJiminyEnv` if one desires</span>
+<span class="sd">                    to stack several controllers with `BaseJiminyEnv`.</span>
+<span class="sd">        :param controller: Controller to use to send targets to the subsequent</span>
+<span class="sd">                           block.</span>
+<span class="sd">        :param augment_observation: Whether or not to gather the target of the</span>
+<span class="sd">                                    controller with the observation of the</span>
+<span class="sd">                                    environment. This option is only available</span>
+<span class="sd">                                    if the observation space is of type</span>
+<span class="sd">                                    `gym.spaces.Dict`.</span>
+<span class="sd">                                    Optional: Disabled by default.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments to allow automatic pipeline</span>
+<span class="sd">                       wrapper generation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Backup user arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">controller</span> <span class="o">=</span> <span class="n">controller</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">augment_observation</span> <span class="o">=</span> <span class="n">augment_observation</span>
+
+        <span class="c1"># Make sure that the unwrapped environment matches the controlled one</span>
+        <span class="k">assert</span> <span class="n">env</span><span class="o">.</span><span class="n">unwrapped</span> <span class="ow">is</span> <span class="n">controller</span><span class="o">.</span><span class="n">env</span>
+
+        <span class="c1"># Initialize base wrapper</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Enable terminal reward only if the controller implements it</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">enable_reward_terminal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">enable_reward_terminal</span>
+
+        <span class="c1"># Set the controller name, based on the controller index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">controller_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;controller_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_block_index</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># Update the action space</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">action_space</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="c1"># Check that &#39;augment_observation&#39; can be enabled</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">augment_observation</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">),</span> <span class="p">(</span>
+            <span class="s2">&quot;&#39;augment_observation&#39; is only available for environments whose &quot;</span>
+            <span class="s2">&quot;observation space inherits from `gym.spaces.Dict`.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Append the controller&#39;s target to the observation if requested</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">augment_observation</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span>
+                <span class="s1">&#39;targets&#39;</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">())</span><span class="o">.</span><span class="n">spaces</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">controller_name</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">action_space</span>
+
+        <span class="c1"># Initialize some internal buffers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_action</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ControlledJiminyEnv._setup"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ControlledJiminyEnv._setup">[docs]</a>    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the wrapper.</span>
+
+<span class="sd">        In addition to the base implementation, it configures the controller</span>
+<span class="sd">        and registers its target to the telemetry.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Configure the controller</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+
+        <span class="c1"># Call base implementation</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+
+        <span class="c1"># Reset some additional internal buffers</span>
+        <span class="n">fill</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="c1"># Compute the observe and control update periods</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observe_dt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">observe_dt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_dt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">control_dt</span>
+
+        <span class="c1"># Register the controller target to the telemetry.</span>
+        <span class="c1"># It may be useful for computing the terminal reward or debugging.</span>
+        <span class="n">register_variables</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">controller</span><span class="p">,</span>
+                           <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">get_fieldnames</span><span class="p">(),</span>
+                           <span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span>
+                           <span class="bp">self</span><span class="o">.</span><span class="n">controller_name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ControlledJiminyEnv.compute_command"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ControlledJiminyEnv.compute_command">[docs]</a>    <span class="k">def</span> <span class="nf">compute_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                        <span class="n">measure</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">:</span> <span class="n">SpaceDictNested</span>
+                        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute the motors efforts to apply on the robot.</span>
+
+<span class="sd">        In practice, it updates, whenever it is necessary:</span>
+
+<span class="sd">            - the target sent to the subsequent block by the controller</span>
+<span class="sd">            - the command send to the robot by the environment through the</span>
+<span class="sd">              subsequent block</span>
+
+<span class="sd">        :param measure: Observation of the environment.</span>
+<span class="sd">        :param action: High-level target to achieve.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Update the target to send to the subsequent block if necessary.</span>
+        <span class="c1"># Note that `_observation` buffer has already been updated right before</span>
+        <span class="c1"># calling this method by `_controller_handle`, so it can be used as</span>
+        <span class="c1"># measure argument without issue.</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span><span class="o">.</span><span class="n">t</span>
+        <span class="k">if</span> <span class="n">is_breakpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_dt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dt_eps</span><span class="p">):</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">compute_command</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+            <span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+        <span class="c1"># Update the command to send to the actuators of the robot.</span>
+        <span class="c1"># Note that the environment itself is responsible of making sure to</span>
+        <span class="c1"># update the command of the right period. Ultimately, this is done</span>
+        <span class="c1"># automatically by the engine, which is calling `_controller_handle` at</span>
+        <span class="c1"># the right period.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+            <span class="c1"># Do not update command during the first iteration because the</span>
+            <span class="c1"># action is undefined at this point</span>
+            <span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">)</span>
+            <span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_command</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">compute_command</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">)))</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_command</span></div>
+
+<div class="viewcode-block" id="ControlledJiminyEnv.refresh_observation"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ControlledJiminyEnv.refresh_observation">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># type: ignore[override]</span>
+        <span class="sd">&quot;&quot;&quot;Compute the unified observation based on the current wrapped</span>
+<span class="sd">        environment&#39;s observation and controller&#39;s target.</span>
+
+<span class="sd">        It gathers the actual observation from the environment with the target</span>
+<span class="sd">        of the controller, if requested, otherwise it forwards the observation</span>
+<span class="sd">        directly without any further processing.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Beware it shares the environment observation whenever it is</span>
+<span class="sd">            possible for the sake of efficiency. Despite that, it is safe to</span>
+<span class="sd">            call this method multiple times successively.</span>
+
+<span class="sd">        :returns: Original environment observation, eventually including</span>
+<span class="sd">                  controllers targets if requested.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get environment observation</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">refresh_observation</span><span class="p">()</span>
+
+        <span class="c1"># Add target to observation if requested</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_observation</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">augment_observation</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;targets&#39;</span><span class="p">,</span> <span class="n">OrderedDict</span><span class="p">())[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">controller_name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_action</span></div>
+
+<div class="viewcode-block" id="ControlledJiminyEnv.compute_reward"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ControlledJiminyEnv.compute_reward">[docs]</a>    <span class="k">def</span> <span class="nf">compute_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">compute_reward</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ControlledJiminyEnv.compute_reward_terminal"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/bases/pipeline_bases.html#gym_jiminy.common.bases.pipeline_bases.ControlledJiminyEnv.compute_reward_terminal">[docs]</a>    <span class="k">def</span> <span class="nf">compute_reward_terminal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">compute_reward_terminal</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>dynamics &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="viewer" href="viewer.html" />
+    <link rel="prev" title="simulator" href="simulator.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jiminy Python API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core/index.html">core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulator.html">simulator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewer.html">viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html">processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Jiminy Python API</a> &raquo;</li>
+        
+      <li>dynamics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/jiminy_py/dynamics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-jiminy_py.dynamics">
+<span id="dynamics"></span><h1>dynamics<a class="headerlink" href="#module-jiminy_py.dynamics" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.SE3ToXYZRPY">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">SE3ToXYZRPY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#SE3ToXYZRPY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.SE3ToXYZRPY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Pinocchio SE3 object to [X,Y,Z,Roll,Pitch,Yaw] vector.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.XYZRPYToSE3">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">XYZRPYToSE3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyzrpy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#XYZRPYToSE3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.XYZRPYToSE3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert [X,Y,Z,Roll,Pitch,Yaw] vector to Pinocchio SE3 object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.XYZRPYToXYZQuat">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">XYZRPYToXYZQuat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyzrpy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#XYZRPYToXYZQuat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.XYZRPYToXYZQuat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert [X,Y,Z,Roll,Pitch,Yaw] to [X,Y,Z,Qx,Qy,Qz,Qw].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.XYZQuatToXYZRPY">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">XYZQuatToXYZRPY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyzquat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#XYZQuatToXYZRPY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.XYZQuatToXYZRPY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert [X,Y,Z,Qx,Qy,Qz,Qw] to [X,Y,Z,Roll,Pitch,Yaw].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.velocityXYZRPYToXYZQuat">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">velocityXYZRPYToXYZQuat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyzrpy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dxyzrpy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#velocityXYZRPYToXYZQuat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.velocityXYZRPYToXYZQuat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the derivative of [X,Y,Z,Roll,Pitch,Yaw] to [X,Y,Z,Qx,Qy,Qz,Qw].</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Linear velocity in XYZRPY must be local-world-aligned frame, while
+returned linear velocity in XYZQuat is in local frame.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xyzrpy</strong> (<em>numpy.ndarray</em>) – </p></li>
+<li><p><strong>dxyzrpy</strong> (<em>numpy.ndarray</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.velocityXYZQuatToXYZRPY">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">velocityXYZQuatToXYZRPY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyzquat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#velocityXYZQuatToXYZRPY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.velocityXYZQuatToXYZRPY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the derivative of [X,Y,Z,Qx,Qy,Qz,Qw] to [X,Y,Z,Roll,Pitch,Yaw].</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Linear velocity in XYZRPY must be local-world-aligned frame, while
+returned linear velocity in XYZQuat is in local frame.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xyzquat</strong> (<em>numpy.ndarray</em>) – </p></li>
+<li><p><strong>v</strong> (<em>numpy.ndarray</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.update_quantities">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">update_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_physics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_com</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_jacobian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_collisions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#update_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.update_quantities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute all quantities using position, velocity and acceleration
+configurations.</p>
+<p>Run multiple algorithms to compute all quantities which can be known with
+the model position, velocity and acceleration.</p>
+<p>This includes:
+- body spatial transforms,
+- body spatial velocities,
+- body spatial drifts,
+- body transform acceleration,
+- body transform jacobians,
+- center-of-mass position,
+- center-of-mass velocity,
+- center-of-mass drift,
+- center-of-mass acceleration,
+- center-of-mass jacobian,
+- articular inertia matrix,
+- non-linear effects (Coriolis + gravity)
+- collisions and distances</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Computation results are stored internally in the robot, and can
+be retrieved with associated getters.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function modifies the internal robot data.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It does not called overloaded pinocchio methods provided by
+<cite>jiminy_py.core</cite> but the original pinocchio methods instead. As a
+result, it does not take into account the rotor inertias / armatures.
+One is responsible of calling the appropriate methods manually instead
+of this one if necessary. This behavior is expected to change in the
+future.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – Robot position vector.</p></li>
+<li><p><strong>velocity</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Robot velocity vector.</p></li>
+<li><p><strong>acceleration</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – Robot acceleration vector.</p></li>
+<li><p><strong>update_physics</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to compute the non-linear effects and
+internal/external forces.
+Optional: True by default.</p></li>
+<li><p><strong>update_com</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to compute the COM of the robot AND each
+link individually. The global COM is the first index.
+Optional: False by default.</p></li>
+<li><p><strong>update_energy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to compute the energy of the robot.
+Optional: False by default</p></li>
+<li><p><strong>update_jacobian</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to compute the jacobians.
+Optional: False by default.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether the state corresponds to the
+theoretical model when updating and fetching
+the robot’s state.
+Optional: True by default.</p></li>
+<li><p><strong>update_collisions</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.get_body_world_transform">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">get_body_world_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#get_body_world_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.get_body_world_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the transform from world frame to body frame for a given body.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is assumed that <cite>update_quantities</cite> has been called beforehand.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>body_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Name of the body.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether the state corresponds to the
+theoretical model when updating and fetching
+the robot’s state.
+Optional: True by default.</p></li>
+<li><p><strong>copy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to return the internal buffers (which could be
+altered) or copy them.
+Optional: True by default. It is less efficient but safer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Body transform.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pinocchio.pinocchio_pywrap.SE3</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.get_body_world_velocity">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">get_body_world_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#get_body_world_velocity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.get_body_world_velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the spatial velocity in world frame.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is assumed that <cite>update_quantities</cite> has been called beforehand.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>body_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Name of the body.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether the state corresponds to the
+theoretical model when updating and fetching
+the robot’s state.
+Optional: True by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Spatial velocity.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pinocchio.pinocchio_pywrap.SE3</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.get_body_world_acceleration">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">get_body_world_acceleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#get_body_world_acceleration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.get_body_world_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the body spatial acceleration in world frame.</p>
+<p>The moment of this tensor (i.e linear part) is NOT the linear acceleration
+of the center of the body frame, expressed in the world frame.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is assumed that <cite>update_quantities</cite> has been called.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>body_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Name of the body.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether the state corresponds to the
+theoretical model when updating and fetching
+the robot’s state.
+Optional: True by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Spatial acceleration.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pinocchio.pinocchio_pywrap.SE3</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.compute_transform_contact">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">compute_transform_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_profile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#compute_transform_contact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.compute_transform_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the transform the apply to the freeflyer to touch the ground
+with up to 3 contact points.</p>
+<p>This method can be used in conjunction with
+<cite>compute_freeflyer_state_from_fixed_body</cite> to ensures no contact points are
+going through the ground and up to three are in contact.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is assumed that <cite>update_quantities</cite> has been called.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>ground_profile</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>[</em><em>numpy.ndarray</em><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>]</em>) – Ground profile callback.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The transform the apply in order to touch the ground.
+If the robot has no contact point, then the identity is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pinocchio.pinocchio_pywrap.SE3</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.compute_freeflyer_state_from_fixed_body">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">compute_freeflyer_state_from_fixed_body</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_body_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_profile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#compute_freeflyer_state_from_fixed_body"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.compute_freeflyer_state_from_fixed_body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill rootjoint data from articular data when a body is fixed and
+aligned with world frame.</p>
+<p>This method computes the position of freeflyer in the fixed body frame.</p>
+<p>If <strong>fixed_body_name</strong> is omitted, it will default to either:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the set of three contact points</p></li>
+<li><p>a single collision body</p></li>
+</ul>
+</div></blockquote>
+<p>In such a way that no contact points nor collision bodies are going through
+the ground and at least contact points or a collision body are touching it.</p>
+<p><cite>None</cite> is returned if their is no contact frame or if the robot does not
+have a freeflyer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function modifies the internal robot data.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The method fills in freeflyer data instead of returning an updated copy
+for efficiency.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – Must contain current articular data. The freeflyer data
+can contain any value, it will be ignored and replaced.</p></li>
+<li><p><strong>velocity</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – See position.</p></li>
+<li><p><strong>acceleration</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – See position.</p></li>
+<li><p><strong>fixed_body_name</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – Name of the body frame that is considered fixed
+parallel to world frame.
+Optional: It will be infered from the set of
+contact points and collision bodies.</p></li>
+<li><p><strong>ground_profile</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>[</em><em>numpy.ndarray</em><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>numpy.ndarray</em><em>]</em><em>]</em><em>]</em>) – Ground profile callback.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – Whether the state corresponds to the theoretical model when updating
+and fetching the robot’s state. Must be False if <cite>fixed_body_name</cite> is
+not speficied.
+Optional: True by default if <cite>fixed_body_name</cite> is specified, False
+otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Name of the contact frame, if any.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.compute_efforts_from_fixed_body">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">compute_efforts_from_fixed_body</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_body_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#compute_efforts_from_fixed_body"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.compute_efforts_from_fixed_body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the efforts using RNEA method.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function modifies the internal robot data.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – Robot configuration vector.</p></li>
+<li><p><strong>velocity</strong> (<em>numpy.ndarray</em>) – Robot velocity vector.</p></li>
+<li><p><strong>acceleration</strong> (<em>numpy.ndarray</em>) – Robot acceleration vector.</p></li>
+<li><p><strong>fixed_body_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Name of the body frame.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether the state corresponds to the
+theoretical model when updating and fetching
+the robot’s state.
+Optional: True by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>articular efforts and external forces.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[numpy.ndarray, pinocchio.pinocchio_pywrap.Force]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.compute_inverse_dynamics">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">compute_inverse_dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_theoretical_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#compute_inverse_dynamics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.compute_inverse_dynamics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the motor torques through inverse dynamics, assuming to external
+forces except the one resulting from the anyaltical constraints applied on
+the model.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function modifies the internal robot data.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot</strong> (<a class="reference internal" href="core/robot.html#jiminy_py.core.Model" title="jiminy_py.core.Model"><em>jiminy_py.core.Model</em></a>) – Jiminy robot.</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – Robot configuration vector.</p></li>
+<li><p><strong>velocity</strong> (<em>numpy.ndarray</em>) – Robot velocity vector.</p></li>
+<li><p><strong>acceleration</strong> (<em>numpy.ndarray</em>) – Robot acceleration vector.</p></li>
+<li><p><strong>use_theoretical_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether the position, velocity and
+acceleration are associated with the
+theoretical model instead of the actual one.
+Optional: False by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>motor torques.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.compute_freeflyer">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">compute_freeflyer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajectory_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freeflyer_continuity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#compute_freeflyer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.compute_freeflyer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the freeflyer positions and velocities.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function modifies the internal robot data.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trajectory_data</strong> (<a class="reference internal" href="log.html#jiminy_py.log.TrajectoryDataType" title="jiminy_py.log.TrajectoryDataType"><em>jiminy_py.log.TrajectoryDataType</em></a>) – Sequence of States for which to retrieve the
+freeflyer.</p></li>
+<li><p><strong>freeflyer_continuity</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether or not to enforce the continuity
+in position of the freeflyer.
+Optional: True by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jiminy_py.dynamics.compute_efforts">
+<span class="sig-prename descclassname"><span class="pre">jiminy_py.dynamics.</span></span><span class="sig-name descname"><span class="pre">compute_efforts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajectory_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jiminy_py/dynamics.html#compute_efforts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jiminy_py.dynamics.compute_efforts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the efforts in the trajectory using RNEA method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>trajectory_data</strong> (<a class="reference internal" href="log.html#jiminy_py.log.TrajectoryDataType" title="jiminy_py.log.TrajectoryDataType"><em>jiminy_py.log.TrajectoryDataType</em></a>) – Sequence of States for which to compute the
+efforts.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="viewer.html" class="btn btn-neutral float-right" title="viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="simulator.html" class="btn btn-neutral float-left" title="simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

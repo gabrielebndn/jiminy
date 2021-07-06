@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>jiminy_py.log &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>jiminy_py.log</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for jiminy_py.log</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">fnmatch</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span>
+<span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+<span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_right</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
+<span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">jiminy</span>
+<span class="kn">from</span> <span class="nn">.state</span> <span class="kn">import</span> <span class="n">State</span>
+
+
+<div class="viewcode-block" id="TrajectoryDataType"><a class="viewcode-back" href="../../api/jiminy_py/viewer.html#jiminy_py.log.TrajectoryDataType">[docs]</a><span class="k">class</span> <span class="nc">TrajectoryDataType</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="c1"># List of State objects of increasing time.</span>
+    <span class="n">evolution_robot</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">State</span><span class="p">]</span>
+    <span class="c1"># Jiminy robot. None if omitted.</span>
+    <span class="n">robot</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">jiminy</span><span class="o">.</span><span class="n">Robot</span><span class="p">]</span>
+    <span class="c1"># Whether to use theoretical or actual model</span>
+    <span class="n">use_theoretical_model</span><span class="p">:</span> <span class="nb">bool</span></div>
+
+
+<span class="k">def</span> <span class="nf">_is_log_binary</span><span class="p">(</span><span class="n">fullpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True if the given fullpath appears to be binary log file.</span>
+
+<span class="sd">    File is considered to be binary log if it contains a NULL byte.</span>
+
+<span class="sd">    See https://stackoverflow.com/a/11301631/4820605 for reference.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">if</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\0</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">block</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+
+<div class="viewcode-block" id="read_log"><a class="viewcode-back" href="../../api/jiminy_py/log.html#jiminy_py.log.read_log">[docs]</a><span class="k">def</span> <span class="nf">read_log</span><span class="p">(</span><span class="n">fullpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+             <span class="n">file_format</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+             <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;Read a logfile from jiminy.</span>
+
+<span class="sd">    This function supports both text (csv) and binary log.</span>
+
+<span class="sd">    :param fullpath: Name of the file to load.</span>
+<span class="sd">    :param file_format: Name of the file to load.</span>
+
+<span class="sd">    :returns: Pair of dictionaries containing respectively the logged values,</span>
+<span class="sd">              and the constants.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Handling of file file_format</span>
+    <span class="k">if</span> <span class="n">file_format</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">file_ext</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">fullpath</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span>
+        <span class="k">if</span> <span class="n">file_ext</span> <span class="o">==</span> <span class="s1">&#39;.data&#39;</span><span class="p">:</span>
+            <span class="n">file_format</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span>
+        <span class="k">elif</span> <span class="n">file_ext</span> <span class="o">==</span> <span class="s1">&#39;.csv&#39;</span> <span class="ow">or</span> <span class="n">file_ext</span> <span class="o">==</span> <span class="s1">&#39;.txt&#39;</span><span class="p">:</span>
+            <span class="n">file_format</span> <span class="o">=</span> <span class="s1">&#39;csv&#39;</span>
+        <span class="k">elif</span> <span class="n">file_ext</span> <span class="o">==</span> <span class="s1">&#39;.h5&#39;</span> <span class="ow">or</span> <span class="n">file_ext</span> <span class="o">==</span> <span class="s1">&#39;.hdf5&#39;</span><span class="p">:</span>
+            <span class="n">file_format</span> <span class="o">=</span> <span class="s1">&#39;hdf5&#39;</span>
+        <span class="k">if</span> <span class="n">file_format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_is_log_binary</span><span class="p">(</span><span class="n">fullpath</span><span class="p">):</span>
+            <span class="n">file_format</span> <span class="o">=</span> <span class="s1">&#39;csv&#39;</span>
+    <span class="k">if</span> <span class="n">file_format</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Impossible to determine the file format automatically. Please &quot;</span>
+            <span class="s2">&quot;specify it manually.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">file_format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span> <span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="s1">&#39;hdf5&#39;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Invalid &#39;file_format&#39; argument. It must be either &#39;binary&#39;, &quot;</span>
+            <span class="s2">&quot;&#39;csv&#39; or &#39;hdf5&#39;.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">file_format</span> <span class="o">==</span> <span class="s1">&#39;binary&#39;</span><span class="p">:</span>
+        <span class="c1"># Read binary file using C++ parser.</span>
+        <span class="n">data_dict</span><span class="p">,</span> <span class="n">const_dict</span> <span class="o">=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">Engine</span><span class="o">.</span><span class="n">read_log_binary</span><span class="p">(</span><span class="n">fullpath</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_format</span> <span class="o">==</span> <span class="s1">&#39;csv&#39;</span><span class="p">:</span>
+        <span class="c1"># Read text csv file.</span>
+        <span class="n">const_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">const_str</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">log</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">const_str</span><span class="p">:</span>
+                <span class="c1"># Extract the name and value of the constant.</span>
+                <span class="c1"># Note that newline is stripped at the end of the value.</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+                <span class="c1"># Gather the constants in a dictionary.</span>
+                <span class="n">const_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Read data from the log file, skipping the first line, namely the</span>
+            <span class="c1"># constants definition.</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">DictReader</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">reader</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+        <span class="c1"># Convert every element to array to provide same API as the C++ parser,</span>
+        <span class="c1"># removing spaces present before the keys.</span>
+        <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="k">elif</span> <span class="n">file_format</span> <span class="o">==</span> <span class="s1">&#39;hdf5&#39;</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">parse_constant</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;Process some particular constants based on its name or type.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">value</span>
+
+        <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">fullpath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="c1"># Load constants</span>
+            <span class="n">const_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;constants&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">const_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">parse_constant</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">dataset</span><span class="p">[()])</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;constants&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">const_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">parse_constant</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+            <span class="c1"># Extract time</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Global.Time&#39;</span><span class="p">][()]</span> <span class="o">/</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Global.Time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">]</span>
+
+            <span class="c1"># Load variables (1D time-series)</span>
+            <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Global.Time&#39;</span><span class="p">:</span> <span class="n">time</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;variables&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">data_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">][()]</span>
+
+    <span class="k">return</span> <span class="n">data_dict</span><span class="p">,</span> <span class="n">const_dict</span></div>
+
+
+<div class="viewcode-block" id="extract_trajectory_data_from_log"><a class="viewcode-back" href="../../api/jiminy_py/log.html#jiminy_py.log.extract_trajectory_data_from_log">[docs]</a><span class="k">def</span> <span class="nf">extract_trajectory_data_from_log</span><span class="p">(</span><span class="n">log_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
+                                     <span class="n">robot</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">Model</span>
+                                     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TrajectoryDataType</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Extract the minimal required information from raw log data in order to</span>
+<span class="sd">    replay the simulation in a viewer.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        It extracts the required data for replay, namely temporal evolution of:</span>
+<span class="sd">          - robot configuration: to display of the robot on the scene,</span>
+<span class="sd">          - robot velocity: to update velocity-dependent markers such as DCM,</span>
+<span class="sd">          - external forces: to update force-dependent markers.</span>
+
+<span class="sd">    :param log_data: Data from the log file, in a dictionnary.</span>
+<span class="sd">    :param robot: Jiminy robot.</span>
+
+<span class="sd">    :returns: Trajectory dictionary. The actual trajectory corresponds to the</span>
+<span class="sd">              field &quot;evolution_robot&quot; and it is a list of State object. The</span>
+<span class="sd">              other fields are additional information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">log_data</span><span class="p">[</span><span class="s2">&quot;Global.Time&quot;</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Extract the joint positions, velocities and external forces over time</span>
+        <span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span>
+            <span class="n">log_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;HighLevelController&quot;</span><span class="p">,</span> <span class="n">field</span><span class="p">)),</span> <span class="p">[])</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">logfile_position_headers</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">velocities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span>
+            <span class="n">log_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;HighLevelController&quot;</span><span class="p">,</span> <span class="n">field</span><span class="p">)),</span> <span class="p">[])</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">logfile_velocity_headers</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">forces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span>
+            <span class="n">log_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;HighLevelController&quot;</span><span class="p">,</span> <span class="n">field</span><span class="p">)),</span> <span class="p">[])</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">logfile_f_external_headers</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Determine available data</span>
+        <span class="n">has_positions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">has_velocities</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">velocities</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">has_forces</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">forces</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+        <span class="c1"># Determine whether to use the theoretical or flexible model</span>
+        <span class="n">use_theoretical_model</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">robot</span><span class="o">.</span><span class="n">is_flexible</span>
+
+        <span class="c1"># Create state sequence</span>
+        <span class="n">evolution_robot</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">f_ext</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">times</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">has_positions</span><span class="p">:</span>
+                <span class="n">q</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">has_velocities</span><span class="p">:</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">velocities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">has_forces</span><span class="p">:</span>
+                <span class="n">f_ext</span> <span class="o">=</span> <span class="p">[</span><span class="n">forces</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">j</span><span class="p">)]</span>
+                         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">njoints</span><span class="p">)]</span>
+            <span class="n">evolution_robot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">State</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">f_ext</span><span class="o">=</span><span class="n">f_ext</span><span class="p">))</span>
+
+        <span class="n">traj_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;evolution_robot&quot;</span><span class="p">:</span> <span class="n">evolution_robot</span><span class="p">,</span>
+                     <span class="s2">&quot;robot&quot;</span><span class="p">:</span> <span class="n">robot</span><span class="p">,</span>
+                     <span class="s2">&quot;use_theoretical_model&quot;</span><span class="p">:</span> <span class="n">use_theoretical_model</span><span class="p">}</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>  <span class="c1"># The current options are inconsistent with log data</span>
+        <span class="c1"># Toggle flexibilities</span>
+        <span class="n">model_options</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">get_model_options</span><span class="p">()</span>
+        <span class="n">dyn_options</span> <span class="o">=</span> <span class="n">model_options</span><span class="p">[</span><span class="s2">&quot;dynamics&quot;</span><span class="p">]</span>
+        <span class="n">dyn_options</span><span class="p">[</span><span class="s2">&quot;enableFlexibleModel&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">robot</span><span class="o">.</span><span class="n">is_flexible</span>
+        <span class="n">robot</span><span class="o">.</span><span class="n">set_model_options</span><span class="p">(</span><span class="n">model_options</span><span class="p">)</span>
+
+        <span class="c1"># Get viewer data</span>
+        <span class="n">traj_data</span> <span class="o">=</span> <span class="n">extract_trajectory_data_from_log</span><span class="p">(</span><span class="n">log_data</span><span class="p">,</span> <span class="n">robot</span><span class="p">)</span>
+
+        <span class="c1"># Restore back flexibilities</span>
+        <span class="n">dyn_options</span><span class="p">[</span><span class="s2">&quot;enableFlexibleModel&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">robot</span><span class="o">.</span><span class="n">is_flexible</span>
+        <span class="n">robot</span><span class="o">.</span><span class="n">set_model_options</span><span class="p">(</span><span class="n">model_options</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">traj_data</span></div>
+
+
+<div class="viewcode-block" id="build_robot_from_log_constants"><a class="viewcode-back" href="../../api/jiminy_py/log.html#jiminy_py.log.build_robot_from_log_constants">[docs]</a><span class="k">def</span> <span class="nf">build_robot_from_log_constants</span><span class="p">(</span>
+        <span class="n">log_constants</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+        <span class="n">mesh_package_dirs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">Robot</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Build robot from log constants.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        model options and `robot.pinocchio_model` are guarentee to be the same</span>
+<span class="sd">        as during the simulation until the next call to `reset` method.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        It returns a valid and fully initialized robot, that can be used to</span>
+<span class="sd">        perform new simulation if added to a Jiminy Engine, but the original</span>
+<span class="sd">        controller is lost.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        It does ot require the original URDF file to exist, but the original</span>
+<span class="sd">        mesh paths (if any) must be valid since they are not bundle in the log</span>
+<span class="sd">        archive for now.</span>
+
+<span class="sd">    :param log_file: Path of the simulation log file, in any format.</span>
+<span class="sd">    :param mesh_package_dirs: Prepend custom mesh package seach path</span>
+<span class="sd">                              directories to the ones provided by log file. It</span>
+<span class="sd">                              may be necessary to specify it to read log</span>
+<span class="sd">                              generated on a different environment.</span>
+
+<span class="sd">    :returns: Reconstructed robot, and parsed log data as returned by</span>
+<span class="sd">              `jiminy_py.log.read_log` method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Make sure provided &#39;mesh_package_dirs&#39; is a list</span>
+    <span class="n">mesh_package_dirs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mesh_package_dirs</span><span class="p">)</span>
+
+    <span class="c1"># Extract robot info</span>
+    <span class="n">pinocchio_model_str</span> <span class="o">=</span> <span class="n">log_constants</span><span class="p">[</span>
+        <span class="s2">&quot;HighLevelController.pinocchio_model&quot;</span><span class="p">]</span>
+    <span class="n">urdf_file</span> <span class="o">=</span> <span class="n">log_constants</span><span class="p">[</span><span class="s2">&quot;HighLevelController.urdf_file&quot;</span><span class="p">]</span>
+    <span class="n">has_freeflyer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">log_constants</span><span class="p">[</span><span class="s2">&quot;HighLevelController.has_freeflyer&quot;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="s2">&quot;HighLevelController.mesh_package_dirs&quot;</span> <span class="ow">in</span> <span class="n">log_constants</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">mesh_package_dirs</span> <span class="o">+=</span> <span class="n">log_constants</span><span class="p">[</span>
+            <span class="s2">&quot;HighLevelController.mesh_package_dirs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+    <span class="n">all_options</span> <span class="o">=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">load_config_json_string</span><span class="p">(</span>
+        <span class="n">log_constants</span><span class="p">[</span><span class="s2">&quot;HighLevelController.options&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Create temporary URDF file</span>
+    <span class="n">fd</span><span class="p">,</span> <span class="n">urdf_path</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkstemp</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.urdf&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">urdf_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
+
+    <span class="c1"># Build robot</span>
+    <span class="n">robot</span> <span class="o">=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">urdf_path</span><span class="p">,</span> <span class="n">has_freeflyer</span><span class="p">,</span> <span class="n">mesh_package_dirs</span><span class="p">)</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">all_options</span><span class="p">[</span><span class="s2">&quot;system&quot;</span><span class="p">][</span><span class="s2">&quot;robot&quot;</span><span class="p">])</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">loadFromString</span><span class="p">(</span><span class="n">pinocchio_model_str</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">robot</span></div>
+
+
+<div class="viewcode-block" id="emulate_sensors_data_from_log"><a class="viewcode-back" href="../../api/jiminy_py/log.html#jiminy_py.log.emulate_sensors_data_from_log">[docs]</a><span class="k">def</span> <span class="nf">emulate_sensors_data_from_log</span><span class="p">(</span><span class="n">log_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
+                                  <span class="n">robot</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">Model</span>
+                                  <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Helper to make it easy to emulate sensor data update based on log data.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        It returns an update_hook that can forwarding the `Viewer.replay` to</span>
+<span class="sd">        display sensor information such as contact forces for instance.</span>
+
+<span class="sd">    :param log_data: Data from the log file, in a dictionnary.</span>
+<span class="sd">    :param robot: Jiminy robot.</span>
+
+<span class="sd">    :returns: Callable taking update time in argument and returning nothing.</span>
+<span class="sd">              Note that it does not through an exception if out-of-range, but</span>
+<span class="sd">              rather clip to desired time to the available data range.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Extract time from log</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">log_data</span><span class="p">[</span><span class="s1">&#39;Global.Time&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Filter sensors whose data is available</span>
+    <span class="n">sensors_set</span><span class="p">,</span> <span class="n">sensors_log</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sensor_type</span><span class="p">,</span> <span class="n">sensors_names</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">sensors_names</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">sensor_fieldnames</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">jiminy</span><span class="p">,</span> <span class="n">sensor_type</span><span class="p">)</span><span class="o">.</span><span class="n">fieldnames</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sensors_names</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">get_sensor</span><span class="p">(</span><span class="n">sensor_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">log_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">sensor_log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span>
+                    <span class="n">log_data</span><span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">sensor</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">field</span><span class="p">))]</span>
+                    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">sensor_fieldnames</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">sensors_set</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span>
+                <span class="n">sensors_log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sensor_log</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_hook</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">nonlocal</span> <span class="n">times</span><span class="p">,</span> <span class="n">sensors_set</span><span class="p">,</span> <span class="n">sensors_log</span>
+
+        <span class="c1"># Get surrounding indices in log data</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">i_prev</span><span class="p">,</span> <span class="n">i_next</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">times</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Early return if no more data is available</span>
+        <span class="k">if</span> <span class="n">i_next</span> <span class="o">==</span> <span class="n">i_prev</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Compute current time ratio</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">times</span><span class="p">[</span><span class="n">i_prev</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">times</span><span class="p">[</span><span class="n">i_next</span><span class="p">]</span> <span class="o">-</span> <span class="n">times</span><span class="p">[</span><span class="n">i_prev</span><span class="p">])</span>
+
+        <span class="c1"># Update sensors data</span>
+        <span class="k">for</span> <span class="n">sensor</span><span class="p">,</span> <span class="n">sensor_log</span><span class="p">,</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sensors_set</span><span class="p">,</span> <span class="n">sensors_log</span><span class="p">):</span>
+            <span class="n">value_prev</span><span class="p">,</span> <span class="n">value_next</span> <span class="o">=</span> <span class="n">sensor_log</span><span class="p">[</span><span class="n">i_prev</span><span class="p">],</span> <span class="n">sensor_log</span><span class="p">[</span><span class="n">i_next</span><span class="p">]</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value_prev</span> <span class="o">+</span> <span class="p">(</span><span class="n">value_next</span> <span class="o">-</span> <span class="n">value_prev</span><span class="p">)</span> <span class="o">*</span> <span class="n">ratio</span>
+            <span class="n">sensor</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">return</span> <span class="n">update_hook</span></div>
+
+
+<span class="k">def</span> <span class="nf">plot_log</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">RawTextHelpFormatter</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">dedent</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            Plot data from a jiminy log file using matplotlib.</span>
+<span class="s2">            Specify a list of fields to plot, separated by a colon for </span><span class="se">\</span>
+<span class="s2">            plotting on the same subplot.</span>
+
+<span class="s2">            Example: h1 h2:h3:h4 generates two subplots, one with h1, one </span><span class="se">\</span>
+<span class="s2">                     with h2, h3, and h4.</span>
+
+<span class="s2">            Wildcard token &#39;*&#39; can be used. In such a case:</span>
+<span class="s2">            - If *h2* matches several fields:</span>
+<span class="s2">            each field will be plotted individually in subplots.</span>
+<span class="s2">            - If :*h2* or :*h2*:*h3*:*h4* matches several fields:</span>
+<span class="s2">            each field will be plotted in the same subplot.</span>
+<span class="s2">            - If *h2*:*h3*:*h4* matches several fields:</span>
+<span class="s2">            each match of h2, h3, and h4 will be plotted jointly in subplots.</span>
+
+<span class="s2">            Note that if the number of matches for h2, h3, h4 differs, only </span><span class="se">\</span>
+<span class="s2">            the minimum number will be plotted.</span>
+
+<span class="s2">            Enter no plot command (only the file name) to view the list of </span><span class="se">\</span>
+<span class="s2">            fields available inside the file.&quot;</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">))</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Input logfile.&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;--compare&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">dedent</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            Colon-separated list of comparison log files.</span>
+
+<span class="s2">            The same data as the original log will be plotted in the same </span><span class="se">\</span>
+<span class="s2">            subplot, with different line styes. These logfiles must be of the </span><span class="se">\</span>
+<span class="s2">            same length and contain the same header as the original log file.</span>
+
+<span class="s2">            Note that you can click on the figure top legend to show / hide </span><span class="se">\</span>
+<span class="s2">            data from specific files.</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">))</span>
+    <span class="n">main_arguments</span><span class="p">,</span> <span class="n">plotting_commands</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">()</span>
+
+    <span class="c1"># Load log file</span>
+    <span class="n">log_data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_log</span><span class="p">(</span><span class="n">main_arguments</span><span class="o">.</span><span class="n">input</span><span class="p">)</span>
+
+    <span class="c1"># If no plotting commands, display the list of headers instead</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">plotting_commands</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available data:&quot;</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">log_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Load comparision logs, if any.</span>
+    <span class="n">compare_data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">main_arguments</span><span class="o">.</span><span class="n">compare</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">fullpath</span> <span class="ow">in</span> <span class="n">main_arguments</span><span class="o">.</span><span class="n">compare</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">):</span>
+            <span class="n">compare_data</span><span class="p">[</span><span class="n">fullpath</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_log</span><span class="p">(</span><span class="n">fullpath</span><span class="p">)</span>
+
+    <span class="c1"># Define linestyle cycle that will be used for comparison logs</span>
+    <span class="n">linestyles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;-.&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">]</span>
+
+    <span class="c1"># Parse plotting arguments.</span>
+    <span class="n">plotted_elements</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">plotting_commands</span><span class="p">:</span>
+        <span class="c1"># Check that the command is valid, i.e. that all elements exits.</span>
+        <span class="c1"># If it is the case, add it to the list.</span>
+        <span class="n">same_subplot</span> <span class="o">=</span> <span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Expand each element according to wildcard expression</span>
+        <span class="n">matching_headers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">headers</span><span class="p">:</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">fnmatch</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">log_data</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">h</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">matching_headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No matching headers for expression </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matching_headers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Compute number of subplots</span>
+        <span class="k">if</span> <span class="n">same_subplot</span><span class="p">:</span>
+            <span class="n">plotted_elements</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
+                <span class="n">e</span> <span class="k">for</span> <span class="n">l_sub</span> <span class="ow">in</span> <span class="n">matching_headers</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l_sub</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_subplots</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">matching_headers</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_subplots</span><span class="p">):</span>
+                <span class="n">plotted_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">[</span><span class="n">header</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">matching_headers</span><span class="p">])</span>
+
+    <span class="c1"># Create figure.</span>
+    <span class="n">n_plot</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">plotted_elements</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n_plot</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing to plot. Exiting...&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+    <span class="c1"># Create subplots, arranging them in a rectangular fashion.</span>
+    <span class="c1"># Do not allow for n_cols to be more than n_rows + 2.</span>
+    <span class="n">n_cols</span> <span class="o">=</span> <span class="n">n_plot</span>
+    <span class="n">n_rows</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n_cols</span> <span class="o">&gt;</span> <span class="n">n_rows</span> <span class="o">+</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">n_rows</span> <span class="o">=</span> <span class="n">n_rows</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">n_cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n_plot</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">n_rows</span><span class="p">))</span>
+
+    <span class="n">axes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_plot</span><span class="p">):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n_rows</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_cols</span><span class="p">),</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">get_shared_x_axes</span><span class="p">()</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="p">)</span>
+        <span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="c1"># Store lines in dictionnary {file_name: plotted lines}, to enable to</span>
+    <span class="c1"># toggle individually the visibility the data related to each of them.</span>
+    <span class="n">main_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">main_arguments</span><span class="o">.</span><span class="n">input</span><span class="p">)</span>
+    <span class="n">plotted_lines</span> <span class="o">=</span> <span class="p">{</span><span class="n">main_name</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">compare_data</span><span class="p">:</span>
+        <span class="n">plotted_lines</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">set_window_title</span><span class="p">(</span><span class="n">main_arguments</span><span class="o">.</span><span class="n">input</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">log_data</span><span class="p">[</span><span class="s1">&#39;Global.Time&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Plot each element.</span>
+    <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">plotted_elem</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">plotted_elements</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">plotted_elem</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">log_data</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">plotted_lines</span><span class="p">[</span><span class="n">main_name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+            <span class="n">linecycler</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">linestyles</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">compare_data</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">compare_data</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="s1">&#39;Global.Time&#39;</span><span class="p">],</span>
+                               <span class="n">compare_data</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">name</span><span class="p">],</span>
+                               <span class="nb">next</span><span class="p">(</span><span class="n">linecycler</span><span class="p">),</span>
+                               <span class="n">color</span><span class="o">=</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+                <span class="n">plotted_lines</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Add legend and grid for each plot.</span>
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="c1"># If a compare plot is present, add overall legend specifying line types</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+        <span class="n">top</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="mf">0.06</span><span class="p">,</span>
+        <span class="n">right</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
+        <span class="n">wspace</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">hspace</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">compare_data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">linecycler</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">linestyles</span><span class="p">)</span>
+
+        <span class="c1"># Dictionnary: line in legend to log name</span>
+        <span class="n">legend_lines</span> <span class="o">=</span> <span class="p">{</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">):</span> <span class="n">main_name</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">data_str</span> <span class="ow">in</span> <span class="n">compare_data</span><span class="p">:</span>
+            <span class="n">legend_line_object</span> <span class="o">=</span> <span class="n">Line2D</span><span class="p">(</span>
+                <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">linecycler</span><span class="p">))</span>
+            <span class="n">legend_lines</span><span class="p">[</span><span class="n">legend_line_object</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">data_str</span><span class="p">)</span>
+        <span class="n">legend</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+            <span class="n">legend_lines</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">legend_lines</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span>
+            <span class="n">ncol</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="c1"># Create a dict {picker: log name} for both the lines and the legend</span>
+        <span class="n">picker_to_name</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">legline</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">legend</span><span class="o">.</span><span class="n">get_lines</span><span class="p">(),</span> <span class="n">legend_lines</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+            <span class="n">legline</span><span class="o">.</span><span class="n">set_picker</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 10 pts tolerance</span>
+            <span class="n">picker_to_name</span><span class="p">[</span><span class="n">legline</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">for</span> <span class="n">legline</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">legend</span><span class="o">.</span><span class="n">get_texts</span><span class="p">(),</span> <span class="n">legend_lines</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+            <span class="n">legline</span><span class="o">.</span><span class="n">set_picker</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 10 pts tolerance</span>
+            <span class="n">picker_to_name</span><span class="p">[</span><span class="n">legline</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="c1"># Increase top margin to fit legend</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="n">legend_height</span> <span class="o">=</span> <span class="n">legend</span><span class="o">.</span><span class="n">get_window_extent</span><span class="p">()</span><span class="o">.</span><span class="n">inverse_transformed</span><span class="p">(</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span><span class="o">.</span><span class="n">height</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.98</span><span class="o">-</span><span class="n">legend_height</span><span class="p">)</span>
+
+        <span class="c1"># Make legend interactive</span>
+        <span class="k">def</span> <span class="nf">legend_clicked</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">picker_to_name</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">artist</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">plotted_lines</span><span class="p">[</span><span class="n">file_name</span><span class="p">]:</span>
+                <span class="n">line</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">get_visible</span><span class="p">())</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s1">&#39;pick_event&#39;</span><span class="p">,</span> <span class="n">legend_clicked</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1087 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>jiminy_py.simulator &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>jiminy_py.simulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for jiminy_py.simulator</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">toml</span>
+<span class="kn">import</span> <span class="nn">atexit</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib.figure</span> <span class="kn">import</span> <span class="n">Figure</span>
+
+<span class="kn">import</span> <span class="nn">pinocchio</span> <span class="k">as</span> <span class="nn">pin</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">jiminy</span>
+<span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="p">(</span><span class="n">EncoderSensor</span> <span class="k">as</span> <span class="n">encoder</span><span class="p">,</span>
+                   <span class="n">EffortSensor</span> <span class="k">as</span> <span class="n">effort</span><span class="p">,</span>
+                   <span class="n">ContactSensor</span> <span class="k">as</span> <span class="n">contact</span><span class="p">,</span>
+                   <span class="n">ForceSensor</span> <span class="k">as</span> <span class="n">force</span><span class="p">,</span>
+                   <span class="n">ImuSensor</span> <span class="k">as</span> <span class="n">imu</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.robot</span> <span class="kn">import</span> <span class="p">(</span><span class="n">generate_hardware_description_file</span><span class="p">,</span>
+                    <span class="n">BaseJiminyRobot</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.plot</span> <span class="kn">import</span> <span class="n">TabbedFigure</span>
+<span class="kn">from</span> <span class="nn">.log</span> <span class="kn">import</span> <span class="n">read_log</span><span class="p">,</span> <span class="n">build_robot_from_log_constants</span>
+<span class="kn">from</span> <span class="nn">.viewer</span> <span class="kn">import</span> <span class="p">(</span><span class="n">TrajectoryDataType</span><span class="p">,</span>
+                     <span class="n">interactive_mode</span><span class="p">,</span>
+                     <span class="n">extract_replay_data_from_log_data</span><span class="p">,</span>
+                     <span class="n">play_trajectories</span><span class="p">,</span>
+                     <span class="n">Viewer</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">interactive_mode</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="n">SENSORS_FIELDS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">encoder</span><span class="p">:</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">,</span>
+    <span class="n">effort</span><span class="p">:</span> <span class="n">effort</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">,</span>
+    <span class="n">contact</span><span class="p">:</span> <span class="n">contact</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">,</span>
+    <span class="n">force</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">):]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">force</span><span class="o">.</span><span class="n">fieldnames</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">imu</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">):]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">imu</span><span class="o">.</span><span class="n">fieldnames</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Quat&#39;</span><span class="p">,</span> <span class="s1">&#39;Gyro&#39;</span><span class="p">,</span> <span class="s1">&#39;Accel&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">DEFAULT_UPDATE_PERIOD</span> <span class="o">=</span> <span class="mf">1.0e-3</span>  <span class="c1"># 0.0 for time continuous update</span>
+<span class="n">DEFAULT_GROUND_STIFFNESS</span> <span class="o">=</span> <span class="mf">4.0e6</span>
+<span class="n">DEFAULT_GROUND_DAMPING</span> <span class="o">=</span> <span class="mf">2.0e3</span>
+
+
+<div class="viewcode-block" id="Simulator"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator">[docs]</a><span class="k">class</span> <span class="nc">Simulator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This class wraps the different submodules of Jiminy, namely the robot,</span>
+<span class="sd">    controller, engine, and viewer, as a single simulation environment. The</span>
+<span class="sd">    user only as to create a robot and associated controller if any, and</span>
+<span class="sd">    give high-level instructions to the simulator.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">robot</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">Robot</span><span class="p">,</span>
+                 <span class="n">controller</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">jiminy</span><span class="o">.</span><span class="n">AbstractController</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">engine_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">jiminy</span><span class="o">.</span><span class="n">Engine</span><span class="p">]</span> <span class="o">=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">Engine</span><span class="p">,</span>
+                 <span class="n">use_theoretical_model</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                 <span class="n">viewer_backend</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param robot: Jiminy robot already initialized.</span>
+<span class="sd">        :param controller: Jiminy (observer-)controller already initialized.</span>
+<span class="sd">                           Optional: None by default.</span>
+<span class="sd">        :param engine_class: Class of engine to use.</span>
+<span class="sd">                             Optional: jiminy_py.core.Engine by default.</span>
+<span class="sd">        :param use_theoretical_model: Whether the state corresponds to the</span>
+<span class="sd">                                      theoretical model when updating and</span>
+<span class="sd">                                      fetching the robot&#39;s state.</span>
+<span class="sd">        :param viewer_backend: Backend of the viewer, e.g. panda3d or meshcat.</span>
+<span class="sd">                               Optional: It is setup-dependent. See `Viewer`</span>
+<span class="sd">                               documentation for details about it.</span>
+<span class="sd">        :param kwargs: Used arguments to allow automatic pipeline wrapper</span>
+<span class="sd">                       generation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Backup the user arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_theoretical_model</span> <span class="o">=</span> <span class="n">use_theoretical_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">viewer_backend</span> <span class="o">=</span> <span class="n">viewer_backend</span>
+
+        <span class="c1"># Wrap callback in nested function to hide update of progress bar</span>
+        <span class="k">def</span> <span class="nf">callback_wrapper</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                             <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+                             <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">nonlocal</span> <span class="bp">self</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__pbar</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">__pbar</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_callback</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Instantiate the low-level Jiminy engine, then initialize it</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">engine_class</span><span class="p">()</span>
+        <span class="n">hresult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">controller</span><span class="p">,</span> <span class="n">callback_wrapper</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hresult</span> <span class="o">!=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">hresult_t</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;Invalid robot or controller. Make sure they are both &quot;</span>
+                <span class="s2">&quot;initialized.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Create shared memories and python-native attribute for fast access</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_simulation_running</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">is_simulation_running</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">stepper_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">system_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_data</span>
+
+        <span class="c1"># Viewer management</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_viewers</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Internal buffer for progress bar management</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__pbar</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">tqdm</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Figure holder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Figure</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Reset the low-level jiminy engine</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Simulator.build"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.build">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+              <span class="n">urdf_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+              <span class="n">hardware_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">mesh_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">has_freeflyer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+              <span class="n">config_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">avoid_instable_collisions</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+              <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+              <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Simulator&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Create a new simulator instance from scratch, based on configuration</span>
+<span class="sd">        files only.</span>
+
+<span class="sd">        :param urdf_path: Path of the urdf model to be used for the simulation.</span>
+<span class="sd">        :param hardware_path: Path of Jiminy hardware description toml file.</span>
+<span class="sd">                              Optional: Looking for &#39;*_hardware.toml&#39; file in</span>
+<span class="sd">                              the same folder and with the same name.</span>
+<span class="sd">        :param mesh_path: Path to the folder containing the model meshes.</span>
+<span class="sd">                          Optional: Env variable &#39;JIMINY_DATA_PATH&#39; will be</span>
+<span class="sd">                          used if available.</span>
+<span class="sd">        :param has_freeflyer: Whether the robot is fixed-based wrt its root</span>
+<span class="sd">                              link, or can move freely in the world.</span>
+<span class="sd">                              Optional: True by default.</span>
+<span class="sd">        :param config_path: Configuration toml file to import. It will be</span>
+<span class="sd">                            imported AFTER loading the hardware description</span>
+<span class="sd">                            file. It can be automatically generated from an</span>
+<span class="sd">                            instance by calling `export_config_file` method.</span>
+<span class="sd">                            Optional: Looking for &#39;*_options.toml&#39; file in the</span>
+<span class="sd">                            same folder and with the same name. If not found,</span>
+<span class="sd">                            using default configuration.</span>
+<span class="sd">        :param avoid_instable_collisions: Prevent numerical instabilities by</span>
+<span class="sd">                                          replacing collision mesh by vertices</span>
+<span class="sd">                                          of associated minimal volume bounding</span>
+<span class="sd">                                          box, and replacing primitive box by</span>
+<span class="sd">                                          its vertices.</span>
+<span class="sd">        :param debug: Whether or not the debug mode must be activated.</span>
+<span class="sd">                      Doing it enables temporary files automatic deletion.</span>
+<span class="sd">        :param kwargs: Keyword arguments to forward to class constructor.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Generate a temporary Hardware Description File if necessary</span>
+        <span class="k">if</span> <span class="n">hardware_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">hardware_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span>
+                <span class="n">urdf_path</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;_hardware.toml&#39;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">hardware_path</span><span class="p">):</span>
+                <span class="c1"># Create a file that will be closed (thus deleted) at exit</span>
+                <span class="n">urdf_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">urdf_path</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">fd</span><span class="p">,</span> <span class="n">hardware_path</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkstemp</span><span class="p">(</span>
+                    <span class="n">prefix</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">urdf_name</span><span class="si">}</span><span class="s2">_&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;_hardware.toml&quot;</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">debug</span><span class="p">:</span>
+                    <span class="k">def</span> <span class="nf">remove_file_at_exit</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="n">hardware_path</span><span class="p">):</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                        <span class="k">except</span> <span class="p">(</span><span class="ne">PermissionError</span><span class="p">,</span> <span class="ne">FileNotFoundError</span><span class="p">):</span>
+                            <span class="k">pass</span>
+
+                    <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">remove_file_at_exit</span><span class="p">)</span>
+
+                <span class="c1"># Generate default Hardware Description File</span>
+                <span class="n">generate_hardware_description_file</span><span class="p">(</span>
+                    <span class="n">urdf_path</span><span class="p">,</span> <span class="n">hardware_path</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+
+        <span class="c1"># Instantiate and initialize the robot</span>
+        <span class="n">robot</span> <span class="o">=</span> <span class="n">BaseJiminyRobot</span><span class="p">()</span>
+        <span class="n">robot</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">urdf_path</span><span class="p">,</span> <span class="n">hardware_path</span><span class="p">,</span> <span class="n">mesh_path</span><span class="p">,</span> <span class="n">has_freeflyer</span><span class="p">,</span>
+                         <span class="n">avoid_instable_collisions</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+
+        <span class="c1"># Instantiate and initialize the engine</span>
+        <span class="n">simulator</span> <span class="o">=</span> <span class="n">Simulator</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="n">Simulator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">simulator</span><span class="p">,</span> <span class="n">robot</span><span class="p">,</span> <span class="n">engine_class</span><span class="o">=</span><span class="n">jiminy</span><span class="o">.</span><span class="n">Engine</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Get engine options</span>
+        <span class="n">engine_options</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+
+        <span class="c1"># Update controller/sensors update period, based on extra toml info</span>
+        <span class="n">control_period</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">extra_info</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;controllerUpdatePeriod&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">sensors_period</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">extra_info</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;sensorsUpdatePeriod&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">control_period</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">sensors_period</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">control_period</span> <span class="o">=</span> <span class="n">DEFAULT_UPDATE_PERIOD</span>
+            <span class="n">sensors_period</span> <span class="o">=</span> <span class="n">DEFAULT_UPDATE_PERIOD</span>
+        <span class="k">elif</span> <span class="n">control_period</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">control_period</span> <span class="o">=</span> <span class="n">sensors_period</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensors_period</span> <span class="o">=</span> <span class="n">control_period</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;stepper&#39;</span><span class="p">][</span><span class="s1">&#39;controllerUpdatePeriod&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">control_period</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;stepper&#39;</span><span class="p">][</span><span class="s1">&#39;sensorsUpdatePeriod&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sensors_period</span>
+
+        <span class="c1"># Handling of ground model parameters, based on extra toml info</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;contacts&#39;</span><span class="p">][</span><span class="s1">&#39;stiffness&#39;</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="n">robot</span><span class="o">.</span><span class="n">extra_info</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;groundStiffness&#39;</span><span class="p">,</span> <span class="n">DEFAULT_GROUND_STIFFNESS</span><span class="p">)</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;contacts&#39;</span><span class="p">][</span><span class="s1">&#39;damping&#39;</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="n">robot</span><span class="o">.</span><span class="n">extra_info</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;groundDamping&#39;</span><span class="p">,</span> <span class="n">DEFAULT_GROUND_DAMPING</span><span class="p">)</span>
+
+        <span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">engine_options</span><span class="p">)</span>
+
+        <span class="c1"># Override the default options by the one in the configuration file</span>
+        <span class="k">if</span> <span class="n">config_path</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">simulator</span><span class="o">.</span><span class="n">import_options</span><span class="p">(</span><span class="n">config_path</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">simulator</span></div>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Custom deleter to make sure the close is properly closed at exit.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Fallback attribute getter.</span>
+
+<span class="sd">        It enables to get access to the attribute and methods of the low-level</span>
+<span class="sd">        Jiminy engine directly, without having to do it through `engine`.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is not meant to be called manually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">&#39;engine&#39;</span><span class="p">),</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Attribute lookup.</span>
+
+<span class="sd">        It is mainly used by autocomplete feature of Ipython. It is overloaded</span>
+<span class="sd">        to get consistent autocompletion wrt `getattr`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pinocchio_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pin</span><span class="o">.</span><span class="n">Model</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Getter of the pinocchio model, depending on the value of</span>
+<span class="sd">           &#39;use_theoretical_model&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_theoretical_model</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">is_flexible</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model_th</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pinocchio_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pin</span><span class="o">.</span><span class="n">Data</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Getter of the pinocchio data, depending on the value of</span>
+<span class="sd">           &#39;use_theoretical_model&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_theoretical_model</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">is_flexible</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_data_th</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_data</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Getter of the current state of the robot.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Return a reference whenever it is possible, which is</span>
+<span class="sd">            computationally efficient but unsafe.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">q</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">v</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_theoretical_model</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">is_flexible</span><span class="p">:</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_rigid_configuration_from_flexible</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_rigid_velocity_from_flexible</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">log_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Getter of the telemetry variables.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_log</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">log_constants</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Getter of the telemetry constants.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_log</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_viewer_available</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns whether or not a viewer instance associated with the robot</span>
+<span class="sd">        is available.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">is_open</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                  <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                  <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                  <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                  <span class="n">out</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Callback method for the simulation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">out</span><span class="p">[()]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="Simulator.seed"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.seed">[docs]</a>    <span class="k">def</span> <span class="nf">seed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Set the seed of the simulation and reset the simulation.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            It also resets the low-level jiminy Engine. Therefore one must call</span>
+<span class="sd">            the `reset` method manually afterward.</span>
+
+<span class="sd">        :param seed: Desired seed (Unsigned integer 32 bits).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">),</span> <span class="s2">&quot;&#39;seed&#39; must have type np.uint32.&quot;</span>
+
+        <span class="c1"># Set the seed through the engine instead of using</span>
+        <span class="c1"># `jiminy.reset_random_generator` to keep track of the seed in options,</span>
+        <span class="c1"># and thereby to log it in the telemetry as constant.</span>
+        <span class="n">engine_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;stepper&quot;</span><span class="p">][</span><span class="s2">&quot;randomSeed&quot;</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;uint32&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">engine_options</span><span class="p">)</span>
+
+        <span class="c1"># It is expected by OpenAI Gym API to reset env after setting the seed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Simulator.reset"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">remove_all_forces</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reset the simulator.</span>
+
+<span class="sd">        It resets the simulation time to zero, and generate a new random model</span>
+<span class="sd">        of the robot. If one wants to get exactly the same result as before,</span>
+<span class="sd">        either set the randomness of the model and sensors to zero, or set the</span>
+<span class="sd">        seed once again to reinitialize the random number generator.</span>
+
+<span class="sd">        :param remove_all_forces:</span>
+<span class="sd">            Whether or not to remove already registered external forces. Note</span>
+<span class="sd">            that it can also be done separately by calling `remove_all_forces`</span>
+<span class="sd">            method.</span>
+<span class="sd">            Optional: Do not remove by default.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Reset the backend engine</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">remove_all_forces</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Simulator.start"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+              <span class="n">q_init</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+              <span class="n">v_init</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+              <span class="n">a_init</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">is_state_theoretical</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Initialize a simulation, starting from (q_init, v_init) at t=0.</span>
+
+<span class="sd">        :param q_init: Initial configuration.</span>
+<span class="sd">        :param v_init: Initial velocity.</span>
+<span class="sd">        :param a_init: Initial acceleration. It is only used by acceleration</span>
+<span class="sd">                       dependent sensors and controllers, such as IMU and force</span>
+<span class="sd">                       sensors.</span>
+<span class="sd">        :param is_state_theoretical: Whether or not the initial state is</span>
+<span class="sd">                                     associated with the actual or theoretical</span>
+<span class="sd">                                     model of the robot.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Call base implementation</span>
+        <span class="n">hresult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">start</span><span class="p">(</span>
+            <span class="n">q_init</span><span class="p">,</span> <span class="n">v_init</span><span class="p">,</span> <span class="n">a_init</span><span class="p">,</span> <span class="n">is_state_theoretical</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hresult</span> <span class="o">!=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">hresult_t</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to start the simulation.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Share the external force buffer of the viewer with the engine.</span>
+        <span class="c1"># Note that the force vector must be converted to pain list to avoid</span>
+        <span class="c1"># copy with external sub-vector.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">f_external</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">f_external</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span></div>
+
+<div class="viewcode-block" id="Simulator.step"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.step">[docs]</a>    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step_dt</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Integrate system dynamics from current state for a given duration.</span>
+
+<span class="sd">        :param step_dt: Duration for which to integrate. -1 to use default</span>
+<span class="sd">                        duration, namely until the next breakpoint if any,</span>
+<span class="sd">                        or &#39;engine_options[&quot;stepper&quot;][&quot;dtMax&quot;]&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Perform a single integration step</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;No simulation running. Please call `start` before `step`.&quot;</span><span class="p">)</span>
+        <span class="n">return_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">step_dt</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">return_code</span> <span class="o">!=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">hresult_t</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to perform the simulation step.&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Simulator.simulate"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.simulate">[docs]</a>    <span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">t_end</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                 <span class="n">q_init</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                 <span class="n">v_init</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                 <span class="n">a_init</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">is_state_theoretical</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                 <span class="n">log_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">show_progress_bar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Run a simulation, starting from x0=(q0,v0) at t=0 up to tf.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Optionally, log the result of the simulation.</span>
+
+<span class="sd">        :param t_end: Simulation end time.</span>
+<span class="sd">        :param q_init: Initial configuration.</span>
+<span class="sd">        :param v_init: Initial velocity.</span>
+<span class="sd">        :param a_init: Initial acceleration.</span>
+<span class="sd">        :param is_state_theoretical: Whether or not the initial state is</span>
+<span class="sd">                                     associated with the actual or theoretical</span>
+<span class="sd">                                     model of the robot.</span>
+<span class="sd">        :param log_path: Save log data to this location. Disable if None.</span>
+<span class="sd">                         Note that the format extension &#39;.data&#39; is enforced.</span>
+<span class="sd">                         Optional, disable by default.</span>
+<span class="sd">        :param show_progress_bar: Whether or not to display a progress bar</span>
+<span class="sd">                                  during the simulation. None to enable only</span>
+<span class="sd">                                  if available.</span>
+<span class="sd">                                  Optional: None by default.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Show progress bar if requested</span>
+        <span class="k">if</span> <span class="n">show_progress_bar</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">t_end</span><span class="p">,</span> <span class="n">bar_format</span><span class="o">=</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="si">{percentage:3.0f}</span><span class="s2">%|</span><span class="si">{bar}</span><span class="s2">| </span><span class="si">{n:.2f}</span><span class="s2">/</span><span class="si">{total_fmt}</span><span class="s2"> &quot;</span>
+                <span class="s2">&quot;[</span><span class="si">{elapsed}</span><span class="s2">&lt;</span><span class="si">{remaining}</span><span class="s2">]&quot;</span><span class="p">))</span>
+
+        <span class="c1"># Run the simulation</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">return_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span>
+                <span class="n">t_end</span><span class="p">,</span> <span class="n">q_init</span><span class="p">,</span> <span class="n">v_init</span><span class="p">,</span> <span class="n">a_init</span><span class="p">,</span> <span class="n">is_state_theoretical</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>  <span class="c1"># Make sure that the progress bar is properly closed</span>
+            <span class="k">if</span> <span class="n">show_progress_bar</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__pbar</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Throw exception if not successful</span>
+        <span class="k">if</span> <span class="n">return_code</span> <span class="o">!=</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">hresult_t</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;The simulation failed.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Write log</span>
+        <span class="k">if</span> <span class="n">log_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">log_suffix</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">log_path</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">log_suffix</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="s2">&quot;hdf5&quot;</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Log format not recognized. It must be either &#39;.data&#39;, &quot;</span>
+                    <span class="s2">&quot;&#39;.csv&#39;, or &#39;.hdf5&#39;.&quot;</span><span class="p">)</span>
+            <span class="n">log_format</span> <span class="o">=</span> <span class="n">log_suffix</span> <span class="k">if</span> <span class="n">log_suffix</span> <span class="o">!=</span> <span class="s1">&#39;data&#39;</span> <span class="k">else</span> <span class="s1">&#39;binary&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">write_log</span><span class="p">(</span><span class="n">log_path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">log_format</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Simulator.render"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.render">[docs]</a>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">return_rgb_array</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+               <span class="n">width</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">height</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">camera_xyzrpy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span>
+                   <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
+                   <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Render the current state of the simulation. One can display it</span>
+<span class="sd">               or return an RGB array instead.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Gepetto-gui supports parallel rendering, which means that one can</span>
+<span class="sd">            display multiple simulations at the same time in different tabs.</span>
+
+<span class="sd">        :param return_rgb_array: Whether or not to return the current frame as</span>
+<span class="sd">                                 an rgb array.</span>
+<span class="sd">        :param width: Width of the returned RGB frame, if enabled.</span>
+<span class="sd">        :param height: Height of the returned RGB frame, if enabled.</span>
+<span class="sd">        :param camera_xyzrpy: Tuple position [X, Y, Z], rotation [Roll, Pitch,</span>
+<span class="sd">                              Yaw] corresponding to the absolute pose of the</span>
+<span class="sd">                              camera. None to disable.</span>
+<span class="sd">                              Optional:None by default.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments to forward at `Viewer`</span>
+<span class="sd">                       initialization.</span>
+
+<span class="sd">        :returns: Rendering as an RGB array (3D numpy array), if enabled, None</span>
+<span class="sd">                  otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Instantiate the robot and viewer client if necessary.</span>
+        <span class="c1"># A new dedicated scene and window will be created.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_viewer_available</span><span class="p">:</span>
+            <span class="c1"># Generate a new unique identifier if necessary</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">uniq_id</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">_get_candidate_names</span><span class="p">())</span>
+                <span class="n">robot_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uniq_id</span><span class="si">}</span><span class="s2">_robot&quot;</span>
+                <span class="n">scene_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uniq_id</span><span class="si">}</span><span class="s2">_scene&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">robot_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">robot_name</span>
+                <span class="n">scene_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">scene_name</span>
+
+            <span class="c1"># Handling of default backend</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer_backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer_backend</span> <span class="ow">or</span> <span class="n">Viewer</span><span class="o">.</span><span class="n">backend</span>
+
+            <span class="c1"># Create new viewer instance</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="o">=</span> <span class="n">Viewer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span>
+                                 <span class="n">use_theoretical_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                 <span class="n">open_gui_if_parent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                 <span class="o">**</span><span class="p">{</span><span class="s1">&#39;scene_name&#39;</span><span class="p">:</span> <span class="n">scene_name</span><span class="p">,</span>
+                                    <span class="s1">&#39;robot_name&#39;</span><span class="p">:</span> <span class="n">robot_name</span><span class="p">,</span>
+                                    <span class="s1">&#39;backend&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer_backend</span><span class="p">,</span>
+                                    <span class="s1">&#39;delete_robot_on_close&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">})</span>
+
+            <span class="c1"># Share the external force buffer of the viewer with the engine</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">f_external</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">f_external</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer_backend</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;panda3d&#39;</span><span class="p">):</span>
+                <span class="c1"># Enable display of COM, DCM and contact markers by default if</span>
+                <span class="c1"># the robot has freeflyer.</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">has_freeflyer</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">&quot;display_com&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">display_center_of_mass</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="s2">&quot;display_dcm&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">display_capture_point</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="s2">&quot;display_contacts&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">display_contact_forces</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+                <span class="c1"># Enable display of external forces by default only for</span>
+                <span class="c1"># the joints having an external force registered to it.</span>
+                <span class="k">if</span> <span class="s2">&quot;display_f_external&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                    <span class="n">force_frames</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="n">f_i</span><span class="o">.</span><span class="n">frame_idx</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span>
+                        <span class="k">for</span> <span class="n">f_i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">forces_profile</span><span class="p">])</span>
+                    <span class="n">force_frames</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">([</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="n">f_i</span><span class="o">.</span><span class="n">frame_idx</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span>
+                        <span class="k">for</span> <span class="n">f_i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">forces_impulse</span><span class="p">])</span>
+                    <span class="n">visibility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">_display_f_external</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">force_frames</span><span class="p">:</span>
+                        <span class="n">visibility</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">display_external_forces</span><span class="p">(</span><span class="n">visibility</span><span class="p">)</span>
+
+            <span class="c1"># Initialize camera pose</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">is_backend_parent</span> <span class="ow">and</span> <span class="n">camera_xyzrpy</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">camera_xyzrpy</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">9.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2e-5</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
+
+        <span class="c1"># Set the camera pose if requested</span>
+        <span class="k">if</span> <span class="n">camera_xyzrpy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">set_camera_transform</span><span class="p">(</span><span class="o">*</span><span class="n">camera_xyzrpy</span><span class="p">)</span>
+
+        <span class="c1"># Make sure the graphical window is open if required</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">return_rgb_array</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">open_gui</span><span class="p">()</span>
+
+        <span class="c1"># Try refreshing the viewer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+
+        <span class="c1"># Compute rgb array if needed</span>
+        <span class="k">if</span> <span class="n">return_rgb_array</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">capture_frame</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Simulator.replay"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.replay">[docs]</a>    <span class="k">def</span> <span class="nf">replay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">extra_logs_files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(),</span>
+               <span class="n">extra_trajectories</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">TrajectoryDataType</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+               <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Replay the current episode until now.</span>
+
+<span class="sd">        :param kwargs: Extra keyword arguments for delegation to</span>
+<span class="sd">                       `replay.play_trajectories` method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Close extra viewer instances if any</span>
+        <span class="k">for</span> <span class="n">viewer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_viewers</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">viewer</span><span class="o">.</span><span class="n">delete_robot_on_close</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">viewer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="c1"># Extract log data and robot from extra log files</span>
+        <span class="n">robots</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">]</span>
+        <span class="n">logs_data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">log_data</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">log_file</span> <span class="ow">in</span> <span class="n">extra_logs_files</span><span class="p">:</span>
+            <span class="n">log_data</span><span class="p">,</span> <span class="n">log_constants</span> <span class="o">=</span> <span class="n">read_log</span><span class="p">(</span><span class="n">log_file</span><span class="p">)</span>
+            <span class="n">robot</span> <span class="o">=</span> <span class="n">build_robot_from_log_constants</span><span class="p">(</span>
+                <span class="n">log_constants</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">mesh_package_dirs</span><span class="p">)</span>
+            <span class="n">robots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">robot</span><span class="p">)</span>
+            <span class="n">logs_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_data</span><span class="p">)</span>
+
+        <span class="c1"># Extract trajectory data from pairs (robot, log)</span>
+        <span class="n">trajectories</span><span class="p">,</span> <span class="n">update_hooks</span><span class="p">,</span> <span class="n">extra_kwargs</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">robot</span><span class="p">,</span> <span class="n">log_data</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">robots</span><span class="p">,</span> <span class="n">logs_data</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">log_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">traj</span><span class="p">,</span> <span class="n">update_hook</span><span class="p">,</span> <span class="n">_kwargs</span> <span class="o">=</span> <span class="n">extract_replay_data_from_log_data</span><span class="p">(</span>
+                    <span class="n">robot</span><span class="p">,</span> <span class="n">log_data</span><span class="p">)</span>
+                <span class="n">trajectories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
+                <span class="n">update_hooks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">update_hook</span><span class="p">)</span>
+                <span class="n">extra_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">_kwargs</span><span class="p">)</span>
+        <span class="n">trajectories</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">extra_trajectories</span><span class="p">)</span>
+        <span class="n">update_hooks</span> <span class="o">+=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">extra_trajectories</span><span class="p">]</span>
+
+        <span class="c1"># Make sure there is something to replay</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">logs_data</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;Nothing to replay. Please run a simulation before calling &quot;</span>
+                <span class="s2">&quot;`replay` method, or provided data manually.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Make sure the viewer is instantiated</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="p">{</span>
+            <span class="s1">&#39;return_rgb_array&#39;</span><span class="p">:</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="s1">&#39;record_video_path&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">})</span>
+
+        <span class="c1"># Define sequence of viewer instances</span>
+        <span class="n">viewers</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="p">,</span>
+            <span class="o">*</span><span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">extra_logs_files</span><span class="p">],</span>
+            <span class="o">*</span><span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">extra_trajectories</span><span class="p">]]</span>
+
+        <span class="c1"># Replay the trajectories</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_viewers</span> <span class="o">=</span> <span class="n">play_trajectories</span><span class="p">(</span>
+            <span class="n">trajectories</span><span class="p">,</span>
+            <span class="n">update_hooks</span><span class="p">,</span>
+            <span class="n">viewers</span><span class="o">=</span><span class="n">viewers</span><span class="p">,</span>
+            <span class="o">**</span><span class="p">{</span><span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s1">&#39;backend&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer_backend</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">extra_kwargs</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">})</span></div>
+
+<div class="viewcode-block" id="Simulator.close"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Close the connection with the renderer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Simulator.plot"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">enable_flexiblity_data</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+             <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Display common simulation data over time.</span>
+
+<span class="sd">        The figure features several tabs:</span>
+
+<span class="sd">          - Subplots with robot configuration</span>
+<span class="sd">          - Subplots with robot velocity</span>
+<span class="sd">          - Subplots with robot acceleration</span>
+<span class="sd">          - Subplots with motors torques</span>
+<span class="sd">          - Subplots with raw sensor data (one tab for each type of sensor)</span>
+
+<span class="sd">        :param enable_flexiblity_data:</span>
+<span class="sd">            Enable display of flexible joints in robot&#39;s configuration,</span>
+<span class="sd">            velocity and acceleration subplots.</span>
+<span class="sd">            Optional: False by default.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments to forward to `TabbedFigure`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Define some internal helper functions</span>
+        <span class="k">def</span> <span class="nf">extract_fields</span><span class="p">(</span><span class="n">log_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
+                           <span class="n">namespace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                           <span class="n">fieldnames</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                           <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]:</span>
+            <span class="sd">&quot;&quot;&quot;Extract value associated with a set of fieldnames in a specific</span>
+<span class="sd">            namespace.</span>
+
+<span class="sd">            :param log_data: Log file, as returned by `log_data` property.</span>
+<span class="sd">            :param namespace: Namespace of the fieldnames. None to disable.</span>
+<span class="sd">            :param fieldnames: Sequence of fieldnames.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">field_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">log_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                    <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">(</span><span class="n">namespace</span><span class="p">,</span> <span class="n">field</span><span class="p">)))),</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fieldnames</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">field_values</span> <span class="ow">or</span> <span class="nb">all</span><span class="p">(</span><span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">field_values</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">field_values</span>
+
+        <span class="c1"># Extract log data</span>
+        <span class="n">log_data</span><span class="p">,</span> <span class="n">log_constants</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_constants</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">log_constants</span><span class="p">:</span>
+            <span class="k">return</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;No data to replay. Please run a simulation first.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Make sure that the log file is compatible with the current model</span>
+        <span class="n">is_incompatible</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">options_old</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">log_constants</span><span class="p">[</span><span class="s1">&#39;HighLevelController.options&#39;</span><span class="p">])</span>
+        <span class="n">model_options_old</span> <span class="o">=</span> <span class="n">options_old</span><span class="p">[</span><span class="s2">&quot;system&quot;</span><span class="p">][</span><span class="s2">&quot;robot&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span>
+        <span class="n">dyn_options_old</span> <span class="o">=</span> <span class="n">model_options_old</span><span class="p">[</span><span class="s1">&#39;dynamics&#39;</span><span class="p">]</span>
+        <span class="n">model_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_model_options</span><span class="p">()</span>
+        <span class="n">dyn_options</span> <span class="o">=</span> <span class="n">model_options</span><span class="p">[</span><span class="s1">&#39;dynamics&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">dyn_options</span><span class="p">[</span><span class="s1">&#39;enableFlexibleModel&#39;</span><span class="p">]</span> <span class="o">!=</span>
+                <span class="n">dyn_options_old</span><span class="p">[</span><span class="s1">&#39;enableFlexibleModel&#39;</span><span class="p">]):</span>
+            <span class="n">is_incompatible</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">dyn_options</span><span class="p">[</span><span class="s1">&#39;enableFlexibleModel&#39;</span><span class="p">]:</span>
+            <span class="n">flex_options_old</span> <span class="o">=</span> <span class="n">dyn_options_old</span><span class="p">[</span><span class="s2">&quot;flexibilityConfig&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+            <span class="n">flex_options</span> <span class="o">=</span> <span class="n">dyn_options</span><span class="p">[</span><span class="s2">&quot;flexibilityConfig&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flex_options_old</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">flex_options</span><span class="p">):</span>
+                <span class="n">is_incompatible</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">flex</span><span class="p">,</span> <span class="n">flex_old</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flex_options</span><span class="p">,</span> <span class="n">flex_options_old</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">flex</span><span class="p">[</span><span class="s2">&quot;frameName&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">flex_old</span><span class="p">[</span><span class="s2">&quot;frameName&quot;</span><span class="p">]:</span>
+                        <span class="n">is_incompatible</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="k">break</span>
+        <span class="k">if</span> <span class="n">is_incompatible</span> <span class="ow">and</span> <span class="n">enable_flexiblity_data</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Log data are incompatible with current model.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Figures data structure as a dictionary</span>
+        <span class="n">tabs_data</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="c1"># Get time and robot positions, velocities, and acceleration</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">log_data</span><span class="p">[</span><span class="s2">&quot;Global.Time&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">fields_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Position&quot;</span><span class="p">,</span> <span class="s2">&quot;Velocity&quot;</span><span class="p">,</span> <span class="s2">&quot;Acceleration&quot;</span><span class="p">]:</span>
+            <span class="n">fieldnames</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span> <span class="s2">&quot;logfile_&quot;</span> <span class="o">+</span> <span class="n">fields_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;_headers&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">enable_flexiblity_data</span><span class="p">:</span>
+                <span class="c1"># Filter out flexibility data</span>
+                <span class="n">fieldnames</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">field</span><span class="p">:</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span>
+                        <span class="n">name</span> <span class="ow">in</span> <span class="n">field</span>
+                        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">flexible_joints_names</span><span class="p">),</span>
+                    <span class="n">fieldnames</span><span class="p">))</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">extract_fields</span><span class="p">(</span>
+                <span class="n">log_data</span><span class="p">,</span> <span class="s1">&#39;HighLevelController&#39;</span><span class="p">,</span> <span class="n">fieldnames</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">tabs_data</span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="n">fields_type</span><span class="p">))]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;current&quot;</span><span class="p">):]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">fields_type</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="n">val</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fieldnames</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
+
+        <span class="c1"># Get motors efforts information</span>
+        <span class="n">motor_effort</span> <span class="o">=</span> <span class="n">extract_fields</span><span class="p">(</span>
+            <span class="n">log_data</span><span class="p">,</span> <span class="s1">&#39;HighLevelController&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">logfile_motor_effort_headers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">motor_effort</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tabs_data</span><span class="p">[</span><span class="s1">&#39;MotorEffort&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+                <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">,</span> <span class="n">motor_effort</span><span class="p">))</span>
+
+        <span class="c1"># Get command information</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">extract_fields</span><span class="p">(</span>
+            <span class="n">log_data</span><span class="p">,</span> <span class="s1">&#39;HighLevelController&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">logfile_command_headers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tabs_data</span><span class="p">[</span><span class="s1">&#39;Command&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+                <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">,</span> <span class="n">command</span><span class="p">))</span>
+
+        <span class="c1"># Get sensors information</span>
+        <span class="k">for</span> <span class="n">sensors_class</span><span class="p">,</span> <span class="n">sensors_fields</span> <span class="ow">in</span> <span class="n">SENSORS_FIELDS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">sensors_type</span> <span class="o">=</span> <span class="n">sensors_class</span><span class="o">.</span><span class="n">type</span>
+            <span class="n">sensors_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sensors_type</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">namespace</span> <span class="o">=</span> <span class="n">sensors_type</span> <span class="k">if</span> <span class="n">sensors_class</span><span class="o">.</span><span class="n">has_prefix</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sensors_fields</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">fields_prefix</span><span class="p">,</span> <span class="n">fieldnames</span> <span class="ow">in</span> <span class="n">sensors_fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">sensors_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">extract_fields</span><span class="p">(</span><span class="n">log_data</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="p">[</span>
+                        <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">fields_prefix</span> <span class="o">+</span> <span class="n">field</span><span class="p">))</span>
+                        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sensors_names</span><span class="p">])</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fieldnames</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">sensors_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">type_name</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">sensors_type</span><span class="p">,</span> <span class="n">fields_prefix</span><span class="p">))</span>
+                        <span class="n">tabs_data</span><span class="p">[</span><span class="n">type_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+                            <span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sensors_names</span><span class="p">,</span> <span class="n">values</span><span class="p">)))</span>
+                            <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fieldnames</span><span class="p">,</span> <span class="n">sensors_data</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">sensors_fields</span><span class="p">:</span>
+                    <span class="n">sensors_data</span> <span class="o">=</span> <span class="n">extract_fields</span><span class="p">(</span>
+                        <span class="n">log_data</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span>
+                        <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">field</span><span class="p">))</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sensors_names</span><span class="p">])</span>
+                    <span class="k">if</span> <span class="n">sensors_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">tabs_data</span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">sensors_type</span><span class="p">,</span> <span class="n">field</span><span class="p">))]</span> <span class="o">=</span> \
+                            <span class="n">OrderedDict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sensors_names</span><span class="p">,</span> <span class="n">sensors_data</span><span class="p">))</span>
+
+        <span class="c1"># Create figure, without closing the existing one</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">TabbedFigure</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">time</span><span class="p">,</span> <span class="n">tabs_data</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s2">&quot;plot_method&quot;</span><span class="p">:</span> <span class="s2">&quot;plot&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">})</span></div>
+
+<div class="viewcode-block" id="Simulator.get_controller_options"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.get_controller_options">[docs]</a>    <span class="k">def</span> <span class="nf">get_controller_options</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Getter of the options of Jiminy Controller.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Simulator.set_controller_options"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.set_controller_options">[docs]</a>    <span class="k">def</span> <span class="nf">set_controller_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Setter of the options of Jiminy Controller.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Simulator.get_options"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.get_options">[docs]</a>    <span class="k">def</span> <span class="nf">get_options</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the options of robot (including controller), and engine.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="n">system</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">(</span><span class="n">robot</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">(),</span> <span class="n">controller</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">()),</span>
+            <span class="n">engine</span><span class="o">=</span><span class="n">OrderedDict</span><span class="p">())</span>
+        <span class="n">robot_options</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">][</span><span class="s1">&#39;robot&#39;</span><span class="p">]</span>
+        <span class="n">robot_options_copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+        <span class="n">robot_options</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">robot_options_copy</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span>
+        <span class="n">robot_options</span><span class="p">[</span><span class="s1">&#39;motors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">robot_options_copy</span><span class="p">[</span><span class="s1">&#39;motors&#39;</span><span class="p">]</span>
+        <span class="n">robot_options</span><span class="p">[</span><span class="s1">&#39;sensors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">robot_options_copy</span><span class="p">[</span><span class="s1">&#39;sensors&#39;</span><span class="p">]</span>
+        <span class="n">robot_options</span><span class="p">[</span><span class="s1">&#39;telemetry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">robot_options_copy</span><span class="p">[</span><span class="s1">&#39;telemetry&#39;</span><span class="p">]</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">][</span><span class="s1">&#39;controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_controller_options</span><span class="p">()</span>
+        <span class="n">engine_options</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;engine&#39;</span><span class="p">]</span>
+        <span class="n">engine_options_copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;stepper&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_options_copy</span><span class="p">[</span><span class="s1">&#39;stepper&#39;</span><span class="p">]</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;world&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_options_copy</span><span class="p">[</span><span class="s1">&#39;world&#39;</span><span class="p">]</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;joints&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_options_copy</span><span class="p">[</span><span class="s1">&#39;joints&#39;</span><span class="p">]</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;contacts&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_options_copy</span><span class="p">[</span><span class="s1">&#39;contacts&#39;</span><span class="p">]</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;telemetry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_options_copy</span><span class="p">[</span><span class="s1">&#39;telemetry&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">options</span></div>
+
+<div class="viewcode-block" id="Simulator.set_options"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.set_options">[docs]</a>    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                    <span class="n">options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Set the options of robot (including controller), and engine.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">controller_options</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">][</span><span class="s1">&#39;controller&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">][</span><span class="s1">&#39;robot&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_controller_options</span><span class="p">(</span><span class="n">controller_options</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;engine&#39;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="Simulator.export_options"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.export_options">[docs]</a>    <span class="k">def</span> <span class="nf">export_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                       <span class="n">config_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+                       <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Export the full configuration, ie the options of the robot (</span>
+<span class="sd">        including controller), and the engine.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            the configuration can be imported thereafter using `import_options`</span>
+<span class="sd">            method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">config_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span> <span class="n">BaseJiminyRobot</span><span class="p">):</span>
+                <span class="n">urdf_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">urdf_path_orig</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">urdf_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">urdf_path</span>
+            <span class="n">config_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span>
+                <span class="n">urdf_path</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;_options.toml&#39;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">toml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_options</span><span class="p">(),</span> <span class="n">f</span><span class="p">,</span> <span class="n">encoder</span><span class="o">=</span><span class="n">toml</span><span class="o">.</span><span class="n">TomlNumpyEncoder</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Simulator.import_options"><a class="viewcode-back" href="../../api/jiminy_py/simulator.html#jiminy_py.simulator.Simulator.import_options">[docs]</a>    <span class="k">def</span> <span class="nf">import_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                       <span class="n">config_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+                       <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Import the full configuration, ie the options of the robot (</span>
+<span class="sd">        including controller), and the engine.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Configuration can be exported beforehand using `export_options`</span>
+<span class="sd">            method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">deep_update</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">overrides</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Update a nested dictionary or similar mapping.</span>
+<span class="sd">            Modify ``source`` in place.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">overrides</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="n">value</span><span class="p">:</span>
+                    <span class="n">source</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">deep_update</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">value</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">source</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">overrides</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">source</span>
+
+        <span class="k">if</span> <span class="n">config_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span> <span class="n">BaseJiminyRobot</span><span class="p">):</span>
+                <span class="n">urdf_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">urdf_path_orig</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">urdf_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">urdf_path</span>
+            <span class="n">config_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span>
+                <span class="n">urdf_path</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;_options.toml&#39;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">config_path</span><span class="p">):</span>
+                <span class="k">return</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="n">deep_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_options</span><span class="p">(),</span> <span class="n">toml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_path</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

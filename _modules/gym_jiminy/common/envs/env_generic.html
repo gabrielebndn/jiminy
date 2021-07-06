@@ -1,0 +1,1561 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gym_jiminy.common.envs.env_generic &mdash; jiminy 1.6.25 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> jiminy
+          
+
+          
+            
+            <img src="../../../../_static/jiminy_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.25
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">README</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Key features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#gym-jiminy">Gym Jiminy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#demo">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#getting-started">Getting started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">INSTALLATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html">Linux-based OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../INSTALL.html#windows-os">Windows OS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">TUTORIALS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">An introduction to Jiminy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API DOC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy/index.html">Jiminy C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/jiminy_py/index.html">Jiminy Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gym_jiminy/common/index.html">Gym Jiminy API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Specifications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/src/tlmc_format_specification.html"><code class="docutils literal notranslate"><span class="pre">tlmc</span></code> Version 1 format specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../spec/pdf/index.html">Downloadable PDF</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">jiminy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>gym_jiminy.common.envs.env_generic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for gym_jiminy.common.envs.env_generic</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Generic gym environment specifically tailored to work with Jiminy Simulator</span>
+<span class="sd">as backend physics engine, and Jiminy Viewer as 3D visualizer. It implements</span>
+<span class="sd">the official OpenAI Gym API and extended it to add more functionalities.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gym</span>
+<span class="kn">from</span> <span class="nn">gym</span> <span class="kn">import</span> <span class="n">logger</span><span class="p">,</span> <span class="n">spaces</span>
+<span class="kn">from</span> <span class="nn">gym.utils</span> <span class="kn">import</span> <span class="n">seeding</span>
+
+<span class="kn">import</span> <span class="nn">jiminy_py.core</span> <span class="k">as</span> <span class="nn">jiminy</span>
+<span class="kn">from</span> <span class="nn">jiminy_py.core</span> <span class="kn">import</span> <span class="p">(</span><span class="n">EncoderSensor</span> <span class="k">as</span> <span class="n">encoder</span><span class="p">,</span>
+                            <span class="n">EffortSensor</span> <span class="k">as</span> <span class="n">effort</span><span class="p">,</span>
+                            <span class="n">ContactSensor</span> <span class="k">as</span> <span class="n">contact</span><span class="p">,</span>
+                            <span class="n">ForceSensor</span> <span class="k">as</span> <span class="n">force</span><span class="p">,</span>
+                            <span class="n">ImuSensor</span> <span class="k">as</span> <span class="n">imu</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">jiminy_py.viewer.viewer</span> <span class="kn">import</span> <span class="n">DEFAULT_CAMERA_XYZRPY_REL</span>
+<span class="kn">from</span> <span class="nn">jiminy_py.dynamics</span> <span class="kn">import</span> <span class="n">compute_freeflyer_state_from_fixed_body</span>
+<span class="kn">from</span> <span class="nn">jiminy_py.simulator</span> <span class="kn">import</span> <span class="n">Simulator</span>
+
+<span class="kn">from</span> <span class="nn">pinocchio</span> <span class="kn">import</span> <span class="n">neutral</span><span class="p">,</span> <span class="n">normalize</span><span class="p">,</span> <span class="n">framesForwardKinematics</span>
+
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="p">(</span><span class="n">zeros</span><span class="p">,</span>
+                     <span class="n">fill</span><span class="p">,</span>
+                     <span class="n">set_value</span><span class="p">,</span>
+                     <span class="n">clip</span><span class="p">,</span>
+                     <span class="n">get_fieldnames</span><span class="p">,</span>
+                     <span class="n">register_variables</span><span class="p">,</span>
+                     <span class="n">FieldDictNested</span><span class="p">,</span>
+                     <span class="n">SpaceDictNested</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">..bases</span> <span class="kn">import</span> <span class="n">ObserverControllerInterface</span>
+
+<span class="kn">from</span> <span class="nn">.internal</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ObserverHandleType</span><span class="p">,</span>
+                       <span class="n">ControllerHandleType</span><span class="p">,</span>
+                       <span class="n">BaseJiminyObserverController</span><span class="p">,</span>
+                       <span class="n">loop_interactive</span><span class="p">)</span>
+
+
+<span class="c1"># Define universal bounds for the observation space</span>
+<span class="n">FREEFLYER_POS_TRANS_MAX</span> <span class="o">=</span> <span class="mf">1000.0</span>
+<span class="n">FREEFLYER_VEL_LIN_MAX</span> <span class="o">=</span> <span class="mf">1000.0</span>
+<span class="n">FREEFLYER_VEL_ANG_MAX</span> <span class="o">=</span> <span class="mf">10000.0</span>
+<span class="n">JOINT_POS_MAX</span> <span class="o">=</span> <span class="mf">10000.0</span>
+<span class="n">JOINT_VEL_MAX</span> <span class="o">=</span> <span class="mf">100.0</span>
+<span class="n">FLEX_VEL_ANG_MAX</span> <span class="o">=</span> <span class="mf">10000.0</span>
+<span class="n">MOTOR_EFFORT_MAX</span> <span class="o">=</span> <span class="mf">1000.0</span>
+<span class="n">SENSOR_FORCE_MAX</span> <span class="o">=</span> <span class="mf">100000.0</span>
+<span class="n">SENSOR_MOMENT_MAX</span> <span class="o">=</span> <span class="mf">10000.0</span>
+<span class="n">SENSOR_GYRO_MAX</span> <span class="o">=</span> <span class="mf">100.0</span>
+<span class="n">SENSOR_ACCEL_MAX</span> <span class="o">=</span> <span class="mf">10000.0</span>
+
+
+<div class="viewcode-block" id="BaseJiminyEnv"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv">[docs]</a><span class="k">class</span> <span class="nc">BaseJiminyEnv</span><span class="p">(</span><span class="n">ObserverControllerInterface</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base class to train a robot in Gym OpenAI using a user-specified Python</span>
+<span class="sd">    Jiminy engine for physics computations.</span>
+
+<span class="sd">    It creates an Gym environment wrapping Jiminy Engine and behaves like any</span>
+<span class="sd">    other Gym environment.</span>
+
+<span class="sd">    The observation space is a dictionary gathering the current simulation</span>
+<span class="sd">    time, the real robot state, and the sensors data. The action is a vector</span>
+<span class="sd">    gathering the torques of the actuator of the robot.</span>
+
+<span class="sd">    There is no reward by default. It is up to the user to overload this class</span>
+<span class="sd">    to implement one. It has been designed to be highly flexible and easy to</span>
+<span class="sd">    customize by overloading it to fit the vast majority of users&#39; needs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;render.modes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="s1">&#39;rgb_array&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+
+    <span class="n">observation_space</span><span class="p">:</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span>
+    <span class="n">action_space</span><span class="p">:</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">simulator</span><span class="p">:</span> <span class="n">Simulator</span><span class="p">,</span>
+                 <span class="n">step_dt</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                 <span class="n">enforce_bounded_spaces</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                 <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param simulator: Jiminy Python simulator used for physics</span>
+<span class="sd">                          computations. It must be fully initialized.</span>
+<span class="sd">        :param step_dt: Simulation timestep for learning. Note that it is</span>
+<span class="sd">                        independent from the controller and observation update</span>
+<span class="sd">                        periods. The latter are configured via</span>
+<span class="sd">                        `engine.set_options`.</span>
+<span class="sd">        :param enforce_bounded_spaces:</span>
+<span class="sd">            Whether or not to enforce finite bounds for the observation and</span>
+<span class="sd">            action spaces. If so, then &#39;\*_MAX&#39; are used whenever it is</span>
+<span class="sd">            necessary. Note that whose bounds are very spread to make sure it</span>
+<span class="sd">            is suitable for the vast majority of systems.</span>
+<span class="sd">        :param debug: Whether or not the debug mode must be enabled. Doing it</span>
+<span class="sd">                      enables telemetry recording.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments that may be useful for derived</span>
+<span class="sd">                       environments with multiple inheritance, and to allow</span>
+<span class="sd">                       automatic pipeline wrapper generation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+
+        <span class="c1"># Initialize the interfaces through multiple inheritance</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>  <span class="c1"># Do not forward extra arguments, if any</span>
+
+        <span class="c1"># Backup some user arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="p">:</span> <span class="n">Simulator</span> <span class="o">=</span> <span class="n">simulator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step_dt</span> <span class="o">=</span> <span class="n">step_dt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">enforce_bounded_spaces</span> <span class="o">=</span> <span class="n">enforce_bounded_spaces</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+
+        <span class="c1"># Define some proxies for fast access</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">EngineMultiRobot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">engine</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">StepperState</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">stepper_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">SystemState</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">system_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">sensorsData</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">)</span>
+
+        <span class="c1"># Internal buffers for physics computations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_seed</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">FieldDictNested</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Whether or not play interactive mode is active</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_interactive</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Information about the learning process</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Keep track of cumulative reward</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_reward</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># Number of simulation steps performed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_steps</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">simulation_duration_max</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">step_dt</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Initialize the seed of the environment.</span>
+        <span class="c1"># Note that reseting the seed also reset robot internal state.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">()</span>
+
+        <span class="c1"># Set robot in neutral configuration for rendering</span>
+        <span class="n">qpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_neutral</span><span class="p">()</span>
+        <span class="n">framesForwardKinematics</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_data</span><span class="p">,</span> <span class="n">qpos</span><span class="p">)</span>
+
+        <span class="c1"># Refresh the observation and action spaces.</span>
+        <span class="c1"># Note that it is necessary to refresh the action space before the</span>
+        <span class="c1"># observation one, since it may be useful to observe the action.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_refresh_action_space</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_refresh_observation_space</span><span class="p">()</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">)</span> <span class="ow">and</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">))</span>
+
+        <span class="c1"># Initialize some internal buffers.</span>
+        <span class="c1"># Note that float64 dtype must be enforced for the action, otherwise</span>
+        <span class="c1"># it would be impossible to register action to controller&#39;s telemetry.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_action</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Fallback attribute getter.</span>
+
+<span class="sd">        It enables to get access to the attribute and methods of the low-level</span>
+<span class="sd">        Simulator directly, without having to do it through `simulator`.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is not meant to be called manually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">&#39;simulator&#39;</span><span class="p">),</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Attribute lookup.</span>
+
+<span class="sd">        It is mainly used by autocomplete feature of Ipython. It is overloaded</span>
+<span class="sd">        to get consistent autocompletion wrt `getattr`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>   <span class="c1"># pylint: disable=broad-except</span>
+            <span class="c1"># This method must not fail under any circumstances</span>
+            <span class="k">pass</span>
+
+<div class="viewcode-block" id="BaseJiminyEnv._controller_handle"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._controller_handle">[docs]</a>    <span class="k">def</span> <span class="nf">_controller_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                           <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                           <span class="n">q</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                           <span class="n">v</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                           <span class="n">sensors_data</span><span class="p">:</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">sensorsData</span><span class="p">,</span>
+                           <span class="n">command</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">[:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_command</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(),</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._get_time_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._get_time_space">[docs]</a>    <span class="k">def</span> <span class="nf">_get_time_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get time space.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span>
+            <span class="n">low</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">simulation_duration_max</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._get_state_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._get_state_space">[docs]</a>    <span class="k">def</span> <span class="nf">_get_state_space</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                         <span class="n">use_theoretical_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                         <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get state space.</span>
+
+<span class="sd">        This method is not meant to be overloaded in general since the</span>
+<span class="sd">        definition of the state space is mostly consensual. One must rather</span>
+<span class="sd">        overload `_refresh_observation_space` to customize the observation</span>
+<span class="sd">        space as a whole.</span>
+
+<span class="sd">        :param use_theoretical_model: Whether to compute the state space</span>
+<span class="sd">                                      corresponding to the theoretical model to</span>
+<span class="sd">                                      the actual one. `None` to use internal</span>
+<span class="sd">                                      value &#39;simulator.use_theoretical_model&#39;.</span>
+<span class="sd">                                      Optional: `None` by default.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Handling of default argument</span>
+        <span class="k">if</span> <span class="n">use_theoretical_model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">use_theoretical_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">use_theoretical_model</span>
+
+        <span class="c1"># Define some proxies for convenience</span>
+        <span class="n">model_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_model_options</span><span class="p">()</span>
+        <span class="n">joints_position_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">rigid_joints_position_idx</span>
+        <span class="n">joints_velocity_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">rigid_joints_velocity_idx</span>
+        <span class="n">position_limit_upper</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">position_limit_upper</span>
+        <span class="n">position_limit_lower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">position_limit_lower</span>
+        <span class="n">velocity_limit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">velocity_limit</span>
+
+        <span class="c1"># Replace inf bounds of the state space if requested</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enforce_bounded_spaces</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">has_freeflyer</span><span class="p">:</span>
+                <span class="n">position_limit_lower</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">FREEFLYER_POS_TRANS_MAX</span>
+                <span class="n">position_limit_upper</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">+</span><span class="n">FREEFLYER_POS_TRANS_MAX</span>
+                <span class="n">velocity_limit</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">FREEFLYER_VEL_LIN_MAX</span>
+                <span class="n">velocity_limit</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">FREEFLYER_VEL_ANG_MAX</span>
+
+            <span class="k">for</span> <span class="n">joint_idx</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">flexible_joints_idx</span><span class="p">:</span>
+                <span class="n">joint_vel_idx</span> <span class="o">=</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="n">joint_idx</span><span class="p">]</span><span class="o">.</span><span class="n">idx_v</span>
+                <span class="n">velocity_limit</span><span class="p">[</span><span class="n">joint_vel_idx</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="o">=</span> <span class="n">FLEX_VEL_ANG_MAX</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">model_options</span><span class="p">[</span><span class="s1">&#39;joints&#39;</span><span class="p">][</span><span class="s1">&#39;enablePositionLimit&#39;</span><span class="p">]:</span>
+                <span class="n">position_limit_lower</span><span class="p">[</span><span class="n">joints_position_idx</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">JOINT_POS_MAX</span>
+                <span class="n">position_limit_upper</span><span class="p">[</span><span class="n">joints_position_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">JOINT_POS_MAX</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">model_options</span><span class="p">[</span><span class="s1">&#39;joints&#39;</span><span class="p">][</span><span class="s1">&#39;enableVelocityLimit&#39;</span><span class="p">]:</span>
+                <span class="n">velocity_limit</span><span class="p">[</span><span class="n">joints_velocity_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">JOINT_VEL_MAX</span>
+
+        <span class="c1"># Define bounds of the state space</span>
+        <span class="k">if</span> <span class="n">use_theoretical_model</span><span class="p">:</span>
+            <span class="n">position_limit_lower</span> <span class="o">=</span> <span class="n">position_limit_lower</span><span class="p">[</span><span class="n">joints_position_idx</span><span class="p">]</span>
+            <span class="n">position_limit_upper</span> <span class="o">=</span> <span class="n">position_limit_upper</span><span class="p">[</span><span class="n">joints_position_idx</span><span class="p">]</span>
+            <span class="n">velocity_limit</span> <span class="o">=</span> <span class="n">velocity_limit</span><span class="p">[</span><span class="n">joints_velocity_idx</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="n">Q</span><span class="o">=</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">position_limit_lower</span><span class="p">,</span>
+                         <span class="n">high</span><span class="o">=</span><span class="n">position_limit_upper</span><span class="p">,</span>
+                         <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+            <span class="n">V</span><span class="o">=</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="n">velocity_limit</span><span class="p">,</span>
+                         <span class="n">high</span><span class="o">=</span><span class="n">velocity_limit</span><span class="p">,</span>
+                         <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._get_sensors_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._get_sensors_space">[docs]</a>    <span class="k">def</span> <span class="nf">_get_sensors_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get sensor space.</span>
+
+<span class="sd">        It gathers the sensors data in a dictionary. It maps each available</span>
+<span class="sd">        type of sensor to the associated data matrix. Rows correspond to the</span>
+<span class="sd">        sensor type&#39;s fields, and columns correspond to each individual sensor.</span>
+
+<span class="sd">        .. note:</span>
+<span class="sd">            The mapping between row `i` of data matrix and associated sensor</span>
+<span class="sd">            type&#39;s field is given by:</span>
+
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                field = getattr(jiminy_py.core, key).fieldnames[i]</span>
+
+<span class="sd">            The mapping between column `j` of data matrix and associated sensor</span>
+<span class="sd">            name and object are given by:</span>
+
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                sensor_name = env.robot.sensors_names[key][j]</span>
+<span class="sd">                sensor = env.robot.get_sensor(key, sensor_name)</span>
+
+<span class="sd">        .. warning:</span>
+<span class="sd">            This method is not meant to be overloaded in general since the</span>
+<span class="sd">            definition of the sensor space is mostly consensual. One must</span>
+<span class="sd">            rather overload `_refresh_observation_space` to customize the</span>
+<span class="sd">            observation space as a whole.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Define some proxies for convenience</span>
+        <span class="n">sensors_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_data</span>
+        <span class="n">command_limit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">command_limit</span>
+
+        <span class="n">state_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_state_space</span><span class="p">(</span><span class="n">use_theoretical_model</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># Replace inf bounds of the action space</span>
+        <span class="k">for</span> <span class="n">motor_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">:</span>
+            <span class="n">motor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_motor</span><span class="p">(</span><span class="n">motor_name</span><span class="p">)</span>
+            <span class="n">motor_options</span> <span class="o">=</span> <span class="n">motor</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">motor_options</span><span class="p">[</span><span class="s2">&quot;enableCommandLimit&quot;</span><span class="p">]:</span>
+                <span class="n">command_limit</span><span class="p">[</span><span class="n">motor</span><span class="o">.</span><span class="n">joint_velocity_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">MOTOR_EFFORT_MAX</span>
+
+        <span class="c1"># Initialize the bounds of the sensor space</span>
+        <span class="n">sensor_space_lower</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="n">sensor_space_upper</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+        <span class="c1"># Replace inf bounds of the encoder sensor space</span>
+        <span class="k">if</span> <span class="n">encoder</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">sensor_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_names</span><span class="p">[</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">sensor_name</span> <span class="ow">in</span> <span class="n">sensor_list</span><span class="p">:</span>
+                <span class="c1"># Get the position and velocity bounds of the sensor.</span>
+                <span class="c1"># Note that for rotary unbounded encoders, the sensor bounds</span>
+                <span class="c1"># cannot be extracted from the configuration vector limits</span>
+                <span class="c1"># since the representation is different: cos/sin for the</span>
+                <span class="c1"># configuration, and principal value of the angle for the</span>
+                <span class="c1"># sensor.</span>
+                <span class="n">sensor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_sensor</span><span class="p">(</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">sensor_name</span><span class="p">)</span>
+                <span class="n">sensor_idx</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">idx</span>
+                <span class="n">joint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="n">sensor</span><span class="o">.</span><span class="n">joint_idx</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">sensor</span><span class="o">.</span><span class="n">joint_type</span> <span class="o">==</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">joint_t</span><span class="o">.</span><span class="n">ROTARY_UNBOUNDED</span><span class="p">:</span>
+                    <span class="n">sensor_position_lower</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+                    <span class="n">sensor_position_upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">sensor_position_lower</span> <span class="o">=</span> <span class="n">state_space</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">low</span><span class="p">[</span><span class="n">joint</span><span class="o">.</span><span class="n">idx_q</span><span class="p">]</span>
+                    <span class="n">sensor_position_upper</span> <span class="o">=</span> <span class="n">state_space</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">high</span><span class="p">[</span><span class="n">joint</span><span class="o">.</span><span class="n">idx_q</span><span class="p">]</span>
+                <span class="n">sensor_velocity_limit</span> <span class="o">=</span> <span class="n">state_space</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">high</span><span class="p">[</span><span class="n">joint</span><span class="o">.</span><span class="n">idx_v</span><span class="p">]</span>
+
+                <span class="c1"># Update the bounds accordingly</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="n">sensor_idx</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="n">sensor_position_lower</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="n">sensor_idx</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="n">sensor_position_upper</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">1</span><span class="p">,</span> <span class="n">sensor_idx</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="o">-</span> <span class="n">sensor_velocity_limit</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">encoder</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">1</span><span class="p">,</span> <span class="n">sensor_idx</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="n">sensor_velocity_limit</span>
+
+        <span class="c1"># Replace inf bounds of the effort sensor space</span>
+        <span class="k">if</span> <span class="n">effort</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">sensor_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_names</span><span class="p">[</span><span class="n">effort</span><span class="o">.</span><span class="n">type</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">sensor_name</span> <span class="ow">in</span> <span class="n">sensor_list</span><span class="p">:</span>
+                <span class="n">sensor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_sensor</span><span class="p">(</span><span class="n">effort</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">sensor_name</span><span class="p">)</span>
+                <span class="n">sensor_idx</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">idx</span>
+                <span class="n">motor_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_velocity_idx</span><span class="p">[</span><span class="n">sensor</span><span class="o">.</span><span class="n">motor_idx</span><span class="p">]</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">effort</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="n">sensor_idx</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="o">-</span><span class="n">command_limit</span><span class="p">[</span><span class="n">motor_idx</span><span class="p">]</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">effort</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="n">sensor_idx</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="o">+</span><span class="n">command_limit</span><span class="p">[</span><span class="n">motor_idx</span><span class="p">]</span>
+
+        <span class="c1"># Replace inf bounds of the imu sensor space</span>
+        <span class="k">if</span> <span class="n">imu</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">quat_imu_idx</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">field</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Quat&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">imu</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">]</span>
+            <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">imu</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="n">quat_imu_idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1e-12</span>
+            <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">imu</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="n">quat_imu_idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="mf">1e-12</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enforce_bounded_spaces</span><span class="p">:</span>
+            <span class="c1"># Replace inf bounds of the contact sensor space</span>
+            <span class="k">if</span> <span class="n">contact</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">contact</span><span class="o">.</span><span class="n">type</span><span class="p">][:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="o">-</span><span class="n">SENSOR_FORCE_MAX</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">contact</span><span class="o">.</span><span class="n">type</span><span class="p">][:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">SENSOR_FORCE_MAX</span>
+
+            <span class="c1"># Replace inf bounds of the force sensor space</span>
+            <span class="k">if</span> <span class="n">force</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">force</span><span class="o">.</span><span class="n">type</span><span class="p">][:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="o">-</span><span class="n">SENSOR_FORCE_MAX</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">force</span><span class="o">.</span><span class="n">type</span><span class="p">][:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">SENSOR_FORCE_MAX</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">force</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">3</span><span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="o">-</span><span class="n">SENSOR_MOMENT_MAX</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">force</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="mi">3</span><span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">SENSOR_MOMENT_MAX</span>
+
+            <span class="c1"># Replace inf bounds of the imu sensor space</span>
+            <span class="k">if</span> <span class="n">imu</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">sensors_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">gyro_imu_idx</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">field</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Gyro&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">imu</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">]</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">imu</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="n">gyro_imu_idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> \
+                    <span class="o">-</span><span class="n">SENSOR_GYRO_MAX</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">imu</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="n">gyro_imu_idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> \
+                    <span class="n">SENSOR_GYRO_MAX</span>
+
+                <span class="n">accel_imu_idx</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">field</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Accel&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">imu</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">]</span>
+                <span class="n">sensor_space_lower</span><span class="p">[</span><span class="n">imu</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="n">accel_imu_idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> \
+                    <span class="o">-</span><span class="n">SENSOR_ACCEL_MAX</span>
+                <span class="n">sensor_space_upper</span><span class="p">[</span><span class="n">imu</span><span class="o">.</span><span class="n">type</span><span class="p">][</span><span class="n">accel_imu_idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> \
+                    <span class="n">SENSOR_ACCEL_MAX</span>
+
+        <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">min_val</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">max_val</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">min_val</span><span class="p">),</span> <span class="n">max_val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                <span class="n">sensor_space_lower</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">sensor_space_upper</span><span class="o">.</span><span class="n">values</span><span class="p">())))</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._refresh_action_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._refresh_action_space">[docs]</a>    <span class="k">def</span> <span class="nf">_refresh_action_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the action space of the environment.</span>
+
+<span class="sd">        The action is a vector gathering the torques of the actuator of the</span>
+<span class="sd">        robot.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            This method is called internally by `reset` method. It is not</span>
+<span class="sd">            meant to be overloaded since the actual action space of the</span>
+<span class="sd">            robot is uniquely defined.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get effort limit</span>
+        <span class="n">command_limit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">command_limit</span>
+
+        <span class="c1"># Replace inf bounds of the effort limit if requested</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enforce_bounded_spaces</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">motor_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">:</span>
+                <span class="n">motor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_motor</span><span class="p">(</span><span class="n">motor_name</span><span class="p">)</span>
+                <span class="n">motor_options</span> <span class="o">=</span> <span class="n">motor</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">motor_options</span><span class="p">[</span><span class="s2">&quot;enableCommandLimit&quot;</span><span class="p">]:</span>
+                    <span class="n">command_limit</span><span class="p">[</span><span class="n">motor</span><span class="o">.</span><span class="n">joint_velocity_idx</span><span class="p">]</span> <span class="o">=</span> \
+                        <span class="n">MOTOR_EFFORT_MAX</span>
+
+        <span class="c1"># Set the action space.</span>
+        <span class="c1"># Note that float32 is used instead of float64, because otherwise it</span>
+        <span class="c1"># would requires the neural network to perform float64 computations</span>
+        <span class="c1"># or cast the output for no really advantage since the action is</span>
+        <span class="c1"># directly forwarded to the motors, without intermediary computations.</span>
+        <span class="n">action_scale</span> <span class="o">=</span> <span class="n">command_limit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_velocity_idx</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="n">action_scale</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+                                       <span class="n">high</span><span class="o">=</span><span class="n">action_scale</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+                                       <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.reset"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+              <span class="n">controller_hook</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[],</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span>
+                  <span class="n">Optional</span><span class="p">[</span><span class="n">ObserverHandleType</span><span class="p">],</span>
+                  <span class="n">Optional</span><span class="p">[</span><span class="n">ControllerHandleType</span><span class="p">]]]]]</span> <span class="o">=</span> <span class="kc">None</span>
+              <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Reset the environment.</span>
+
+<span class="sd">        In practice, it resets the backend simulator and set the initial state</span>
+<span class="sd">        of the robot. The initial state is obtained by calling &#39;_sample_state&#39;.</span>
+<span class="sd">        This method is also in charge of setting the initial action (at the</span>
+<span class="sd">        beginning) and observation (at the end).</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            It starts the simulation immediately. As a result, it is not</span>
+<span class="sd">            possible to change the robot (included options), nor to register</span>
+<span class="sd">            log variable. The only way to do so is via &#39;controller_hook&#39;.</span>
+
+<span class="sd">        :param controller_hook: Custom controller hook. It will be executed</span>
+<span class="sd">                                right after initialization of the environment,</span>
+<span class="sd">                                and just before actually starting the</span>
+<span class="sd">                                simulation. It is a callable that optionally</span>
+<span class="sd">                                returns observer and/or controller handles. If</span>
+<span class="sd">                                defined, it will be used to initialize the</span>
+<span class="sd">                                low-level jiminy controller. It is useful to</span>
+<span class="sd">                                override partially the configuration of the</span>
+<span class="sd">                                low-level engine, set a custom low-level</span>
+<span class="sd">                                observer/controller handle, or to register</span>
+<span class="sd">                                custom variables to the telemetry. Set to</span>
+<span class="sd">                                `None` if unused.</span>
+<span class="sd">                                Optional: Disabled by default.</span>
+
+<span class="sd">        :returns: Initial observation of the episode.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=arguments-differ</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="c1"># Stop the simulator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="c1"># Remove external forces, if any</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">remove_all_forces</span><span class="p">()</span>
+
+        <span class="c1"># Make sure the environment is properly setup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+
+        <span class="c1"># Make sure the low-level engine has not changed,</span>
+        <span class="c1"># otherwise some proxies would be corrupted.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;The memory address of the low-level has changed.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Enforce the low-level controller.</span>
+        <span class="c1"># The robot may have changed, for example if it is randomly generated</span>
+        <span class="c1"># based on different URDF files. As a result, it is necessary to</span>
+        <span class="c1"># instantiate a new low-level controller.</span>
+        <span class="c1"># Note that `BaseJiminyObserverController` is used in place of</span>
+        <span class="c1"># `jiminy.BaseControllerFunctor`. Although it is less efficient because</span>
+        <span class="c1"># it adds an extra layer of indirection, it makes it possible to update</span>
+        <span class="c1"># the controller handle without instantiating a new controller, which</span>
+        <span class="c1"># is necessary to allow registering telemetry variables before knowing</span>
+        <span class="c1"># the controller handle in advance.</span>
+        <span class="n">controller</span> <span class="o">=</span> <span class="n">BaseJiminyObserverController</span><span class="p">()</span>
+        <span class="n">controller</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">set_controller</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+
+        <span class="c1"># Reset the simulator.</span>
+        <span class="c1"># Note that the controller must be set BEFORE calling &#39;reset&#39;, because</span>
+        <span class="c1"># otherwise the controller would be corrupted if the robot has changed.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+        <span class="c1"># Re-initialize some shared memories.</span>
+        <span class="c1"># It must be done because the robot may have changed.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">)</span>
+
+        <span class="c1"># Set default action.</span>
+        <span class="c1"># It will be used for the initial step.</span>
+        <span class="n">fill</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="c1"># Reset some internal buffers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_steps</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Create a new log file</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">:</span>
+            <span class="n">fd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_path</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkstemp</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;log_&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.data&quot;</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
+
+        <span class="c1"># Extract the observer/controller update period.</span>
+        <span class="c1"># There is no actual observer by default, apart from the robot&#39;s state</span>
+        <span class="c1"># and raw sensors data. Similarly, there is no actual controller by</span>
+        <span class="c1"># default, apart from forwarding the command torque to the motors.</span>
+        <span class="n">engine_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_dt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observe_dt</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
+            <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;stepper&#39;</span><span class="p">][</span><span class="s1">&#39;controllerUpdatePeriod&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Run controller hook and set the observer and controller handles</span>
+        <span class="n">observer_handle</span><span class="p">,</span> <span class="n">controller_handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">controller_hook</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">handles</span> <span class="o">=</span> <span class="n">controller_hook</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">observer_handle</span><span class="p">,</span> <span class="n">controller_handle</span> <span class="o">=</span> <span class="n">handles</span>
+        <span class="k">if</span> <span class="n">observer_handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">observer_handle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_observer_handle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">set_observer_handle</span><span class="p">(</span>
+            <span class="n">observer_handle</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">controller_handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">controller_handle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_controller_handle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">set_controller_handle</span><span class="p">(</span>
+            <span class="n">controller_handle</span><span class="p">,</span> <span class="n">unsafe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Register the action to the telemetry</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">nmotors</span><span class="p">):</span>
+            <span class="c1"># Default case: assuming there is one scalar action per motor</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;action&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">motors_names</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Fallback: Get generic fieldnames otherwise</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span> <span class="o">=</span> <span class="n">get_fieldnames</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="p">,</span> <span class="s2">&quot;action&quot;</span><span class="p">)</span>
+        <span class="n">is_success</span> <span class="o">=</span> <span class="n">register_variables</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">controller</span><span class="p">,</span>
+                                        <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span><span class="p">,</span>
+                                        <span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_success</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;Action must have dtype np.float64 to be registered to the &quot;</span>
+                <span class="s2">&quot;telemetry.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Sample the initial state and reset the low-level engine</span>
+        <span class="n">qpos</span><span class="p">,</span> <span class="n">qvel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample_state</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">jiminy</span><span class="o">.</span><span class="n">is_position_valid</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="p">,</span> <span class="n">qpos</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;The initial state provided by `_sample_state` is &quot;</span>
+                <span class="s2">&quot;inconsistent with the dimension or types of joints of the &quot;</span>
+                <span class="s2">&quot;model.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Start the engine</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">start</span><span class="p">(</span>
+            <span class="n">qpos</span><span class="p">,</span> <span class="n">qvel</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">use_theoretical_model</span><span class="p">)</span>
+
+        <span class="c1"># Initialize the observer.</span>
+        <span class="c1"># Note that it is responsible of refreshing the environment&#39;s</span>
+        <span class="c1"># observation before anything else, so no need to do it twice.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">refresh_observation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span><span class="o">.</span><span class="n">t</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">q</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">v</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">)</span>
+
+        <span class="c1"># Make sure the state is valid, otherwise there `refresh_observation`</span>
+        <span class="c1"># and `_refresh_observation_space` are probably inconsistent.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">obs</span> <span class="o">=</span> <span class="n">clip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">())</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;The observation computed by `refresh_observation` is &quot;</span>
+                <span class="s2">&quot;inconsistent with the observation space defined by &quot;</span>
+                <span class="s2">&quot;`_refresh_observation_space` at initialization.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_done</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;The simulation is already done at `reset`. Check the &quot;</span>
+                <span class="s2">&quot;implementation of `is_done` if overloaded.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Reset cumulative reward</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_reward</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># Note that the viewer must be reset if available, otherwise it would</span>
+        <span class="c1"># keep using the old robot model for display, which must be avoided.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_viewer_available</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">_setup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rgb_array&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">obs</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.seed"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.seed">[docs]</a>    <span class="k">def</span> <span class="nf">seed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Specify the seed of the environment.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            It also resets the low-level jiminy Engine. Therefore one must call</span>
+<span class="sd">            the `reset` method manually afterward.</span>
+
+<span class="sd">        :param seed: Random seed, as a positive integer.</span>
+<span class="sd">                     Optional: A strongly random seed will be generated by gym</span>
+<span class="sd">                     if omitted.</span>
+
+<span class="sd">        :returns: Updated seed of the environment</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Generate a 8 bytes (uint64) seed using gym utils</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_seed</span> <span class="o">=</span> <span class="n">seeding</span><span class="o">.</span><span class="n">np_random</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+
+        <span class="c1"># Convert it into a 4 bytes uint32 seed.</span>
+        <span class="c1"># Note that hashing is used to get rid off possible correlation in the</span>
+        <span class="c1"># presence of concurrency.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_seed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">(</span>
+            <span class="n">seeding</span><span class="o">.</span><span class="n">_int_list_from_bigint</span><span class="p">(</span><span class="n">seeding</span><span class="o">.</span><span class="n">hash_seed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_seed</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># Reset the seed of Jiminy Engine</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_seed</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_seed</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.close"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Terminate the Python Jiminy engine.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.step"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.step">[docs]</a>    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">action</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+             <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot;Run a simulation step for a given action.</span>
+
+<span class="sd">        :param action: Action to perform. `None` to not update the action.</span>
+
+<span class="sd">        :returns: Next observation, reward, status of the episode (done or</span>
+<span class="sd">                  not), and a dictionary of extra information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Make sure a simulation is already running</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;No simulation running. Please call `reset` before `step`.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Update the action to perform if necessary</span>
+        <span class="k">if</span> <span class="n">action</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+
+        <span class="c1"># Trying to perform a single simulation step</span>
+        <span class="n">is_step_failed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Do a single step</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">step_dt</span><span class="p">)</span>
+
+            <span class="c1"># Update the observer at the end of the step. Indeed, internally,</span>
+            <span class="c1"># it is called at the beginning of the every integration steps,</span>
+            <span class="c1"># during the controller update.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">refresh_observation</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span><span class="o">.</span><span class="n">t</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">q</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="o">.</span><span class="n">v</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">)</span>
+
+            <span class="c1"># Update some internal buffers</span>
+            <span class="n">is_step_failed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unrecoverable Jiminy engine exception:</span><span class="se">\n</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Get clipped observation</span>
+        <span class="n">obs</span> <span class="o">=</span> <span class="n">clip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_observation</span><span class="p">())</span>
+
+        <span class="c1"># Check if the simulation is over.</span>
+        <span class="c1"># Note that &#39;done&#39; is always True if the integration failed or if the</span>
+        <span class="c1"># maximum number of steps will be exceeded next step.</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="n">is_step_failed</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_steps</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_steps</span><span class="p">)</span> <span class="ow">or</span> \
+            <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_simulation_running</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_done</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_info</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Check if stepping after done and if it is an undefined behavior</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enable_reward_terminal</span> <span class="ow">and</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="s2">&quot;Calling &#39;step&#39; even though this environment has already &quot;</span>
+                    <span class="s2">&quot;returned done = True whereas terminal reward is enabled. &quot;</span>
+                    <span class="s2">&quot;Please call `reset` to avoid further undefined behavior.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Early return in case of low-level engine integration failure.</span>
+        <span class="c1"># In such a case, it always returns reward = 0.0 and done = True.</span>
+        <span class="k">if</span> <span class="n">is_step_failed</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_info</span><span class="p">)</span>
+
+        <span class="c1"># Compute reward and extra information</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_reward</span><span class="p">(</span><span class="n">info</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_info</span><span class="p">)</span>
+
+        <span class="c1"># Finalize the episode is the simulation is over</span>
+        <span class="k">if</span> <span class="n">done</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps_beyond_done</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Write log file if simulation is over (debug mode only)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">write_log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;binary&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Compute terminal reward if any</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enable_reward_terminal</span><span class="p">:</span>
+                <span class="c1"># Add terminal reward to current reward</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_reward_terminal</span><span class="p">(</span><span class="n">info</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_info</span><span class="p">)</span>
+
+        <span class="c1"># Update cumulative reward</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_reward</span> <span class="o">+=</span> <span class="n">reward</span>
+
+        <span class="c1"># Update number of (successful) steps</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_steps</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_info</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.render"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.render">[docs]</a>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;human&#39;</span><span class="p">,</span>
+               <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Render the current state of the robot.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Do not suport Multi-Rendering RGB output for now.</span>
+
+<span class="sd">        :param mode: Rendering mode. It can be either &#39;human&#39; to display the</span>
+<span class="sd">                     current simulation state, or &#39;rgb_array&#39; to return</span>
+<span class="sd">                     instead a snapshot of it as an RGB array without showing</span>
+<span class="sd">                     it on the screen.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments to forward to</span>
+<span class="sd">                       `jiminy_py.simulator.Simulator.render` method.</span>
+
+<span class="sd">        :returns: RGB array if &#39;mode&#39; is &#39;rgb_array&#39;, None otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;human&#39;</span><span class="p">:</span>
+            <span class="n">return_rgb_array</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;rgb_array&#39;</span><span class="p">:</span>
+            <span class="n">return_rgb_array</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rendering mode </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> not supported.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="p">{</span>
+            <span class="s1">&#39;return_rgb_array&#39;</span><span class="p">:</span> <span class="n">return_rgb_array</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">})</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.plot"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Display common simulation data and action over time.</span>
+
+<span class="sd">        .. Note:</span>
+<span class="sd">            It adds &quot;Action&quot; tab on top of original `Simulator.plot`.</span>
+
+<span class="sd">        :param kwargs: Extra keyword arguments to forward to `simulator.plot`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Call base implementation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Extract action.</span>
+        <span class="c1"># If telemetry action fieldnames is a dictionary, it cannot be nested.</span>
+        <span class="c1"># In such a case, keys corresponds to subplots, and values are</span>
+        <span class="c1"># individual scalar data over time to be displayed to the same subplot.</span>
+        <span class="n">log_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">log_data</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">log_data</span><span class="p">[</span><span class="s2">&quot;Global.Time&quot;</span><span class="p">]</span>
+        <span class="n">tab_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># It was impossible to register the action to the telemetry, likely</span>
+            <span class="c1"># because of incompatible dtype. Early return without adding tab.</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">subfields</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subfields</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Action space not supported.&quot;</span><span class="p">)</span>
+                    <span class="k">return</span>
+                <span class="n">tab_data</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">log_data</span><span class="p">[</span>
+                        <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;HighLevelController&quot;</span><span class="p">,</span> <span class="n">field</span><span class="p">))]</span>
+                    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">subfields</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">tab_data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                <span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">log_data</span><span class="p">[</span>
+                    <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;HighLevelController&quot;</span><span class="p">,</span> <span class="n">field</span><span class="p">))]</span>
+                <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">logfile_action_headers</span><span class="p">})</span>
+
+        <span class="c1"># Add action tab</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">add_tab</span><span class="p">(</span><span class="s2">&quot;Action&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">tab_data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.replay"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.replay">[docs]</a>    <span class="k">def</span> <span class="nf">replay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable_travelling</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Replay the current episode until now.</span>
+
+<span class="sd">        :param enable_travelling: Whether or not enable travelling, following</span>
+<span class="sd">                                  the motion of the root frame of the model.</span>
+<span class="sd">                                  This parameter is ignored if the model has no</span>
+<span class="sd">                                  freeflyer.</span>
+<span class="sd">                                  Optional: True by default.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments for delegation to</span>
+<span class="sd">                       `replay.play_trajectories` method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Do not open graphical window automatically if recording requested.</span>
+        <span class="c1"># Note that backend is closed automatically is there is no viewer</span>
+        <span class="c1"># backend available at this point, to reduce memory pressure, but it</span>
+        <span class="c1"># will take time to restart it systematically for every recordings.</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;record_video_path&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;rgb_array&#39;</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;close_backend&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_viewer_available</span>
+
+        <span class="c1"># Stop any running simulation before replay if `is_done` is True.</span>
+        <span class="c1"># It will enable to display contact forces.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_done</span><span class="p">():</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">_display_contacts</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="c1"># Set default camera pose if viewer not already available</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_viewer_available</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">has_freeflyer</span><span class="p">:</span>
+            <span class="c1"># Get root frame name.</span>
+            <span class="c1"># The first and second frames are respectively &quot;universe&quot; no matter</span>
+            <span class="c1"># if the robot has a freeflyer or not, and the second one is the</span>
+            <span class="c1"># freeflyer joint &quot;root_joint&quot; if any.</span>
+            <span class="n">root_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+
+            <span class="c1"># Set default camera pose options.</span>
+            <span class="c1"># Note that the actual signature is hacked to set relative pose.</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;camera_xyzrpy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">DEFAULT_CAMERA_XYZRPY_REL</span><span class="p">,</span> <span class="n">root_name</span><span class="p">)</span>
+
+        <span class="c1"># Call render before replay in order to take into account custom</span>
+        <span class="c1"># backend viewer instantiation options, such as initial camera pose.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Set default travelling options</span>
+        <span class="k">if</span> <span class="n">enable_travelling</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">has_freeflyer</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;travelling_frame&#39;</span><span class="p">]</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">replay</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">})</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.play_interactive"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.play_interactive">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">play_interactive</span><span class="p">(</span><span class="n">env</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;BaseJiminyEnv&quot;</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">],</span>
+                         <span class="n">enable_travelling</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                         <span class="n">start_paused</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                         <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Activate interact mode enabling to control the robot using keyboard.</span>
+
+<span class="sd">        It stops automatically as soon as &#39;done&#39; flag is True. One has to press</span>
+<span class="sd">        a key to start the interaction. If no key is pressed, the action is</span>
+<span class="sd">        not updated and the previous one keeps being sent to the robot.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            This method requires `_key_to_action` method to be implemented by</span>
+<span class="sd">            the user by overloading it, otherwise it raises an exception.</span>
+
+<span class="sd">        :param env: `BaseJiminyEnv` environment instance to play with,</span>
+<span class="sd">                    eventually wrapped by composition, typically using</span>
+<span class="sd">                    `gym.Wrapper`.</span>
+<span class="sd">        :param enable_travelling: Whether or not enable travelling, following</span>
+<span class="sd">                                  the motion of the root frame of the model.</span>
+<span class="sd">                                  This parameter is ignored if the model has no</span>
+<span class="sd">                                  freeflyer.</span>
+<span class="sd">                                  Optional: Enabled by default iif &#39;panda3d&#39;</span>
+<span class="sd">                                  viewer backend is used.</span>
+<span class="sd">        :param start_paused: Whether or not to start in pause.</span>
+<span class="sd">                             Optional: Enabled by default.</span>
+<span class="sd">        :param verbose: Whether or not to display status messages.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments to forward to `_key_to_action`</span>
+<span class="sd">                       method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get unwrapped environment</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">):</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">unwrapped</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="n">env</span>
+
+        <span class="c1"># Make sure the unwrapped environment derive from this class</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">BaseJiminyEnv</span><span class="p">),</span> <span class="p">(</span>
+            <span class="s2">&quot;Unwrapped environment must derived from `BaseJiminyEnv`.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Enable play interactive mode flag</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_interactive</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Make sure viewer gui is open, so that the viewer will shared external</span>
+        <span class="c1"># forces with the robot automatically.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_viewer_available</span> <span class="ow">and</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">has_gui</span><span class="p">()):</span>
+            <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+        <span class="c1"># Reset the environement</span>
+        <span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Enable travelling</span>
+        <span class="k">if</span> <span class="n">enable_travelling</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">enable_travelling</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;panda3d&#39;</span><span class="p">)</span>
+        <span class="n">enable_travelling</span> <span class="o">=</span> <span class="n">enable_travelling</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">has_freeflyer</span>
+        <span class="k">if</span> <span class="n">enable_travelling</span><span class="p">:</span>
+            <span class="n">tracked_frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">attach_camera</span><span class="p">(</span><span class="n">tracked_frame</span><span class="p">)</span>
+
+        <span class="c1"># Refresh the scene once again to update camera placement</span>
+        <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+        <span class="c1"># Define interactive loop</span>
+        <span class="k">def</span> <span class="nf">_interact</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="k">nonlocal</span> <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_to_action</span><span class="p">(</span>
+                <span class="n">key</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s2">&quot;verbose&quot;</span><span class="p">:</span> <span class="n">verbose</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">})</span>
+            <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+            <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">done</span>
+
+        <span class="c1"># Run interactive loop</span>
+        <span class="n">loop_interactive</span><span class="p">(</span><span class="n">max_rate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">step_dt</span><span class="p">,</span>
+                         <span class="n">start_paused</span><span class="o">=</span><span class="n">start_paused</span><span class="p">,</span>
+                         <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)(</span><span class="n">_interact</span><span class="p">)()</span>
+
+        <span class="c1"># Disable travelling if it enabled</span>
+        <span class="k">if</span> <span class="n">enable_travelling</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">detach_camera</span><span class="p">()</span>
+
+        <span class="c1"># Stop the simulation to unlock the robot.</span>
+        <span class="c1"># It will enable to display contact forces for replay.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="c1"># Disable play interactive mode flag</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_interactive</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+    <span class="c1"># methods to override:</span>
+    <span class="c1"># ----------------------------</span>
+
+<div class="viewcode-block" id="BaseJiminyEnv._setup"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._setup">[docs]</a>    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the environment. It must guarantee that its internal state</span>
+<span class="sd">        is valid after calling this method.</span>
+
+<span class="sd">        By default, it enforces some options of the engine.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called internally by `reset` methods.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get options</span>
+        <span class="n">robot_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+        <span class="n">engine_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+
+        <span class="c1"># Disable part of the telemetry in non debug mode, to speed up the</span>
+        <span class="c1"># simulation. Only the required data for log replay are enabled. It is</span>
+        <span class="c1"># up to the user to overload this method if logging more data is</span>
+        <span class="c1"># necessary for computating the terminal reward.</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">robot_options</span><span class="p">[</span><span class="s2">&quot;telemetry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">robot_options</span><span class="p">[</span><span class="s2">&quot;telemetry&quot;</span><span class="p">][</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;telemetry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;enable&#39;</span><span class="p">):</span>
+                <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;telemetry&quot;</span><span class="p">][</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;telemetry&#39;</span><span class="p">][</span><span class="s1">&#39;enableConfiguration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;telemetry&#39;</span><span class="p">][</span><span class="s1">&#39;enableVelocity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Enable the friction model</span>
+        <span class="k">for</span> <span class="n">motor_name</span> <span class="ow">in</span> <span class="n">robot_options</span><span class="p">[</span><span class="s2">&quot;motors&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">robot_options</span><span class="p">[</span><span class="s2">&quot;motors&quot;</span><span class="p">][</span><span class="n">motor_name</span><span class="p">][</span><span class="s2">&quot;enableFriction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Configure the stepper</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;stepper&quot;</span><span class="p">][</span><span class="s2">&quot;iterMax&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;stepper&quot;</span><span class="p">][</span><span class="s2">&quot;timeout&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;stepper&quot;</span><span class="p">][</span><span class="s2">&quot;logInternalStepperSteps&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">engine_options</span><span class="p">[</span><span class="s2">&quot;stepper&quot;</span><span class="p">][</span><span class="s2">&quot;randomSeed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_seed</span>
+
+        <span class="c1"># Set options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">robot_options</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">engine_options</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._refresh_observation_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._refresh_observation_space">[docs]</a>    <span class="k">def</span> <span class="nf">_refresh_observation_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Configure the observation of the environment.</span>
+
+<span class="sd">        By default, the observation is a dictionary gathering the current</span>
+<span class="sd">        simulation time, the real robot state, and the sensors data.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called internally by `reset` method at the very end,</span>
+<span class="sd">            just before computing and returning the initial observation. This</span>
+<span class="sd">            method, alongside `refresh_observation`, must be overwritten in</span>
+<span class="sd">            order to define a custom observation space.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">observation_spaces</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="n">observation_spaces</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_time_space</span><span class="p">()</span>
+        <span class="n">observation_spaces</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_state_space</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">:</span>
+            <span class="n">observation_spaces</span><span class="p">[</span><span class="s1">&#39;sensors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sensors_space</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">observation_spaces</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._neutral"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._neutral">[docs]</a>    <span class="k">def</span> <span class="nf">_neutral</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a neutral valid configuration for the robot.</span>
+
+<span class="sd">        The default implementation returns the neutral configuration if valid,</span>
+<span class="sd">        the &quot;mean&quot; configuration otherwise (right in the middle of the position</span>
+<span class="sd">        lower and upper bounds).</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Beware there is no guarantee for this configuration to be</span>
+<span class="sd">            statically stable.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called internally by &#39;_sample_state&#39; to generate the</span>
+<span class="sd">            initial state. It can be overloaded to ensure static stability of</span>
+<span class="sd">            the configuration.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get the neutral configuration of the actual model</span>
+        <span class="n">qpos</span> <span class="o">=</span> <span class="n">neutral</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="p">)</span>
+
+        <span class="c1"># Make sure it is not out-of-bounds</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">qpos</span><span class="p">)):</span>  <span class="c1"># pylint: disable=consider-using-enumerate</span>
+            <span class="n">lo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">position_limit_lower</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">hi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">position_limit_upper</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">hi</span> <span class="o">&lt;</span> <span class="n">qpos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">or</span> <span class="n">qpos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lo</span><span class="p">:</span>
+                <span class="n">qpos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">])</span>
+
+        <span class="c1"># Make sure the configuration is valid</span>
+        <span class="n">qpos</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="p">,</span> <span class="n">qpos</span><span class="p">)</span>
+
+        <span class="c1"># Return rigid/flexible configuration</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">use_theoretical_model</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">qpos</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">rigid_joints_position_idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">qpos</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._sample_state"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._sample_state">[docs]</a>    <span class="k">def</span> <span class="nf">_sample_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a valid configuration and velocity for the robot.</span>
+
+<span class="sd">        The default implementation returns the neutral configuration and zero</span>
+<span class="sd">        velocity.</span>
+
+<span class="sd">        Offsets are applied on the freeflyer to ensure no contact points are</span>
+<span class="sd">        going through the ground and up to three are in contact.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called internally by `reset` to generate the initial</span>
+<span class="sd">            state. It can be overloaded to act as a random state generator.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get the neutral configuration</span>
+        <span class="n">qpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_neutral</span><span class="p">()</span>
+
+        <span class="c1"># Make sure the robot impacts the ground</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">has_freeflyer</span><span class="p">:</span>
+            <span class="n">engine_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+            <span class="n">ground_fun</span> <span class="o">=</span> <span class="n">engine_options</span><span class="p">[</span><span class="s1">&#39;world&#39;</span><span class="p">][</span><span class="s1">&#39;groundProfile&#39;</span><span class="p">]</span>
+            <span class="n">compute_freeflyer_state_from_fixed_body</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span> <span class="n">qpos</span><span class="p">,</span> <span class="n">ground_profile</span><span class="o">=</span><span class="n">ground_fun</span><span class="p">)</span>
+
+        <span class="c1"># Zero velocity</span>
+        <span class="n">qvel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">pinocchio_model</span><span class="o">.</span><span class="n">nv</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">qpos</span><span class="p">,</span> <span class="n">qvel</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.refresh_observation"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.refresh_observation">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># type: ignore[override]</span>
+        <span class="sd">&quot;&quot;&quot;Compute the observation based on the current state of the robot.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called right after step, so it is the right place to</span>
+<span class="sd">            update shared data between `refresh_observation`, `is_done`, and</span>
+<span class="sd">            `compute_reward` methods.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            In practice, it updates the internal buffer directly for the sake</span>
+<span class="sd">            of efficiency.</span>
+
+<span class="sd">            As a side note, there is no way in the current implementation to</span>
+<span class="sd">            discriminate the initialization of the observation buffer from the</span>
+<span class="sd">            next one. The workaround is to check if the simulation already</span>
+<span class="sd">            started. Even though it is not the same rigorously speaking, it</span>
+<span class="sd">            does the job here since it is only about preserving efficiency.</span>
+
+<span class="sd">        :param full_refresh: Whether or not to do a full refresh. This is</span>
+<span class="sd">                             usually done once, when calling `reset` method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=arguments-differ</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stepper_state</span><span class="o">.</span><span class="n">t</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">is_simulation_running</span><span class="p">:</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">][</span><span class="s1">&#39;Q&#39;</span><span class="p">],</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">][</span><span class="s1">&#39;V&#39;</span><span class="p">])</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">state</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">[</span><span class="s1">&#39;sensors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensors_data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">use_theoretical_model</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">is_flexible</span><span class="p">:</span>
+                <span class="n">position</span><span class="p">,</span> <span class="n">velocity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulator</span><span class="o">.</span><span class="n">state</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">][</span><span class="s1">&#39;Q&#39;</span><span class="p">][:]</span> <span class="o">=</span> <span class="n">position</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">][</span><span class="s1">&#39;V&#39;</span><span class="p">][:]</span> <span class="o">=</span> <span class="n">velocity</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.compute_command"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.compute_command">[docs]</a>    <span class="k">def</span> <span class="nf">compute_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                        <span class="n">measure</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
+                        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute the motors efforts to apply on the robot.</span>
+
+<span class="sd">        By default, it does not perform any processing. One is responsible of</span>
+<span class="sd">        overloading this method to clip the action if necessary to make sure it</span>
+<span class="sd">        does not violate the lower and upper bounds.</span>
+
+<span class="sd">        :param measure: Observation of the environment.</span>
+<span class="sd">        :param action: Desired motors efforts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if the action is out-of-bounds, in debug mode only</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">action</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The action is out-of-bounds.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">action</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv.is_done"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv.is_done">[docs]</a>    <span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Determine whether the episode is over.</span>
+
+<span class="sd">        By default, it returns True if the observation reaches or exceeds the</span>
+<span class="sd">        lower or upper limit.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called right after calling `refresh_observation`, so</span>
+<span class="sd">            that the internal buffer &#39;_observation&#39; is up-to-date. It can be</span>
+<span class="sd">            overloaded to implement a custom termination condition for the</span>
+<span class="sd">            simulation. Moreover, as it is called before `compute_reward`, it</span>
+<span class="sd">            can be used to update some share intermediary computations to avoid</span>
+<span class="sd">            redundant calculus and thus improve efficiency.</span>
+
+<span class="sd">        :param args: Extra arguments that may be useful for derived</span>
+<span class="sd">                     environments, for example `Gym.GoalEnv`.</span>
+<span class="sd">        :param kwargs: Extra keyword arguments. See &#39;args&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
+
+        <span class="c1"># Assertion(s) for type checker</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_observation</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyEnv._key_to_action"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyEnv._key_to_action">[docs]</a>    <span class="k">def</span> <span class="nf">_key_to_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                       <span class="n">key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                       <span class="n">obs</span><span class="p">:</span> <span class="n">SpaceDictNested</span><span class="p">,</span>
+                       <span class="n">reward</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
+                       <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Mapping from input keyboard keys to actions.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called before `step` method systematically, even if</span>
+<span class="sd">            not key has been pressed, or reward is not defined. In such a case,</span>
+<span class="sd">            the value is `None`.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            The mapping can be state dependent, and the key can be used for</span>
+<span class="sd">            something different than computing the action directly. For</span>
+<span class="sd">            instance, one can provide as extra argument to this method a</span>
+<span class="sd">            custom policy taking user parameters mapped to keyboard in input.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Overloading this method is required for calling `play_interactive`</span>
+<span class="sd">            method.</span>
+
+<span class="sd">        :param key: Key pressed by the user as a string. `None` if no key has</span>
+<span class="sd">                    been pressed since the last step of the environment.</span>
+<span class="sd">        :param obs: Previous observation from last step of the environment.</span>
+<span class="sd">                    It is always available, included right after `reset`.</span>
+<span class="sd">        :param reward: Previous reward from last step of the environment.</span>
+<span class="sd">                       Not available before first step right after `reset`.</span>
+<span class="sd">        :param kwargs: Extra keyword argument provided by the user when calling</span>
+<span class="sd">                       `play_interactive` method.</span>
+
+<span class="sd">        :returns: Action to forward to the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+
+
+<span class="n">BaseJiminyEnv</span><span class="o">.</span><span class="n">compute_reward</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> \
+    <span class="sd">&quot;&quot;&quot;Compute reward at current episode state.</span>
+
+<span class="sd">    See `ControllerInterface.compute_reward` for details.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This method is called after updating the internal buffer</span>
+<span class="sd">        &#39;_num_steps_beyond_done&#39;, which is None if the simulation is not done,</span>
+<span class="sd">        0 right after, and so on.</span>
+
+<span class="sd">    :param args: Extra arguments that may be useful for derived environments,</span>
+<span class="sd">                 for example `Gym.GoalEnv`.</span>
+<span class="sd">    :param info: Dictionary of extra information for monitoring.</span>
+<span class="sd">    :param kwargs: Extra keyword arguments. See &#39;args&#39;.</span>
+
+<span class="sd">    :returns: Total reward.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv">[docs]</a><span class="k">class</span> <span class="nc">BaseJiminyGoalEnv</span><span class="p">(</span><span class="n">BaseJiminyEnv</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">GoalEnv</span><span class="p">):</span>  <span class="c1"># Don&#39;t change order</span>
+    <span class="sd">&quot;&quot;&quot;Base class to train a robot in Gym OpenAI using a user-specified Jiminy</span>
+<span class="sd">    Engine for physics computations.</span>
+
+<span class="sd">    It creates an Gym environment wrapping Jiminy Engine and behaves like any</span>
+<span class="sd">    other Gym goal-environment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">simulator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Simulator</span><span class="p">],</span>
+                 <span class="n">step_dt</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                 <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Initialize base class</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">simulator</span><span class="p">,</span> <span class="n">step_dt</span><span class="p">,</span> <span class="n">debug</span><span class="p">)</span>
+
+        <span class="c1"># Append default desired and achieved goal spaces to observation space</span>
+        <span class="n">goal_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_goal_space</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="n">observation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span>
+            <span class="n">desired_goal</span><span class="o">=</span><span class="n">goal_space</span><span class="p">,</span>
+            <span class="n">achieved_goal</span><span class="o">=</span><span class="n">goal_space</span><span class="p">))</span>
+
+        <span class="c1"># Define some internal buffers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_desired_goal</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">goal_space</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv.get_observation"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv.get_observation">[docs]</a>    <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get post-processed observation.</span>
+
+<span class="sd">        It gathers the original observation from the environment with the</span>
+<span class="sd">        currently achieved and desired goal, as a dictionary. See</span>
+<span class="sd">        `ObserverInterface.get_observation` documentation for details.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="n">observation</span><span class="o">=</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_observation</span><span class="p">(),</span>
+            <span class="n">achieved_goal</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_achieved_goal</span><span class="p">(),</span>
+            <span class="n">desired_goal</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_desired_goal</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv.reset"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+              <span class="n">controller_hook</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[],</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span>
+                  <span class="n">Optional</span><span class="p">[</span><span class="n">ObserverHandleType</span><span class="p">],</span>
+                  <span class="n">Optional</span><span class="p">[</span><span class="n">ControllerHandleType</span><span class="p">]]]]]</span> <span class="o">=</span> <span class="kc">None</span>
+              <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_desired_goal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample_goal</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">controller_hook</span><span class="p">)</span></div>
+
+    <span class="c1"># methods to override:</span>
+    <span class="c1"># ----------------------------</span>
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv._get_goal_space"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv._get_goal_space">[docs]</a>    <span class="k">def</span> <span class="nf">_get_goal_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get goal space.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called internally at init to define the observation</span>
+<span class="sd">            space. It is called BEFORE `super().reset` so non goal-env-specific</span>
+<span class="sd">            internal buffers are NOT up-to-date. This method must be overloaded</span>
+<span class="sd">            while implementing a goal environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv._sample_goal"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv._sample_goal">[docs]</a>    <span class="k">def</span> <span class="nf">_sample_goal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Sample a goal randomly.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called internally by `reset` to sample the new</span>
+<span class="sd">            desired goal that the agent will have to achieve. It is called</span>
+<span class="sd">            BEFORE `super().reset` so non goal-env-specific internal buffers</span>
+<span class="sd">            are NOT up-to-date. This method must be overloaded while</span>
+<span class="sd">            implementing a goal environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv._get_achieved_goal"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv._get_achieved_goal">[docs]</a>    <span class="k">def</span> <span class="nf">_get_achieved_goal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpaceDictNested</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute the achieved goal based on current state of the robot.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method can be called by `refresh_observation` to get the</span>
+<span class="sd">            currently achieved goal. This method must be overloaded while</span>
+<span class="sd">            implementing a goal environment.</span>
+
+<span class="sd">        :returns: Currently achieved goal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv.is_done"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv.is_done">[docs]</a>    <span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="c1"># type: ignore[override]</span>
+                <span class="n">achieved_goal</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">desired_goal</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Determine whether a termination condition has been reached.</span>
+
+<span class="sd">        By default, it uses the termination condition inherited from normal</span>
+<span class="sd">        environment.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method is called right after calling `refresh_observation`, so</span>
+<span class="sd">            that the internal buffer &#39;_observation&#39; is up-to-date. This method</span>
+<span class="sd">            can be overloaded while implementing a goal environment.</span>
+
+<span class="sd">        :param achieved_goal: Achieved goal. If set to None, one is supposed to</span>
+<span class="sd">                              call `_get_achieved_goal` instead.</span>
+<span class="sd">                              Optional: None by default.</span>
+<span class="sd">        :param desired_goal: Desired goal. If set to None, one is supposed to</span>
+<span class="sd">                             use the internal buffer &#39;_desired_goal&#39; instead.</span>
+<span class="sd">                             Optional: None by default.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=arguments-differ</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="BaseJiminyGoalEnv.compute_reward"><a class="viewcode-back" href="../../../../api/gym_jiminy/common/envs/env_generic.html#gym_jiminy.common.envs.env_generic.BaseJiminyGoalEnv.compute_reward">[docs]</a>    <span class="k">def</span> <span class="nf">compute_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="c1"># type: ignore[override]</span>
+                       <span class="n">achieved_goal</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="n">desired_goal</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SpaceDictNested</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="o">*</span><span class="p">,</span> <span class="n">info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute the reward for any given episode state.</span>
+
+<span class="sd">        :param achieved_goal: Achieved goal. `None` to evalute the reward for</span>
+<span class="sd">                              currently achieved goal.</span>
+<span class="sd">        :param desired_goal: Desired goal. `None` to evalute the reward for</span>
+<span class="sd">                             currently desired goal.</span>
+<span class="sd">        :param info: Dictionary of extra information for monitoring.</span>
+
+<span class="sd">        :returns: Total reward.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=arguments-differ</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Alexis Duburcq - MIT licence.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
